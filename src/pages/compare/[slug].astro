@@ -52,13 +52,15 @@ const v = VIEWS[slug];
 const scale = chartScale(v.courses);
 const description = `${v.lead.slice(0, 90)} 全${municipalities.length}自治体・${v.courses.length}件を掲載（2026年9月時点）。`;
 const pricedInView = v.courses.filter((c) => typeof c.fee?.amount === 'number');
+// 掲載データのうち最も新しい確認日を出す（直書きすると更新し忘れる）
+const lastVerified = municipalities.map((m) => m.lastVerified).sort().at(-1);
 ---
 
 <Base title={`${v.title}｜${municipalities.length}自治体を横断比較`} description={description}>
   <p class="eyebrow">{municipalities.length}自治体 横断調査　2026年9月</p>
   <h1>{v.h1.map((t) => <span class="nb">{t}</span>)}</h1>
   <p class="standfirst">{v.lead}</p>
-  <p class="stamp">最終確認 <b>2026-09-09</b>　—　出典は各自治体・各実施機関の公式ページ</p>
+  <p class="stamp"><span>最終確認 <b>{lastVerified}</b></span><span>出典は各自治体・各実施機関の公式ページ</span></p>
 
   {slug === 'fee' && (
     <div class="figs">

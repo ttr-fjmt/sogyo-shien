@@ -87,10 +87,17 @@ h1{
   max-width:60ch;
 }
 .stamp{
-  display:inline-flex;align-items:baseline;gap:.5rem;
+  display:inline-flex;align-items:baseline;flex-wrap:wrap;gap:.15rem 1.1rem;
   border:1px solid var(--rule-strong);border-radius:2px;
   padding:.35rem .7rem;font-size:.78rem;color:var(--ink-soft);
   background:var(--surface);
+}
+/* 語の途中で折り返さない。折り返すなら塊と塊の間で */
+.stamp > span{white-space:nowrap}
+.stamp > span + span::before{content:"—";margin-right:1.1rem;color:var(--rule-strong)}
+@media(max-width:520px){
+  .stamp > span{white-space:normal}
+  .stamp > span + span::before{content:none}
 }
 .stamp b{color:var(--ink);font-variant-numeric:tabular-nums;font-weight:700}
 
@@ -444,4 +451,47 @@ td.city{color:var(--ink-soft);white-space:nowrap}
 @media (min-width:1000px){
   .ledger{max-width:64rem}
   .course{max-width:70rem}
+}
+
+/* ==========================================================================
+   サイト名（朱地に白のボタン）
+   ブランド色はテーマで変えない。ダークでも朱地×白のままのほうが
+   「同じサイトだ」と分かりやすく、白文字とのコントラストも 7.8:1 で足りる。
+   ========================================================================== */
+:root{
+  --brand:#B7452F;
+  --brand-hover:#9C3A27;
+  --brand-ink:#FBFAF7;
+}
+
+.site-head{margin:0 0 var(--s4)}
+
+.brand{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--brand);color:var(--brand-ink);
+  padding:.46rem .9rem .5rem;border-radius:3px;
+  text-decoration:none;line-height:1.2;
+  transition:background .12s ease;
+}
+.brand:hover,
+.brand:focus-visible{background:var(--brand-hover);color:var(--brand-ink)}
+.brand:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+.brand-mark{
+  font-family:var(--f-disp);font-weight:800;font-size:1.18rem;
+  line-height:1;padding-right:.5rem;
+  border-right:1px solid rgba(251,250,247,.42);
+}
+.brand-name{
+  font-family:var(--f-disp);font-weight:700;font-size:1.02rem;letter-spacing:.06em;
+}
+
+/* フッター側は控えめに */
+.foot-brand{margin:0 0 var(--s3)}
+.brand-sm{padding:.34rem .7rem .38rem}
+.brand-sm .brand-mark{font-size:1rem;padding-right:.42rem}
+.brand-sm .brand-name{font-size:.86rem}
+
+@media(max-width:420px){
+  .brand-name{font-size:.94rem;letter-spacing:.04em}
 }

@@ -72,13 +72,15 @@ const citing = municipalities.filter((m) =>
   m.otherBenefits?.some((b) => b.title.includes(s.title.slice(0, 4))) ||
   (slug === 'registration-tax')
 );
+// 掲載データのうち最も新しい確認日を出す（直書きすると更新し忘れる）
+const lastVerified = municipalities.map((m) => m.lastVerified).sort().at(-1);
 ---
 
 <Base title={`${s.title}｜特定創業支援等事業で受けられる優遇`} description={description}>
   <p class="eyebrow">制度解説 <span class="sep"></span> 特定創業支援等事業</p>
   <h1><span class="nb">{s.h1[0]}</span><span class="nb">{s.h1[1]}</span></h1>
   <p class="standfirst">{s.lead}</p>
-  <p class="stamp">最終確認 <b>2026-09-09</b>　—　{municipalities.length}自治体の公式ページを確認</p>
+  <p class="stamp"><span>最終確認 <b>{lastVerified}</b></span><span>{municipalities.length}自治体の公式ページを確認</span></p>
 
   {slug === 'registration-tax' && (
     <div class="ledger">

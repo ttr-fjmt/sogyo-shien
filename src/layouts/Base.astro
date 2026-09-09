@@ -171,6 +171,12 @@ const allLd = [siteLd, breadcrumbLd, faqLd, ...jsonLd].filter(Boolean);
   </head>
   <body>
     <div class="wrap">
+      <header class="site-head">
+        <a class="brand" href="/" aria-label="創業支援ポータル トップページ">
+          <span class="brand-mark" aria-hidden="true">創</span>
+          <span class="brand-name">創業支援ポータル</span>
+        </a>
+      </header>
       {crumbs.length > 1 && (
         <nav class="crumbs" aria-label="パンくずリスト">
           {crumbs.map((c, i) => (
@@ -183,7 +189,13 @@ const allLd = [siteLd, breadcrumbLd, faqLd, ...jsonLd].filter(Boolean);
       )}
       <slot />
       <footer class="site-foot">
-        <p><a href="/">トップ</a>　<a href="/about/">このサイトについて</a>　<a href="/privacy/">プライバシーポリシー</a></p>
+        <p class="foot-brand">
+          <a class="brand brand-sm" href="/" aria-label="創業支援ポータル トップページ">
+            <span class="brand-mark" aria-hidden="true">創</span>
+            <span class="brand-name">創業支援ポータル</span>
+          </a>
+        </p>
+        <p><a href="/about/">このサイトについて</a>　<a href="/privacy/">プライバシーポリシー</a></p>
         <p class="note">掲載内容は各機関の公式ページから取得したものです。申込前に必ず各実施機関へご確認ください。</p>
       </footer>
     </div>
