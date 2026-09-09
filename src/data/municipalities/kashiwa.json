@@ -1,0 +1,150 @@
+{
+  "slug": "kashiwa",
+  "prefSlug": "chiba",
+  "pref": "千葉県",
+  "prefKana": "ちば",
+  "kana": "かしわ",
+  "name": "柏市",
+  "kind": "中核市",
+  "lastVerified": "2026-09-09",
+  "sourceUpdatedAt": "2026-07-31",
+  "publish": {
+    "ready": false,
+    "blockers": [
+      "市のページに、講座の受講料も開催日も、国の3措置以外の上乗せ支援も掲載されていない"
+    ]
+  },
+  "taxReduction": {
+    "kabushiki": {
+      "before": 150000,
+      "after": 75000
+    },
+    "godo": {
+      "before": 60000,
+      "after": 30000
+    },
+    "rate": {
+      "before": "0.7%",
+      "after": "0.35%"
+    },
+    "notes": []
+  },
+  "requirement": {
+    "minSessions": null,
+    "minMonths": null,
+    "subjects": [
+      "経営",
+      "財務",
+      "人材育成",
+      "販路開拓"
+    ],
+    "lead": "柏市は「規定回数以上受講し、経営・財務・人材育成・販路開拓のすべての知識を身につけること」を条件としています。規定回数は事業ごとに異なります。",
+    "notes": [
+      "規定回数は各事業で異なるため、申し込み先に確認する必要があります。",
+      "個人事業主が開業日から5年以内に法人成りした場合、個人事業主としての開業日から5年以内であれば会社設立後でも対象になります。",
+      "証明書の有効期限は令和9年3月31日までです（既創業者は開業日から5年を経過しない日と比べて早いほう）。",
+      "創業予定の方は、会社の商号や本店所在地が未定でも証明書の発行を受けられます。ただし提出先によっては記入必須の項目があるため、事前確認が推奨されています。"
+    ]
+  },
+  "courses": [
+    {
+      "name": "かしわ創業塾",
+      "org": "柏商工会議所",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "公式ページに日程・費用の記載なし"
+    },
+    {
+      "name": "柏市しょうなん創業塾",
+      "org": "柏市沼南商工会",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "公式ページに日程・費用の記載なし"
+    },
+    {
+      "name": "TEPビジネスプラン作成セミナー",
+      "org": "一般社団法人TXアントレプレナーパートナーズ（TEP）",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "公式ページに日程・費用の記載なし"
+    },
+    {
+      "name": "創業スクール",
+      "org": "千葉県信用保証協会",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "公式ページに日程・費用の記載なし",
+      "content": "令和3年度下期（令和4年1月実施）のものから対象になっています。"
+    }
+  ],
+  "coursesNote": "柏市は4つの講座を認定しています。商工会議所・商工会・スタートアップ支援団体・信用保証協会と実施主体の性格が分かれているため、必要な回数も内容も違います。市のページには日程も費用もないため、申し込み先での確認が必要です。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      {
+        "label": "すべての講座の受講料と開催日",
+        "body": "4講座いずれも記載がありません"
+      },
+      {
+        "label": "証明書に必要な規定回数",
+        "body": "「規定回数は、各事業ごとに異なります」とあるのみです"
+      }
+    ],
+    "action": "柏市商工観光課、または各講座の実施主体へお問い合わせください。"
+  },
+  "highlight": {
+    "title": "商号や本店所在地が決まっていなくても申請できます",
+    "body": "柏市は「**会社の商号や本店所在地等が未定のため申請書に記載できない場合も、証明書の発行は可能**」と明記しています。多くの自治体が商号・所在地の確定を求めるなかでは柔軟です。ただし**提出先によっては記入が必須の項目もある**ため、法務局や金融機関に事前確認したうえで申請してください。"
+  },
+  "applicationSteps": [],
+  "otherBenefits": [
+    {
+      "title": "創業関連保証の特例",
+      "body": "証明書を信用保証協会に提出することで特例措置を受けられます。"
+    },
+    {
+      "title": "日本政策金融公庫",
+      "body": "証明書を公庫に提出することで特例措置を受けられます。"
+    }
+  ],
+  "localSupport": [
+    {
+      "title": "実施主体の幅が広い",
+      "body": "商工会議所、商工会に加えて、スタートアップ支援団体の**TXアントレプレナーパートナーズ（TEP）**と**千葉県信用保証協会**の講座も認定されています。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "柏市「特定創業支援事業による支援を受けたことの証明書」",
+      "url": "https://www.city.kashiwa.lg.jp/shoko/jigyosha/promotion/sangyoshinko/2237.html"
+    }
+  ]
+}
