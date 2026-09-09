@@ -1,0 +1,60 @@
+{
+  "slug": "toyama", "prefSlug": "toyama", "pref": "富山県", "prefKana": "とやま", "kana": "とやま",
+  "name": "富山市", "kind": "中核市",
+  "lastVerified": "2026-09-09", "sourceUpdatedAt": "2026-07-15",
+  "publish": {
+    "ready": false,
+    "blockers": ["市のページに、講座の受講料も具体的な開催日も掲載されていない"]
+  },
+  "taxReduction": {
+    "kabushiki": { "before": 150000, "after": 75000 },
+    "godo": { "before": 60000, "after": 30000 },
+    "rate": { "before": "0.7%", "after": "0.35%" },
+    "notes": []
+  },
+  "requirement": {
+    "minSessions": null, "minMonths": null,
+    "subjects": ["経営", "財務", "人材育成", "販路開拓"],
+    "lead": "富山市は回数・期間の要件をページに明記していません。認定された8事業のいずれかを修了することが条件です。",
+    "notes": [
+      "証明書の交付申請は、申請書に「特定創業支援等事業を受けたことの証明」を添付して企業立地課へ提出します。郵送の場合は返信用封筒も同封します。",
+      "対象は、特定創業支援等事業を修了した方で、創業予定の事業が反社会的なものでなく、暴力団員でない方です。",
+      "証明書の有効期限は、令和9年3月31日か、開業日（設立年月日）から5年を経過する前日のうち早いほうです。"
+    ]
+  },
+  "courses": [
+    { "name": "富山広域連携中枢都市圏創業支援セミナー", "org": "富山広域連携中枢都市圏（富山市・滑川市・舟橋村・上市町・立山町）", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "創業・起業支援コース「ビジネスプラン作成講座」", "org": "富山市新産業支援センター（富山大学）", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "とやまエキスパート・バンクを活用した「とやま創業塾」", "org": "富山商工会議所、富山市内商工会", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "創業ビジネススクール", "org": "富山商工会議所", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "富山市北創業塾", "org": "富山市北商工会", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "創業塾（令和6年度は創業セミナーとして実施）", "org": "富山市南商工会", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "創業セミナー", "org": "富山市八尾山田商工会", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "創業スクール", "org": "アシステム税理士法人", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" }
+  ],
+  "coursesNote": "富山市は地域別に窓口が分かれています。市街地は富山商工会議所、北部は富山市北商工会、南部は富山市南商工会、八尾・山田地域は富山市八尾山田商工会です。税理士法人の創業スクールも認定されています。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      { "label": "すべての事業の受講料と開催日", "body": "8事業いずれも記載がなく、「各主催者へお問い合わせください」と案内されています" },
+      { "label": "証明書に必要な回数・期間", "body": "市のページに明記されていません" }
+    ],
+    "action": "お住まいの地域の商工会議所・商工会にお問い合わせください。"
+  },
+  "highlight": {
+    "title": "近隣4市町村と組んだ広域のセミナーがあります",
+    "body": "「富山広域連携中枢都市圏創業支援セミナー」は、**富山市・滑川市・舟橋村・上市町・立山町**の圏域で実施されます。市域を越えて創業を考えている方でも受けやすい形です。また相談窓口として、**14の金融機関**（第四北越銀行、北陸銀行、富山銀行、北國銀行、福井銀行、富山第一銀行、富山信用金庫、高岡信用金庫、にいかわ信用金庫、新湊信用金庫、富山県信用組合、商工組合中央金庫、富山県医師信用組合、日本政策金融公庫）が創業支援等事業者に名を連ねています。"
+  },
+  "applicationSteps": [],
+  "otherBenefits": [
+    { "title": "創業関連保証の特例", "body": "創業関連保証の特例を利用できます。" },
+    { "title": "日本政策金融公庫", "body": "新規開業・スタートアップ支援資金の貸付利率の引き下げの対象になります。" }
+  ],
+  "localSupport": [
+    { "title": "創業ワンストップ支援窓口", "body": "富山商工会議所、富山市北商工会、富山市南商工会、富山市八尾山田商工会に**創業ワンストップ支援窓口**が置かれています。" },
+    { "title": "富山大学のインキュベータ交流会", "body": "富山大学が**インキュベータ交流会**を開催しており、創業支援等事業計画に位置づけられています。" }
+  ],
+  "sources": [
+    { "title": "富山市「富山市創業支援等事業計画」", "url": "https://www.city.toyama.lg.jp/business/kigyoshien/1010594/1005676.html" }
+  ]
+}

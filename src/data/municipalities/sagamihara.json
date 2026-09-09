@@ -1,0 +1,61 @@
+{
+  "slug": "sagamihara", "prefSlug": "kanagawa", "pref": "神奈川県", "prefKana": "かながわ", "kana": "さがみはら",
+  "name": "相模原市", "kind": "政令指定都市",
+  "lastVerified": "2026-09-09", "sourceUpdatedAt": null,
+  "publish": {
+    "ready": false,
+    "blockers": ["市のサイトに、講座の受講料も具体的な開催日も掲載されていない（日程はイベントカレンダー側）"]
+  },
+  "taxReduction": {
+    "kabushiki": { "before": 150000, "after": 75000 },
+    "godo": { "before": 60000, "after": 30000 },
+    "rate": { "before": "0.7%", "after": "0.35%" },
+    "notes": []
+  },
+  "requirement": {
+    "minSessions": 4, "minMonths": 1,
+    "subjects": ["経営", "財務", "人材育成", "販路開拓"],
+    "lead": "相模原市は事業ごとに交付条件を分けています。相談型は1か月以上継続して4回以上、講座型は全回出席または全5回中4回以上が条件です。",
+    "notes": [
+      "創業・経営相談会と創業実践セミナーを組み合わせて、1か月以上継続して4回以上にすることもできます。",
+      "対象は、これから創業を行おうとする方と、創業後5年未満の方です。"
+    ]
+  },
+  "courses": [
+    { "name": "さがみはら女性起業家のたまご応援セミナー", "org": "相模原市（運営：相模原市産業振興財団）", "fee": { "unknown": true }, "format": "offline", "sessions": "全5回", "schedule": null, "capacity": null, "deadline": null, "audience": ["women"], "content": "1回目から5回目まで休まず参加することが交付条件です。", "status": "unknown", "statusBasis": "日程はイベントカレンダー側にあり、市の制度ページには記載なし" },
+    { "name": "中山間地域 起業家支援講座〜起業家から学ぶ創業セミナー〜", "org": "相模原市（運営：森のイノベーションラボFUJINO）", "fee": { "unknown": true }, "format": "offline", "sessions": "全4回以上", "schedule": null, "capacity": null, "deadline": null, "content": "全4回以上の参加と1か月以上の参加が交付条件です。", "status": "unknown", "statusBasis": "日程はイベントカレンダー側にあり、市の制度ページには記載なし" },
+    { "name": "創業・経営相談会", "org": "公益財団法人相模原市産業振興財団", "fee": { "unknown": true }, "format": "hybrid", "sessions": "4回以上", "schedule": null, "capacity": null, "deadline": null, "content": "1か月以上継続して4回以上の参加が交付条件です。創業実践セミナーと組み合わせることもできます。", "status": "unknown", "statusBasis": "市の制度ページに日程・費用の記載なし" },
+    { "name": "創業実践セミナー", "org": "公益財団法人相模原市産業振興財団", "fee": { "unknown": true }, "format": "hybrid", "sessions": "全5回", "schedule": null, "capacity": null, "deadline": null, "content": "1回目から5回目まで休まず参加することが交付条件です。", "status": "unknown", "statusBasis": "市の制度ページに日程・費用の記載なし" },
+    { "name": "さがみはら創業ゼミ", "org": "相模原商工会議所", "fee": { "unknown": true }, "format": "offline", "sessions": "全5回", "schedule": null, "capacity": null, "deadline": null, "content": "全5回中4回以上の受講が交付条件です。", "status": "unknown", "statusBasis": "市の制度ページに日程・費用の記載なし" },
+    { "name": "創業・経営革新相談", "org": "相模原商工会議所", "fee": { "unknown": true }, "format": "offline", "sessions": "4回以上", "schedule": null, "capacity": null, "deadline": null, "content": "1か月以上継続して4回以上の参加が交付条件です。", "status": "unknown", "statusBasis": "市の制度ページに日程・費用の記載なし" },
+    { "name": "ハンズオン支援", "org": "相模原商工会議所", "fee": { "unknown": true }, "format": "offline", "sessions": "4回以上", "schedule": null, "capacity": null, "deadline": null, "content": "1か月以上継続して4回以上の参加が交付条件です。", "status": "unknown", "statusBasis": "市の制度ページに日程・費用の記載なし" },
+    { "name": "ハンズオン支援", "org": "平塚信用金庫", "fee": { "unknown": true }, "format": "offline", "sessions": "4回以上", "schedule": null, "capacity": null, "deadline": null, "content": "個別相談指導を1か月以上継続して4回以上受けることが交付条件です。", "status": "unknown", "statusBasis": "市の制度ページに日程・費用の記載なし" },
+    { "name": "創業支援セミナー「相模原みらい海図」", "org": "横浜銀行", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "content": "横浜銀行と相模原市の地域活性化に関する連携協定（令和元年8月締結）に基づいて開催されます。", "status": "unknown", "statusBasis": "市の制度ページに日程・費用の記載なし" }
+  ],
+  "coursesNote": "相模原市は9つの事業それぞれに交付条件を明記しています。とくに「創業・経営相談会と創業実践セミナーを組み合わせて1か月以上・4回以上」という条件があり、講座だけ・相談だけで揃えられない場合の逃げ道が用意されています。",
+  "unknowns": {
+    "title": "市のサイトから分からないこと",
+    "items": [
+      { "label": "すべての事業の受講料", "body": "9事業いずれも費用の記載がありません" },
+      { "label": "開催日", "body": "「各セミナー・相談会の日程は、イベントカレンダーをご確認ください」と案内されています" }
+    ],
+    "action": "日程はさがみはら起業・創業サポートNaviのイベントカレンダーで確認できます。相模原商工会議所は042-753-8135、相模原市産業振興財団は042-759-5600です。"
+  },
+  "highlight": {
+    "title": "講座と相談を組み合わせて条件を満たせます",
+    "body": "相模原市産業振興財団の事業では、**創業・経営相談会と創業実践セミナーを組み合わせて1か月以上継続して4回以上**参加すれば条件を満たせます。講座の日程が合わなくても、相談で回数を埋められる設計です。また**中山間地域向けの起業家支援講座**（森のイノベーションラボFUJINO運営）があるのも特徴です。"
+  },
+  "applicationSteps": [],
+  "otherBenefits": [
+    { "title": "創業関連保証の特例", "body": "無担保・第三者保証人なしの創業関連保証を、事業開始の6か月前から利用できます。" },
+    { "title": "日本政策金融公庫", "body": "新規開業・スタートアップ支援資金の貸付利率が引き下げられます。" },
+    { "title": "持続化補助金", "body": "小規模事業者持続化補助金〈創業型〉の申請対象になります。" }
+  ],
+  "localSupport": [
+    { "title": "中山間地域向けの講座があります", "body": "**中山間地域 起業家支援講座**（森のイノベーションラボFUJINO運営）は、市街地以外での創業を想定した講座です。地域を限った講座を特定創業支援等事業に位置づけている自治体は多くありません。" },
+    { "title": "金融機関2行が実施機関に入っています", "body": "平塚信用金庫のハンズオン支援と、横浜銀行の創業支援セミナー「相模原みらい海図」が認定されています。**資金調達の相談と証明書の取得を同時に進められます**。" }
+  ],
+  "sources": [
+    { "title": "さがみはら起業・創業サポートNavi「相模原市 創業支援等事業計画」", "url": "https://sogyo.city.sagamihara.kanagawa.jp/tokutei-sogyo-sagamihara/" }
+  ]
+}

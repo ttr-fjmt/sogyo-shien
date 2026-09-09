@@ -1,0 +1,55 @@
+{
+  "slug": "hamamatsu", "prefSlug": "shizuoka", "pref": "静岡県", "prefKana": "しずおか", "kana": "はままつ",
+  "name": "浜松市", "kind": "政令指定都市",
+  "lastVerified": "2026-09-09", "sourceUpdatedAt": "2026-07-31",
+  "publish": {
+    "ready": false,
+    "blockers": ["市のページに、講座の受講料も具体的な開催日も掲載されていない"]
+  },
+  "taxReduction": {
+    "kabushiki": { "before": 150000, "after": 75000 },
+    "godo": { "before": 60000, "after": 30000 },
+    "rate": { "before": "0.7%", "after": "0.35%" },
+    "notes": ["浜松市内に株式会社・合同会社を設立する場合が対象です。「創業前の個人」または「創業後5年未満の個人」が対象になります。"]
+  },
+  "requirement": {
+    "minSessions": 4, "minMonths": 1,
+    "subjects": ["経営", "財務", "人材育成", "販路開拓"],
+    "notes": [
+      "代表者本人が支援を受ける必要があります。",
+      "登録免許税の軽減以外の優遇措置には、別途審査があります。無条件に適用されるものではありません。"
+    ]
+  },
+  "courses": [
+    { "name": "相談支援事業（創業に関する相談）", "org": "はままつ起業家カフェ、公益財団法人浜松地域イノベーション推進機構、浜松商工会議所、浜名商工会、奥浜名湖商工会、浜北商工会、天竜商工会、日本政策金融公庫、静岡銀行、浜松いわた信用金庫、遠州信用金庫、在浜松ブラジル総領事館", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "創業塾、創業スクール", "org": "浜松商工会議所、浜北商工会、浜名商工会、天竜商工会、浜松いわた信用金庫", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "起業サロン、実践サロン", "org": "はままつ起業家カフェ", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "インキュベーション施設支援事業", "org": "浜松市", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" }
+  ],
+  "coursesNote": "浜松市は12機関が相談支援を、5機関が創業塾・創業スクールを実施しています。窓口は浜松商工会議所会館1階の「はままつ起業家カフェ」に集約されており、まずここに相談するのが早道です。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      { "label": "すべての事業の受講料と開催日", "body": "市のページには機関名のみが載っており、「詳細は申請窓口にお問い合わせください」と案内されています" }
+    ],
+    "action": "はままつ起業家カフェ（浜松商工会議所会館1階）が中心窓口です。"
+  },
+  "highlight": {
+    "title": "市の創業サポート資金で、利子補給が0.7%→0.9%に上がります",
+    "body": "浜松市中小企業向け融資制度「創業サポート資金」で、証明書があると**市の利子補給率が0.7%から0.9%に拡大**され、実質の融資利率が年1.5%以内から**年1.3%以内**に下がります。また創業関連保証の特例は、通常「法人は創業2か月前・個人は創業1か月前から」のところ、**事業開始6か月前**から利用できるようになります。"
+  },
+  "applicationSteps": [],
+  "otherBenefits": [
+    { "title": "浜松市創業サポート資金の利率優遇", "body": "市の利子補給率が0.7%から0.9%に拡大し、融資利率が年1.5%以内から年1.3%以内になります。" },
+    { "title": "創業関連保証の申込期間の特例", "body": "通常は法人で創業2か月前、個人で創業1か月前からのところ、事業開始6か月前から利用できます。" },
+    { "title": "日本政策金融公庫", "body": "新規開業・スタートアップ支援資金の貸付利率の引き下げの対象になります。" },
+    { "title": "持続化補助金〈創業型〉", "body": "創業1年以内の小規模事業者の販路開拓等を支援する補助金の申請対象になります。" }
+  ],
+  "localSupport": [
+    { "title": "窓口が1か所に集約されています", "body": "浜松商工会議所会館1階の**「創業支援総合窓口 はままつ起業家カフェ」**が、はままつスタートアップの中心窓口です。どこに相談すればよいか迷わずに済みます。" },
+    { "title": "在浜松ブラジル総領事館も連携機関です", "body": "相談支援事業の実施機関に**在浜松ブラジル総領事館**が入っています。外国人の創業相談に対応できる体制がある、珍しい自治体です。" }
+  ],
+  "sources": [
+    { "title": "浜松市「浜松市特定創業支援等事業のご案内」", "url": "https://www.city.hamamatsu.shizuoka.jp/sangyoshinko/shinko/shien/20240401tokutei.html" }
+  ]
+}

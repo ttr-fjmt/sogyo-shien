@@ -1,0 +1,60 @@
+{
+  "slug": "hachioji", "prefSlug": "tokyo", "pref": "東京都", "prefKana": "とうきょう", "kana": "はちおうじ",
+  "name": "八王子市", "kind": "中核市",
+  "lastVerified": "2026-09-09", "sourceUpdatedAt": "2026-07-01",
+  "publish": {
+    "ready": false,
+    "blockers": ["市のページに、講座の受講料も具体的な開催日も掲載されていない"]
+  },
+  "taxReduction": {
+    "kabushiki": { "before": 150000, "after": 75000 },
+    "godo": { "before": 60000, "after": 30000 },
+    "rate": { "before": "0.7%", "after": "0.35%" },
+    "notes": [
+      "八王子市内で会社を設立する方が対象です。",
+      "法務局での登記手続きは完全予約制です。"
+    ]
+  },
+  "requirement": {
+    "minSessions": 4, "minMonths": 1,
+    "subjects": ["経営", "財務", "人材育成", "販路開拓"],
+    "lead": "八王子市は事業の型ごとに条件を分けています。創業個別相談事業は4回以上・1か月以上、創業塾および創業スクールは所定のカリキュラムの修了が条件です。",
+    "notes": [
+      "対象は、八王子市内に住所がある方、または創業場所（法人の場合は登記所在地）が市内、もしくは創業予定地を「八王子市内」と意思表示した方です。",
+      "2社目の創業は対象外です。事業承継した2代目代表等も、経営に携わっている場合は創業したとみなすため対象外になります。",
+      "郵送申請の場合は、返信用封筒と110円切手、申請書、本人確認ができる顔写真付き書類の写しを八王子市役所経済産業部産業振興課へ送ります。"
+    ]
+  },
+  "courses": [
+    { "name": "特定創業支援等事業（詳細は各機関へ）", "org": "八王子商工会議所", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "特定創業支援等事業（詳細は各機関へ）", "org": "サイバーシルクロード八王子", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "特定創業支援等事業（詳細は各機関へ）", "org": "多摩信用金庫", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "contact": "多摩信用金庫創業支援担当", "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "特定創業支援等事業（詳細は各機関へ）", "org": "日本政策金融公庫 八王子支店", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "特定創業支援等事業（詳細は各機関へ）", "org": "西武信用金庫", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "特定創業支援等事業（詳細は各機関へ）", "org": "フリー株式会社", "fee": { "unknown": true }, "format": "online", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" }
+  ],
+  "coursesNote": "八王子市は6つの実施機関を挙げていますが、日程も費用も掲載していません。信用金庫と公庫が3機関入っているため、資金調達の相談と並行して要件を満たす道筋が組みやすい構成です。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      { "label": "すべての事業の受講料と開催日", "body": "6機関いずれも記載がなく、各機関への問い合わせが案内されています" }
+    ],
+    "action": "八王子商工会議所またはサイバーシルクロード八王子（八王子起業家応援プロジェクト）にご確認ください。"
+  },
+  "highlight": {
+    "title": "市外に住んでいても、市内で創業する意思があれば対象です",
+    "body": "八王子市の対象は「八王子市内に住所がある方」だけではありません。**創業場所（法人なら登記所在地）が市内**、または**創業予定地を「八王子市内」と意思表示した方**も対象になります。まだ住んでいなくても、八王子で創業するつもりなら受けられるということです。一方で、**事業承継した2代目代表も経営に携わっていれば対象外**という点は厳しめです。"
+  },
+  "applicationSteps": [],
+  "otherBenefits": [
+    { "title": "創業関連保証の特例", "body": "無担保・第三者保証人なしの創業関連保証を、事業開始の6か月前から利用できます。東京信用保証協会または金融機関に証明書（写し可）を提出し、別途審査を受けます。" },
+    { "title": "日本政策金融公庫", "body": "「新規開業・スタートアップ支援資金」の貸付利率の引き下げの対象になります。別途審査があります。" },
+    { "title": "その他の補助金", "body": "国や東京都などの補助金・助成金制度の申請時に使える場合があります。" }
+  ],
+  "localSupport": [
+    { "title": "金融機関が3つ入っています", "body": "多摩信用金庫、西武信用金庫、日本政策金融公庫八王子支店が実施機関です。**融資の相談を進めながら証明書の要件も満たす**動き方ができます。" }
+  ],
+  "sources": [
+    { "title": "八王子市「特定創業支援等事業について」", "url": "https://www.city.hachioji.tokyo.jp/jigyosha/004/003/p024405.html" }
+  ]
+}

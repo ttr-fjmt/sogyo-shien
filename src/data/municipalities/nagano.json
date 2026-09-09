@@ -1,0 +1,120 @@
+{
+  "slug": "nagano", "prefSlug": "nagano", "pref": "長野県", "prefKana": "ながの", "kana": "ながの",
+  "name": "長野市", "kind": "中核市",
+  "lastVerified": "2026-09-09", "sourceUpdatedAt": "2026-03-02",
+  "publish": { "ready": true, "blockers": [] },
+  "taxReduction": {
+    "kabushiki": { "before": 150000, "after": 75000 },
+    "godo": { "before": 60000, "after": 30000 },
+    "rate": { "before": "0.7%", "after": "0.35%" },
+    "notes": ["会社設立後の方が組織変更を行う場合は、登録免許税の軽減を受けられません。"]
+  },
+  "requirement": {
+    "minSessions": null, "minMonths": null,
+    "subjects": ["経営", "財務", "人材育成", "販路開拓"],
+    "lead": "長野市は「一定の条件のもと受講された方」とだけ記載しており、回数・期間をページに明記していません。",
+    "notes": [
+      "2026年3月2日に、特定創業支援等事業の要件が一部変更されています。受講前に長野市創業ご縁スポット「そうぎょうながの」で最新の条件をご確認ください。",
+      "認定講座は長野市実践起業塾、ながの地域創業スクール、創業カレッジの3つです。"
+    ]
+  },
+  "courses": [
+    {
+      "name": "長野市実践起業塾（第2期）", "org": "長野市",
+      "fee": { "unknown": true }, "format": "offline",
+      "sessions": null,
+      "schedule": "2027年1月28日から3月25日",
+      "venue": "長野市生涯学習センター（予定）",
+      "capacity": null, "deadline": null,
+      "contact": "長野市創業ご縁スポット「そうぎょうながの」（申し込みフォームまたは電話）",
+      "status": "unknown",
+      "statusBasis": "「令和8年度第2期講座は受付準備中」と記載。日程は公表済みですが受付は未開始です"
+    },
+    {
+      "name": "創業準備プレ講座（第2期）", "org": "長野市",
+      "fee": { "unknown": true }, "format": "online",
+      "sessions": "1回",
+      "schedule": "2027年1月16日（土曜日）",
+      "venue": "オンライン（Zoom）",
+      "capacity": null, "deadline": null,
+      "contact": "長野市創業ご縁スポット「そうぎょうながの」",
+      "status": "unknown",
+      "statusBasis": "「令和8年度第2期講座は受付準備中」と記載。日程は公表済みですが受付は未開始です"
+    },
+    {
+      "name": "新規創業相談（専門家による個別相談）", "org": "長野市創業フォローアップデスク",
+      "fee": { "free": true, "note": "相談料無料・事前予約制" },
+      "format": "offline", "sessions": null,
+      "schedule": "毎週火曜日 18時〜20時",
+      "capacity": null, "deadline": null,
+      "target": "どなたでも",
+      "contact": "長野市創業フォローアップデスク（運営受託：NPO法人コミュニティビジネスネットワーク長野／長野市柳町1-2 小池ビル2F）",
+      "status": "open", "statusBasis": "サイトに「予約受付中」と記載"
+    },
+    {
+      "name": "行政手続・法務相談（専門家による個別相談）", "org": "長野市創業フォローアップデスク",
+      "fee": { "free": true, "note": "相談料無料・事前予約制" },
+      "format": "offline", "sessions": null,
+      "schedule": "毎週水曜日 18時〜20時",
+      "capacity": null, "deadline": null,
+      "status": "open", "statusBasis": "サイトに「予約受付中」と記載"
+    },
+    {
+      "name": "労務・人事相談（専門家による個別相談）", "org": "長野市創業フォローアップデスク",
+      "fee": { "free": true, "note": "相談料無料・事前予約制" },
+      "format": "offline", "sessions": null,
+      "schedule": "毎週木曜日 18時〜20時",
+      "capacity": null, "deadline": null,
+      "status": "open", "statusBasis": "サイトに「予約受付中」と記載"
+    },
+    {
+      "name": "店舗・不動産相談（専門家による個別相談）", "org": "長野市創業フォローアップデスク",
+      "fee": { "free": true, "note": "相談料無料・事前予約制" },
+      "format": "offline", "sessions": null,
+      "schedule": "毎週月曜日 18時〜20時",
+      "capacity": null, "deadline": null,
+      "status": "open", "statusBasis": "サイトに「予約受付中」と記載"
+    },
+    {
+      "name": "ながの地域創業スクール", "org": "長野商工会議所",
+      "fee": { "unknown": true }, "format": "offline",
+      "sessions": null, "schedule": null, "capacity": null, "deadline": null,
+      "status": "unknown", "statusBasis": "認定講座として名前のみ掲載。日程・費用の記載なし"
+    },
+    {
+      "name": "創業カレッジ", "org": "長野信用金庫",
+      "fee": { "unknown": true }, "format": "offline",
+      "sessions": null, "schedule": null, "capacity": null, "deadline": null,
+      "status": "unknown", "statusBasis": "認定講座として名前のみ掲載。日程・費用の記載なし"
+    }
+  ],
+  "coursesNote": "長野市の第1期（長野市実践起業塾・創業準備プレ講座）は満席で受付を終了しています。第2期は2027年1月開講で日程だけ先に公表され、受付は準備中です。今すぐ動きたい場合は、曜日ごとにテーマの決まった無料の個別相談（月〜木の18時〜20時）が使えます。",
+  "unknowns": {
+    "title": "サイトから分からないこと",
+    "items": [
+      { "label": "実践起業塾・プレ講座の受講料", "body": "第2期の日程は出ていますが、費用の記載がありません" },
+      { "label": "証明書に必要な回数・期間", "body": "「一定の条件のもと」とあるのみです。2026年3月2日に要件が一部変更されています" },
+      { "label": "ながの地域創業スクール・創業カレッジの詳細", "body": "認定講座として名前が挙がっているだけで、日程も費用も掲載されていません" }
+    ],
+    "action": "第2期の受付開始は「広報ながの」とサイトで告知されます。それを待つ間に、無料の個別相談で準備を進められます。"
+  },
+  "highlight": {
+    "title": "平日夜の無料相談が、曜日ごとにテーマ分けされています",
+    "body": "長野市創業フォローアップデスクの個別相談は、**月曜＝店舗・不動産、火曜＝新規創業、水曜＝行政手続・法務、木曜＝労務・人事**と曜日でテーマが決まっています。いずれも**18時〜20時・相談料無料・事前予約制**で、どなたでも利用できます。勤めながら準備する方には、この時間帯と無料であることが効きます。"
+  },
+  "applicationSteps": [],
+  "otherBenefits": [
+    { "title": "創業関連保証の特例", "body": "無担保・第三者保証なしの創業関連保証を、事業開始の6か月前から利用できます。" },
+    { "title": "日本政策金融公庫", "body": "「新規開業・スタートアップ支援資金」の貸付利率が引き下げられます。別途審査があります。" },
+    { "title": "長野市中小企業振興資金融資制度", "body": "創業支援資金の貸付利率の引き下げの対象になります。別途、長野市および金融機関の審査があります。" },
+    { "title": "持続化補助金〈創業型〉", "body": "小規模事業者持続化補助金〈創業型〉の申請対象になります。支援を受けた日と開業日が、公募締切から起算して過去1か年の間である必要があります。" }
+  ],
+  "localSupport": [
+    { "title": "市の融資制度も利率が下がります", "body": "国の3つの優遇措置に加えて、**長野市中小企業振興資金融資制度の創業支援資金**も貸付利率の引き下げ対象になります。借入を考えているなら、証明書の価値は登録免許税の7万5千円分にとどまりません。" },
+    { "title": "第1期は満席になります", "body": "令和8年度第1期の実践起業塾は**満席のため受付終了**、創業準備プレ講座も受付を終了しました。第2期を狙う場合は、告知が出たらすぐ動いたほうが確実です。" }
+  ],
+  "sources": [
+    { "title": "そうぎょうながの「特定創業支援等事業とは？」", "url": "https://www.sougyou-nagano.com/tokutei" },
+    { "title": "長野市創業ご縁スポット そうぎょうながの", "url": "https://www.sougyou-nagano.com/" }
+  ]
+}

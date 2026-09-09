@@ -1,0 +1,63 @@
+{
+  "slug": "kitakyushu", "prefSlug": "fukuoka", "pref": "福岡県", "prefKana": "ふくおか", "kana": "きたきゅうしゅう",
+  "name": "北九州市", "kind": "政令指定都市",
+  "lastVerified": "2026-09-09", "sourceUpdatedAt": "2025-10-29",
+  "publish": {
+    "ready": false,
+    "blockers": ["市のページに、講座の受講料も具体的な開催日も掲載されていない"]
+  },
+  "taxReduction": {
+    "kabushiki": { "before": 150000, "after": 75000 },
+    "godo": { "before": 60000, "after": 30000 },
+    "rate": { "before": "0.7%", "after": "0.35%" },
+    "notes": [
+      "会社設立後の方が組織変更を行う場合は、登録免許税の軽減を受けられません。",
+      "北九州市の証明書で、他の市区町村で創業・会社設立する場合は登録免許税の軽減を受けられません。",
+      "会社法上の発起人かつ会社の代表者となり会社を設立しようとする個人が証明を受ける必要があります。"
+    ]
+  },
+  "requirement": {
+    "minSessions": null, "minMonths": 1,
+    "subjects": ["経営", "財務", "人材育成", "販路開拓"],
+    "lead": "北九州市の条件は「特定創業支援等事業による支援を1か月以上にわたって受けること」です。回数の指定はページに記載がありません。",
+    "notes": [
+      "証明書の申請には、各実施機関が発行する修了証書の写しが必要です。",
+      "証明書は即日交付できません。最低でも1週間程度の余裕をもって申請してください。",
+      "窓口は本庁舎7階のスタートアップ推進課（開庁日8時30分〜17時）です。郵送も可（返信用封筒に切手を貼付）。"
+    ]
+  },
+  "courses": [
+    { "name": "創業塾", "org": "北九州商工会議所", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "contact": "093-541-0192", "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "ひびしん創業塾", "org": "福岡ひびき信用金庫", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "contact": "093-661-2414", "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "創生塾スタンダードコース", "org": "一般社団法人まちはチームだ", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "contact": "093-967-1003", "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "創業セミナー", "org": "公益財団法人北九州産業学術推進機構 中小企業支援センター", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "contact": "093-873-1430", "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "支援人材によるハンズオン支援事業", "org": "公益財団法人北九州産業学術推進機構", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "contact": "093-873-1430", "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "インキュベーションマネージャーによるハンズオン支援事業", "org": "北九州市（COMPASS小倉）", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "contact": "093-513-5300", "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "女性の起業支援セミナー", "org": "北九州市（ウーマンワークカフェ北九州）", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "audience": ["women"], "contact": "093-551-0091", "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "つばめ創業セミナー", "org": "フリー株式会社", "fee": { "unknown": true }, "format": "online", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "contact": "03-6694-1946", "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" }
+  ],
+  "coursesNote": "北九州市は8事業を認定しており、実施機関ごとに問合せ先の電話番号まで一覧で載せています。通年の事業と期間限定の事業が混在しているため、日程は各機関への問い合わせが必要です。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      { "label": "すべての事業の受講料と開催日", "body": "8事業いずれも記載がなく、各機関への問い合わせが案内されています" }
+    ],
+    "action": "電話番号が一覧に載っているので、通いやすい機関に直接確認するのが早道です。北九州商工会議所は093-541-0192です。"
+  },
+  "highlight": {
+    "title": "創業関連保証は「他の市区町村で創業する場合」でも使えます",
+    "body": "北九州市の証明書は、**登録免許税の軽減は市内での創業に限られます**が、**創業関連保証の特例は他の市区町村で創業する場合でも活用できます**。ただしこちらは「事業開始6か月前から創業後5年未満の方」という要件が別途あります。証明書は即日交付されないため、**最低でも1週間程度の余裕**をもって申請してください。"
+  },
+  "applicationSteps": [],
+  "otherBenefits": [
+    { "title": "創業関連保証の利用開始月の前倒し", "body": "通常は創業2か月前からのところ、事業開始6か月前から対象になります。他の市区町村で創業する場合でも利用できます。別途審査があります。" },
+    { "title": "日本政策金融公庫", "body": "新規開業・スタートアップ支援資金の貸付利率の引き下げの対象になります。別途審査があります。" }
+  ],
+  "localSupport": [
+    { "title": "女性向けの窓口があります", "body": "**ウーマンワークカフェ北九州**の女性の起業支援セミナーが認定事業に入っています（093-551-0091）。" },
+    { "title": "実施機関の連絡先が一覧化されています", "body": "北九州市は実施機関・事業名・問合せ先の電話番号・ホームページを表にまとめています。**どこに聞けばよいかで迷いません**。" }
+  ],
+  "sources": [
+    { "title": "北九州市「北九州市で創業するメリット 特定創業支援等事業のご案内」", "url": "https://www.city.kitakyushu.lg.jp/contents/10700156.html" }
+  ]
+}
