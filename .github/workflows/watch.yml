@@ -1,0 +1,50 @@
+name: 出典ページの差分検知
+
+on:
+  schedule:
+    - cron: '0 22 * * 0'   # 毎週月曜 7:00 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 巡回して差分を検知
+        id: watch
+        run: |
+          set +e
+          node tools/watch.mjs --update > report.md
+          echo "changed=$?" >> $GITHUB_OUTPUT
+          cat report.md
+
+      - name: 差分があればIssueを立てる
+        if: steps.watch.outputs.changed == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "出典ページに変化がありました（$(date -u +%Y-%m-%d)）" \
+            --body-file report.md \
+            --label "data-check" || \
+          gh issue create \
+            --title "出典ページに変化がありました（$(date -u +%Y-%m-%d)）" \
+            --body-file report.md
+
+      - name: スナップショットを更新
+        run: |
+          if [ -n "$(git status --porcelain tools/snapshots)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add tools/snapshots
+            git commit -m "スナップショットを更新（自動）"
+            git push
+          fi
