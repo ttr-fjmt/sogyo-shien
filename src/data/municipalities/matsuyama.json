@@ -1,0 +1,215 @@
+{
+  "slug": "matsuyama",
+  "prefSlug": "ehime",
+  "pref": "愛媛県",
+  "prefKana": "えひめ",
+  "kana": "まつやま",
+  "name": "松山市",
+  "kind": "中核市",
+  "lastVerified": "2026-09-09",
+  "sourceUpdatedAt": "2026-08-03",
+  "publish": {
+    "ready": false,
+    "blockers": [
+      "市のページに、講座の受講料も開催日も、国の3措置以外の上乗せ支援も掲載されていない"
+    ]
+  },
+  "taxReduction": {
+    "kabushiki": {
+      "before": 150000,
+      "after": 75000
+    },
+    "godo": {
+      "before": 60000,
+      "after": 30000
+    },
+    "rate": {
+      "before": "0.7%",
+      "after": "0.35%"
+    },
+    "notes": []
+  },
+  "requirement": {
+    "minSessions": 4,
+    "minMonths": 1,
+    "subjects": [
+      "経営",
+      "財務",
+      "人材育成",
+      "販路開拓"
+    ],
+    "notes": [
+      "証明書発行にかかる受講要件は特定創業支援事業ごとに異なるため、実施機関への確認が必要です。",
+      "2社目の創業は対象外です。事業承継した2代目代表等も、経営に携わっている場合は創業したとみなすため対象外になります。",
+      "創業予定の事業が公序良俗に問題のないと判断されることが条件です。"
+    ]
+  },
+  "courses": [
+    {
+      "name": "創業塾セミナー",
+      "org": "松山しごと創造センター",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "公式ページに日程・費用の記載なし",
+      "content": "特定創業支援等事業の対象です。"
+    },
+    {
+      "name": "相談窓口・個別相談",
+      "org": "松山しごと創造センター",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "open",
+      "statusBasis": "通年の相談窓口として市のページに掲載",
+      "content": "特定創業支援等事業の対象です。"
+    },
+    {
+      "name": "個別相談",
+      "org": "松山商工会議所",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "open",
+      "statusBasis": "通年の相談窓口として市のページに掲載",
+      "content": "個別相談が特定創業支援等事業の対象です（相談窓口は対象外）。"
+    },
+    {
+      "name": "いよぎん松山みらい起業塾",
+      "org": "株式会社伊予銀行",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "公式ページに日程・費用の記載なし",
+      "content": "特定創業支援等事業の対象です。"
+    },
+    {
+      "name": "相談窓口・個別相談",
+      "org": "株式会社伊予銀行",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "open",
+      "statusBasis": "通年の相談窓口として市のページに掲載",
+      "content": "特定創業支援等事業の対象です。"
+    },
+    {
+      "name": "創業支援セミナー、創業・経営相談会",
+      "org": "株式会社愛媛銀行",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "公式ページに日程・費用の記載なし",
+      "content": "特定創業支援等事業の対象です。"
+    },
+    {
+      "name": "相談窓口・個別相談（えひめイノベーション起業塾）",
+      "org": "株式会社愛媛銀行",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "open",
+      "statusBasis": "通年の相談窓口として市のページに掲載",
+      "content": "特定創業支援等事業の対象です。"
+    },
+    {
+      "name": "個別相談",
+      "org": "愛媛信用金庫",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "open",
+      "statusBasis": "通年の相談窓口として市のページに掲載",
+      "content": "個別相談が特定創業支援等事業の対象です。同金庫の創業セミナーで「経営・財務・人材育成・販路開拓」の知識習得が確認できた場合は、要件の一部として認定される場合があります。"
+    }
+  ],
+  "coursesNote": "松山市は7機関の事業を掲載し、そのうち「（特定）」と表記のあるものが証明書発行の対象です。地方銀行2行（伊予銀行・愛媛銀行）と信用金庫の相談・セミナーが対象に入っているため、資金調達の相談と並行して要件を満たせます。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      {
+        "label": "すべての事業の受講料と開催日",
+        "body": "市のページには機関名と事業名のみが載っています"
+      },
+      {
+        "label": "事業ごとの受講要件",
+        "body": "「証明書発行にかかる受講要件は、特定創業支援事業ごとに異なりますので、実施機関に必ずご確認ください」とあります"
+      }
+    ],
+    "action": "松山しごと創造センターが市の中心的な窓口です。"
+  },
+  "highlight": {
+    "title": "松山圏域3市3町の共同計画。近隣の講座でも要件を満たせます",
+    "body": "松山市の創業支援等事業計画は、**松山市・伊予市・東温市・久万高原町・松前町・砥部町の3市3町が共同で申請**したものです。自治体間で情報を共有し、支援機関と連携する形で運営されており、**圏域の特定創業支援等事業による支援を受けた方**が証明書の対象になります。計画は年間70名の創業実現を目標に掲げています。"
+  },
+  "applicationSteps": [],
+  "otherBenefits": [
+    {
+      "title": "創業関連保証の特例",
+      "body": "無担保・第三者保証人なしの創業関連保証を、事業開始の6か月前から利用できます。"
+    },
+    {
+      "title": "日本政策金融公庫",
+      "body": "新規開業・スタートアップ支援資金の貸付利率が引き下げられます。"
+    }
+  ],
+  "localSupport": [
+    {
+      "title": "金融機関が4つ入っています",
+      "body": "伊予銀行、愛媛銀行、愛媛信用金庫、日本政策金融公庫松山支店が実施機関です。うち**伊予銀行「いよぎん松山みらい起業塾」と愛媛銀行の創業支援セミナーは特定創業支援等事業の対象**です。"
+    },
+    {
+      "title": "信用金庫のセミナーは要件の一部として認定される場合があります",
+      "body": "愛媛信用金庫の創業セミナーは表の上では対象外ですが、「経営・財務・人材育成・販路開拓」の知識習得が確認できた場合は**特定創業支援事業の要件の一部として認定可能**とされています。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "松山市「松山市の創業支援について（産業競争力強化法に基づく「創業支援等事業計画」）」",
+      "url": "https://www.city.matsuyama.ehime.jp/kurashi/sangyo/chusyoukigyou/sougyo-shienjigyo.html"
+    }
+  ]
+}
