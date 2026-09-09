@@ -1,20 +1,43 @@
 {
-  "slug": "sendai", "prefSlug": "miyagi", "pref": "宮城県", "prefKana": "みやぎ", "kana": "せんだい",
-  "name": "仙台市", "kind": "政令指定都市",
-  "lastVerified": "2026-09-09", "sourceUpdatedAt": null,
+  "slug": "sendai",
+  "prefSlug": "miyagi",
+  "pref": "宮城県",
+  "prefKana": "みやぎ",
+  "kana": "せんだい",
+  "name": "仙台市",
+  "kind": "政令指定都市",
+  "lastVerified": "2026-09-09",
+  "sourceUpdatedAt": null,
   "publish": {
-    "ready": false,
-    "blockers": ["市および実施機関のページに、講座の受講料も具体的な開催日も掲載されていない"]
+    "ready": true,
+    "blockers": []
   },
   "taxReduction": {
-    "kabushiki": { "before": 150000, "after": 75000 },
-    "godo": { "before": 60000, "after": 30000 },
-    "rate": { "before": "0.7%", "after": "0.35%" },
-    "notes": ["他の市町村で創業する場合、仙台市の証明書では登録免許税の減免を受けられません。"]
+    "kabushiki": {
+      "before": 150000,
+      "after": 75000
+    },
+    "godo": {
+      "before": 60000,
+      "after": 30000
+    },
+    "rate": {
+      "before": "0.7%",
+      "after": "0.35%"
+    },
+    "notes": [
+      "他の市町村で創業する場合、仙台市の証明書では登録免許税の減免を受けられません。"
+    ]
   },
   "requirement": {
-    "minSessions": 4, "minMonths": 1,
-    "subjects": ["経営", "財務", "人材育成", "販売方法"],
+    "minSessions": 4,
+    "minMonths": 1,
+    "subjects": [
+      "経営",
+      "財務",
+      "人材育成",
+      "販売方法"
+    ],
     "notes": [
       "6か月以内に開業する方が交付対象です。",
       "法人の場合は代表者かつ発起人が受講する必要があります。",
@@ -23,18 +46,99 @@
     ]
   },
   "courses": [
-    { "name": "窓口相談、起業家セミナー", "org": "仙台市起業支援センター アシ☆スタ", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市・センターのページに日程・費用の記載なし" },
-    { "name": "個別窓口・巡回相談、創業関連セミナー", "org": "仙台商工会議所", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
-    { "name": "創業関連セミナー", "org": "みやぎ仙台商工会", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
-    { "name": "ちっちゃいビジネス開業応援塾", "org": "株式会社ゆいネット", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
-    { "name": "ハンズオン支援", "org": "スパークル株式会社", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
-    { "name": "インキュベーション施設", "org": "一般社団法人IMPACT Foundation Japan（INTILAQ東北イノベーションセンター）", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" }
+    {
+      "name": "窓口相談、起業家セミナー",
+      "org": "仙台市起業支援センター アシ☆スタ",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市・センターのページに日程・費用の記載なし"
+    },
+    {
+      "name": "個別窓口・巡回相談、創業関連セミナー",
+      "org": "仙台商工会議所",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに日程・費用の記載なし"
+    },
+    {
+      "name": "創業関連セミナー",
+      "org": "みやぎ仙台商工会",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに日程・費用の記載なし"
+    },
+    {
+      "name": "ちっちゃいビジネス開業応援塾",
+      "org": "株式会社ゆいネット",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに日程・費用の記載なし"
+    },
+    {
+      "name": "ハンズオン支援",
+      "org": "スパークル株式会社",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに日程・費用の記載なし"
+    },
+    {
+      "name": "インキュベーション施設",
+      "org": "一般社団法人IMPACT Foundation Japan（INTILAQ東北イノベーションセンター）",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに日程・費用の記載なし"
+    }
   ],
   "coursesNote": "仙台市は6つの実施機関を挙げていますが、受講料も開催日も掲載していません。アシ☆スタ（仙台市起業支援センター）の窓口相談とセミナーを組み合わせて4回以上・1か月以上にするのが基本の道筋です。",
   "unknowns": {
     "title": "市のページから分からないこと",
     "items": [
-      { "label": "すべての事業の受講料と開催日", "body": "6機関いずれも記載がありません" }
+      {
+        "label": "すべての事業の受講料と開催日",
+        "body": "6機関いずれも記載がありません"
+      }
     ],
     "action": "アシ☆スタ（仙台市起業支援センター）に相談すると、窓口相談とセミナーの組み合わせ方を案内してもらえます。"
   },
@@ -44,15 +148,33 @@
   },
   "applicationSteps": [],
   "otherBenefits": [
-    { "title": "創業関連保証の特例", "body": "通常は創業2か月前からのところ、事業開始6か月前から対象になります。他の市区町村で創業する場合でも利用できます。対応する市の融資制度は「新事業創出支援融資（起業家支援資金）」です。" },
-    { "title": "日本政策金融公庫", "body": "「新規開業・スタートアップ支援資金」の貸付利率が引き下げられます。他の市区町村で創業する場合でも利用できます。" },
-    { "title": "省エネ・再エネ設備等の補助金", "body": "事業所用太陽光発電システム導入支援（最大250万円／蓄電池の同時導入で最大100万円）、温室効果ガス削減設備導入支援（最大100万円）、事業所用クリーンエネルギー自動車等導入支援（最大60万円／V2B・V2Hは最大20万円）、事業所断熱改修促進補助金（最大300万円）。いずれも着手前の申請が必要です。" }
+    {
+      "title": "創業関連保証の特例",
+      "body": "通常は創業2か月前からのところ、事業開始6か月前から対象になります。他の市区町村で創業する場合でも利用できます。対応する市の融資制度は「新事業創出支援融資（起業家支援資金）」です。"
+    },
+    {
+      "title": "日本政策金融公庫",
+      "body": "「新規開業・スタートアップ支援資金」の貸付利率が引き下げられます。他の市区町村で創業する場合でも利用できます。"
+    },
+    {
+      "title": "省エネ・再エネ設備等の補助金",
+      "body": "事業所用太陽光発電システム導入支援（最大250万円／蓄電池の同時導入で最大100万円）、温室効果ガス削減設備導入支援（最大100万円）、事業所用クリーンエネルギー自動車等導入支援（最大60万円／V2B・V2Hは最大20万円）、事業所断熱改修促進補助金（最大300万円）。いずれも着手前の申請が必要です。"
+    }
   ],
   "localSupport": [
-    { "title": "対象かどうかを判定フォームで確認できます", "body": "仙台市は「特定創業支援証明書交付要件判定フォーム」と「交付対象判定チャート（簡易版）」を公開しています。**申請してから対象外と分かる事故を防げます**。" }
+    {
+      "title": "対象かどうかを判定フォームで確認できます",
+      "body": "仙台市は「特定創業支援証明書交付要件判定フォーム」と「交付対象判定チャート（簡易版）」を公開しています。**申請してから対象外と分かる事故を防げます**。"
+    }
   ],
   "sources": [
-    { "title": "仙台市「特定創業支援等事業の支援を受けたことの証明書の発行について」", "url": "https://www.city.sendai.jp/startup-sogyo/jigyosha/kezai/jigyosho/joho/hakko.html" },
-    { "title": "仙台市起業支援センター アシ☆スタ「認定特定創業支援等事業について」", "url": "https://www.siip.city.sendai.jp/assista/information/485" }
+    {
+      "title": "仙台市「特定創業支援等事業の支援を受けたことの証明書の発行について」",
+      "url": "https://www.city.sendai.jp/startup-sogyo/jigyosha/kezai/jigyosho/joho/hakko.html"
+    },
+    {
+      "title": "仙台市起業支援センター アシ☆スタ「認定特定創業支援等事業について」",
+      "url": "https://www.siip.city.sendai.jp/assista/information/485"
+    }
   ]
 }

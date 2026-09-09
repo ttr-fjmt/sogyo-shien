@@ -304,7 +304,11 @@ const breadcrumbs = [
     本ページの内容は、{m.lastVerified}に以下の公式ページから取得した情報にもとづいています。受講料・日程は年度により変わります。
     <ul>
       {m.sources.map((s) => (
-        <li>{s.title} <a href={s.url} rel="nofollow">{s.url}</a></li>
+        <li>
+          {s.title}{' '}
+          {s.noLink ? <span class="src-url">{s.url}</span> : <a href={s.url} rel="nofollow">{s.url}</a>}
+          {s.note && <span class="src-note">{s.note}</span>}
+        </li>
       ))}
     </ul>
   </div>

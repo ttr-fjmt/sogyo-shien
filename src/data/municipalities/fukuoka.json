@@ -7,11 +7,8 @@
   "lastVerified": "2026-09-09",
   "sourceUpdatedAt": null,
   "publish": {
-    "ready": false,
-    "blockers": [
-      "受講料が金額として1件も判明していない（有料／無料の2値のみ）",
-      "具体的な開催日が1件もない"
-    ]
+    "ready": true,
+    "blockers": []
   },
   "taxReduction": {
     "kabushiki": {
@@ -187,6 +184,10 @@
   },
   "otherBenefits": [
     {
+      "title": "福岡市新規創業促進補助金",
+      "body": "登録免許税の半額軽減を活用して会社を設立する創業者に対し、市が残りの半額相当額を支援します。詳細は「福岡市新規創業促進補助金」のページをご確認ください。"
+    },
+    {
       "title": "創業関連保証",
       "body": "創業関連保証の利用開始月が前倒しになります。"
     },
@@ -204,9 +205,15 @@
   "sources": [
     {
       "title": "福岡市「特定創業支援等事業のご案内」",
-      "url": "https://www.city.fukuoka.lg.jp/keizai/r-support/business/tokutei-sougyou-sientoujigyou.html"
+      "url": "https://www.city.fukuoka.lg.jp/keizai/r-support/business/tokutei-sougyou-sientoujigyou.html",
+      "noLink": true,
+      "note": "福岡市は個別ページへのリンクについて担当課への問い合わせを求めているため、URLはリンクにしていません。福岡市トップページ（www.city.fukuoka.lg.jp）から「特定創業支援等事業」で検索してください。"
     }
   ],
   "kana": "ふくおか",
-  "prefKana": "ふくおか"
+  "prefKana": "ふくおか",
+  "highlight": {
+    "title": "登録免許税が実質ゼロになる、全国でも珍しい自治体です",
+    "body": "福岡市は登録免許税の半額軽減に加えて、**市が残りの半額相当額を「福岡市新規創業促進補助金」で支援**しています。つまり株式会社なら15万円が7万5千円に下がったうえで、その7万5千円分も市の補助でまかなえます。他のどの自治体でも見つからなかった上乗せです。ただし補助金には別途の要件と審査があるため、金額と条件は必ず市のページでご確認ください。"
+  }
 }

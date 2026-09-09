@@ -495,3 +495,7 @@ td.city{color:var(--ink-soft);white-space:nowrap}
 @media(max-width:420px){
   .brand-name{font-size:.94rem;letter-spacing:.04em}
 }
+
+/* リンクを張らない出典（先方がリンクに条件を付けている場合） */
+.src-url{word-break:break-all;color:var(--ink-faint)}
+.src-note{display:block;margin-top:.25rem;color:var(--ink-faint);font-size:.94em}
