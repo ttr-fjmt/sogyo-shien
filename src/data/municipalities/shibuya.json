@@ -1,24 +1,52 @@
 {
-  "slug": "shibuya", "prefSlug": "tokyo", "pref": "東京都", "prefKana": "とうきょう", "kana": "しぶや",
-  "name": "渋谷区", "kind": "特別区",
-  "lastVerified": "2026-09-09", "sourceUpdatedAt": "2026-08-25",
-  "publish": { "ready": true, "blockers": [] },
+  "slug": "shibuya",
+  "prefSlug": "tokyo",
+  "pref": "東京都",
+  "prefKana": "とうきょう",
+  "kana": "しぶや",
+  "name": "渋谷区",
+  "kind": "特別区",
+  "titleHook": "オンライン完結の創業セミナーと次回開講",
+  "lastVerified": "2026-09-09",
+  "sourceUpdatedAt": "2026-08-25",
+  "publish": {
+    "ready": true,
+    "blockers": []
+  },
   "taxReduction": {
-    "kabushiki": { "before": 150000, "after": 75000 },
-    "godo": { "before": 60000, "after": 30000 },
-    "rate": { "before": "0.7%", "after": "0.35%" },
-    "notes": ["証明書の交付は別途申請が必要です。"]
+    "kabushiki": {
+      "before": 150000,
+      "after": 75000
+    },
+    "godo": {
+      "before": 60000,
+      "after": 30000
+    },
+    "rate": {
+      "before": "0.7%",
+      "after": "0.35%"
+    },
+    "notes": [
+      "証明書の交付は別途申請が必要です。"
+    ]
   },
   "requirement": {
-    "minSessions": null, "minMonths": null, "subjects": [],
+    "minSessions": null,
+    "minMonths": null,
+    "subjects": [],
     "lead": "創業セミナー4日間と交流会の合計5日間すべてに、遅刻・早退・欠席なく出席すること",
-    "notes": ["証明書は、すべての講義を遅刻・早退・欠席なく受講し修了した場合にのみ申請を受け付けます。"]
+    "notes": [
+      "証明書は、すべての講義を遅刻・早退・欠席なく受講し修了した場合にのみ申請を受け付けます。"
+    ]
   },
   "courses": [
     {
       "name": "創業セミナー＠オンライン 基本編（2026年9月開講）",
       "org": "渋谷区創業セミナー事務局",
-      "fee": { "unknown": true, "note": "区のページに受講料の記載なし" },
+      "fee": {
+        "unknown": true,
+        "note": "区のページに受講料の記載なし"
+      },
       "format": "online",
       "sessions": "全5日間（セミナー4日＋交流会）",
       "schedule": "令和8年9月19日・9月26日・10月3日・10月10日・10月17日（いずれも土曜日 13時〜17時）",
@@ -34,7 +62,9 @@
     {
       "name": "創業セミナー＠オンライン 基本編（2027年5〜6月開講予定）",
       "org": "渋谷区創業セミナー事務局",
-      "fee": { "unknown": true },
+      "fee": {
+        "unknown": true
+      },
       "format": "online",
       "sessions": null,
       "schedule": "令和9年5月〜6月頃（予定）",
@@ -48,7 +78,10 @@
   "unknowns": {
     "title": "区のページから分からないこと",
     "items": [
-      { "label": "受講料", "body": "金額の記載がありません。無料か有料かも明示されていません" }
+      {
+        "label": "受講料",
+        "body": "金額の記載がありません。無料か有料かも明示されていません"
+      }
     ],
     "action": "受講料については渋谷区創業セミナー事務局（shibuya.sogyo@gmail.com）へお問い合わせください。"
   },
@@ -58,15 +91,33 @@
   },
   "applicationSteps": [],
   "otherBenefits": [
-    { "title": "創業関連保証", "body": "創業関連保証の特例が利用できます。" },
-    { "title": "日本政策金融公庫", "body": "新規開業・スタートアップ支援資金の貸付利率引き下げの対象になります。" },
-    { "title": "持続化補助金", "body": "小規模事業者持続化補助金〈創業型〉の申請対象になります。" }
+    {
+      "title": "創業関連保証",
+      "body": "創業関連保証の特例が利用できます。"
+    },
+    {
+      "title": "日本政策金融公庫",
+      "body": "新規開業・スタートアップ支援資金の貸付利率引き下げの対象になります。"
+    },
+    {
+      "title": "持続化補助金",
+      "body": "小規模事業者持続化補助金〈創業型〉の申請対象になります。"
+    }
   ],
   "localSupport": [
-    { "title": "全講義への出席が必須", "body": "他の自治体より要件が厳格で、**5日間すべてに遅刻・早退・欠席なく出席**することが証明書交付の条件です。1回でも欠けると交付されません。" },
-    { "title": "オンライン完結", "body": "ZOOMを使用したオンライン開催で、会場に通う必要がありません。" }
+    {
+      "title": "全講義への出席が必須",
+      "body": "他の自治体より要件が厳格で、**5日間すべてに遅刻・早退・欠席なく出席**することが証明書交付の条件です。1回でも欠けると交付されません。"
+    },
+    {
+      "title": "オンライン完結",
+      "body": "ZOOMを使用したオンライン開催で、会場に通う必要がありません。"
+    }
   ],
   "sources": [
-    { "title": "渋谷区「特定創業支援等事業 創業セミナー＠オンライン 基本編」", "url": "https://www.city.shibuya.tokyo.jp/jigyosha/shoko-rodo-sodan/sogyo-shien/sogyoshien.html" }
+    {
+      "title": "渋谷区「特定創業支援等事業 創業セミナー＠オンライン 基本編」",
+      "url": "https://www.city.shibuya.tokyo.jp/jigyosha/shoko-rodo-sodan/sogyo-shien/sogyoshien.html"
+    }
   ]
 }

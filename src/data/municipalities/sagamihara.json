@@ -6,6 +6,7 @@
   "kana": "さがみはら",
   "name": "相模原市",
   "kind": "政令指定都市",
+  "titleHook": "市の融資が0.5%以内になる条件",
   "lastVerified": "2026-09-09",
   "sourceUpdatedAt": null,
   "publish": {
