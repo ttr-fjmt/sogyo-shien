@@ -1,121 +1,92 @@
 # 公開手順
 
-## 0. その前に：公開してよいか
+## 構成
 
-現在**12自治体・91講座**を掲載しています。掲載基準を満たさない5自治体は `noindex` かつ
-sitemap 除外なので、公開しても検索結果には出ません。
+既存サイト（agent-zukan / skillup-zukan / freelance-anken-zukan）と同じ構成です。
 
-ただし、公開前に確認しておくべきことが1つあります。
-
-- **福岡市** は「トップページ以外の個別ページへのリンクは、各ページの担当課に問い合わせ」と
-  明記しています。現在は未公開なので影響しませんが、**公開に切り替える前に一報を入れてください**。
-  法律上リンクは自由なので禁止ではありませんが、出典として深くリンクする設計のためです。
-
-トップページと各ページの「開発版」表記は、公開時に外すかどうかを決めてください。
-12自治体で公開するか、もう少し貯めてから公開するかは判断が必要です。
-
-## 1. ドメイン（取得済み）
-
-**取得済み: sogyo-shien.com**（2026-09-09 登録／お名前.com／有効期限 2027-09-09）
-
-購入先の例: お名前.com / Value Domain / Cloudflare Registrar
-（Cloudflare Registrar は原価販売でホスティングと同じ管理画面に入りますが、.jp は非対応のことがあります）
-
-他の空き候補: sogyo-school.jp / setsuritsu-navi.jp / kaigyo-navi.jp / sogyo-hangaku.jp
-
-**`tokutei-sogyo.jp` は避けてください。**供給側の用語で、会社を作りたい人はこの言葉を知りません。
-
-## 2. Cloudflare の設定
-
-作業は2つに分かれます。順番が大事です。
-
-### 2-1. ドメインを Cloudflare に預ける（先にこちら）
-
-1. Cloudflare のアカウントを作る（無料プランで足ります）
-2. ダッシュボードで **「ドメインを追加」**（Add a domain）から  を入力
-3. プランは **Free** を選ぶ
-4. 既存DNSレコードのスキャン結果が出る（新規ドメインなので空のはず）
-5. **割り当てられたネームサーバー2つが表示される**ので控える
-   （例:  /  ── アカウントごとに違います）
-
-次にお名前.com側で切り替えます。
-
-6. お名前.com Navi にログイン →「ドメイン」→ 対象ドメインの **「ネームサーバーの変更」**
-7. **「その他のネームサーバーを使う」** を選び、控えた2つを入力して保存
-8. Cloudflare のダッシュボードに戻り「ネームサーバーを確認」
-
-反映は通常1時間以内、長いと48時間かかります。
-Cloudflare 側のステータスが **Active** になれば完了です。
-
-### 2-2. Pages プロジェクトを作る
-
-1. Cloudflare ダッシュボードの **「Workers & Pages」**（UIによっては Compute）→ **Pages** →
-   **「Gitに接続」**
-2. GitHub を認可する。**private リポジトリの場合は、対象リポジトリへのアクセスを明示的に許可**する必要があります
-3.  リポジトリを選ぶ
-4. ビルド設定を入力する
-
-| 項目 | 値 |
+| 項目 | 設定 |
 |---|---|
-| フレームワークプリセット | Astro |
-| ビルドコマンド |  |
-| ビルド出力ディレクトリ |  |
-| ルートディレクトリ | （空欄のまま） |
+| ドメイン | sogyo-shien.com（お名前.com で取得、2026-09-09 登録） |
+| DNS | **Cloudflare**（`dan.ns.cloudflare.com` / `jamie.ns.cloudflare.com`） |
+| ホスティング | **GitHub Pages** |
+| リポジトリ | ttr-fjmt/sogyo-shien（private） |
+| Cloudflareプロキシ | **オフ**（グレーの雲） |
 
-5. **環境変数**を2つ追加する
+既存3サイトも DNS は Cloudflare、配信は GitHub Pages です。
+`curl -I https://agent-zukan.net/` が `Server: GitHub.com` と `x-github-edge-region: japaneast` を
+返すことで確認済みで、Cloudflare は純粋に DNS だけを担当しています。
 
-| 変数名 | 値 | 理由 |
-|---|---|---|
-|  |  | canonical・OGP・sitemap の絶対URLに使う |
-|  |  | 既定が古いとビルドが落ちるため明示する |
+### 既存サイトと1点だけ違うところ
 
-6. 「保存してデプロイ」。初回は1〜2分で終わります
-7.  の仮URLが払い出されるので、そこで表示を確認する
+既存3サイトは `main` ブランチの HTML をそのまま配信しています（Pages の `build_type=legacy`）。
+本サイトは Astro でビルドが必要なため、**GitHub Actions でビルドして Pages へデプロイ**します。
 
-### 2-3. 独自ドメインをつなぐ
+そのため Pages の Source は「Deploy from a branch」ではなく「**GitHub Actions**」を選びます。
+ここだけ操作が異なります。
 
-1. Pages プロジェクト → **「カスタムドメイン」** タブ → 「カスタムドメインを設定」
-2.  を追加
-3. 同じ手順で  も追加（www有無どちらでも来られるように）
+利点として、HTML をコミットする必要がなく、
+`src/data/municipalities/` に JSON を1つ置いて push すれば全ページが更新されます。
 
-2-1 でドメインをCloudflareに預けてあれば、**DNSレコードは自動で作成されます**。
-apexドメイン（www無し）も CNAME フラットニングで動くので、Aレコードを手で書く必要はありません。
-SSL証明書も自動で発行されます。
+---
 
-### 2-4. 確認
+## 公開までの手順
 
-デプロイ後、次が返ってくれば成功です。
+### 1. GitHub Pages を有効にする
 
--  → トップページ
--  → Sitemap行が  を指している
--  → 22URL
--  → 川崎市のページ
--  → 404ページが出る
+リポジトリの **Settings → Pages → Build and deployment → Source** を
+「**GitHub Actions**」に変更します。
 
-以降は **main ブランチにpushするたびに自動でビルド・公開**されます。
+変更すると `.github/workflows/deploy.yml` が動き、数分でデプロイされます。
+この時点で払い出される URL で表示確認ができます。
 
+### 2. Cloudflare に DNS レコードを追加する
 
-## 3. 公開に必要なファイルは配置済み
+Cloudflare ダッシュボード → sogyo-shien.com → **DNS** で以下を追加します。
 
-| ファイル | 役割 |
-|---|---|
-| `public/robots.txt` | 全許可＋sitemap の場所を明示 |
-| `public/_headers` | セキュリティヘッダと `_astro/*` の長期キャッシュ |
-| `src/pages/404.astro` | 404ページ（市区町村検索つき、noindex） |
-| `astro.config.mjs` | `site` を `SITE_URL` 環境変数で上書き可能 |
-| `.gitignore` | `node_modules` `dist` `tools/out` を除外 |
+| Type | Name | Content | Proxy |
+|---|---|---|---|
+| A | `@` | `185.199.108.153` | **オフ（グレー）** |
+| A | `@` | `185.199.109.153` | **オフ（グレー）** |
+| A | `@` | `185.199.110.153` | **オフ（グレー）** |
+| A | `@` | `185.199.111.153` | **オフ（グレー）** |
+| CNAME | `www` | `ttr-fjmt.github.io` | **オフ（グレー）** |
 
-ドメインを変える場合は `SITE_URL` を変えるだけで、canonical・OGP・sitemap すべて追従します。
-`public/robots.txt` の Sitemap 行だけは手で書き換えてください。
+**プロキシは必ずオフにしてください。**オンだと GitHub Pages 側の証明書発行が失敗することがあります。
+既存3サイトもオフです。
 
-## 4. 公開後にやること
+### 3. 独自ドメインを設定する
+
+**Settings → Pages → Custom domain** に `sogyo-shien.com` を入力して保存します。
+DNS チェックが通ったら **Enforce HTTPS** にチェックを入れます。
+
+リポジトリには `public/CNAME`（中身は `sogyo-shien.com`）を置いてあり、
+ビルドのたびに `dist/CNAME` として出力されるので、デプロイで設定が消えることはありません。
+
+### 4. 動作確認
+
+- `https://sogyo-shien.com/` — トップページ
+- `https://sogyo-shien.com/robots.txt` — Sitemap 行が `.com` を指している
+- `https://sogyo-shien.com/sitemap-index.xml` — 22 URL
+- `https://sogyo-shien.com/area/kanagawa/kawasaki/` — 川崎市のページ
+- `https://sogyo-shien.com/llms.txt` — LLM 向けのサイト説明
+- `https://sogyo-shien.com/ads.txt` — AdSense のパブリッシャーID
+- `https://sogyo-shien.com/zzz` — 404 ページ
+
+以降は `main` に push するたびに自動でビルド・公開されます。
+
+---
+
+## 公開後にやること
 
 1. **Google Search Console に登録**し、`sitemap-index.xml` を送信する
-2. 掲載している自治体・実施機関に**リンクの一報を入れる**（特に福岡市）
-3. 検索ボリュームとキーワード難易度を実測する（これまで未実施）
-4. 自治体データを増やす（`src/data/municipalities/` に JSON を1つ置くだけ）
+2. **福岡市に一報を入れる** — 「トップページ以外の個別ページへのリンクは担当課に問い合わせ」と
+   明記している唯一の自治体です。現在は未公開なので影響しませんが、公開に切り替える前に連絡してください
+3. 検索ボリュームとキーワード難易度を実測する（未実施）
+4. 自治体データを増やす
 
-## 5. ローカル開発
+---
+
+## ローカル開発
 
 ```bash
 npm install
@@ -123,6 +94,18 @@ npm run dev     # http://localhost:4321
 npm run build   # dist/ に出力
 ```
 
-このプロジェクトは `C:sogyo-shien` に置いてあります。
-Claude のスクラッチ領域（パスが長くWindowsのMAX_PATHを超える）では esbuild の
-回避策が必要でしたが、この場所では不要です。
+プロジェクトは `C:\sogyo-shien` に置いてあります。短いパスなので esbuild の回避策は不要です。
+
+## データを1自治体追加する手順
+
+`src/data/municipalities/<slug>.json` を1つ置くだけです。
+ビルド時に `/area/<prefSlug>/<slug>/` が生成され、比較ページ・トップページ・sitemap にも自動で反映されます。
+
+**公開の最低条件**: 受講料か開催日のどちらかが公表されていること。
+どちらも無い自治体は `publish.ready` を `false` にすると、noindex かつ sitemap 除外になります。
+
+収集用のツールは `tools/` にあります。
+
+```bash
+node tools/screen.mjs tools/targets.tsv   # 一次スクリーニング
+```
