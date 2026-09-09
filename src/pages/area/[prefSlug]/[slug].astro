@@ -5,6 +5,9 @@ import {
   pageTitle, metaDescription, eventJsonLd,
 } from '../../../lib/fmt.js';
 import { published } from '../../../lib/catalog.js';
+import { faqFor } from '../../../lib/faq.js';
+import Ad from '../../../components/Ad.astro';
+import { AD_SLOTS } from '../../../lib/ads.js';
 
 export async function getStaticPaths() {
   const files = import.meta.glob('../../../data/municipalities/*.json', { eager: true });
@@ -25,9 +28,14 @@ const jsonLd = eventJsonLd(m, Astro.site?.href ?? '');
 // 同一都道府県の他の自治体へ回遊させる（内部リンク）
 const siblings = published.filter((x) => x.prefSlug === m.prefSlug && x.slug !== m.slug);
 const others = published.filter((x) => x.prefSlug !== m.prefSlug).slice(0, 6);
+const faq = faqFor(m);
+const breadcrumbs = [
+  { name: m.pref, url: `/area/${m.prefSlug}/${m.slug}/` },
+  { name: m.name, url: `/area/${m.prefSlug}/${m.slug}/` },
+];
 ---
 
-<Base title={title} description={description} jsonLd={jsonLd} noindex={!m.publish?.ready}>
+<Base title={title} description={description} jsonLd={jsonLd} noindex={!m.publish?.ready} breadcrumbs={breadcrumbs} faq={faq}>
   <p class="eyebrow">
     {m.pref} <span class="sep"></span> {m.name} <span class="sep"></span> 創業・会社設立
   </p>
@@ -252,6 +260,18 @@ const others = published.filter((x) => x.prefSlug !== m.prefSlug).slice(0, 6);
     </>
   )}
 
+  <Ad slot={AD_SLOTS.areaInArticle} layout="in-article" />
+
+  <h2>よくある質問</h2>
+  <dl class="faq">
+    {faq.map((f) => (
+      <div class="faq-item">
+        <dt>{f.q}</dt>
+        <dd>{f.a}</dd>
+      </div>
+    ))}
+  </dl>
+
   <h2>他の市区町村を調べる</h2>
   {siblings.length > 0 && (
     <>
@@ -276,6 +296,8 @@ const others = published.filter((x) => x.prefSlug !== m.prefSlug).slice(0, 6);
     ))}
   </dl>
   <p><a href="/">すべての市区町村から探す</a>　／　<a href="/compare/fee/">受講料を比べる</a></p>
+
+  <Ad slot={AD_SLOTS.areaBottom} layout="rectangle" />
 
   <h2>出典</h2>
   <div class="sources">
