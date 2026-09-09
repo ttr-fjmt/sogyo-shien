@@ -4,13 +4,18 @@ import { published, municipalities } from '../../../lib/catalog.js';
 import { yen } from '../../../lib/fmt.js';
 
 export async function getStaticPaths() {
-  const byPref = published.reduce((acc, m) => {
+  // 掲載前の市区町村しかない県でもページを作る。
+  // 市区町村ページのパンくずが必ずここを指すため、無いとリンク切れになる。
+  const byPref = municipalities.reduce((acc, m) => {
     (acc[m.prefSlug] ??= []).push(m);
     return acc;
   }, {});
-  return Object.entries(byPref).map(([prefSlug, list]) => ({
+  return Object.entries(byPref).map(([prefSlug, all]) => ({
     params: { prefSlug },
-    props: { list: list.sort((a, b) => a.kana.localeCompare(b.kana, 'ja')), pref: list[0].pref },
+    props: {
+      list: all.filter((m) => m.publish?.ready).sort((a, b) => a.kana.localeCompare(b.kana, 'ja')),
+      pref: all[0].pref,
+    },
   }));
 }
 
@@ -22,20 +27,29 @@ const totalCourses = list.reduce((n, m) => n + m.courses.length, 0);
 const freeCount = list.reduce((n, m) => n + m.courses.filter((c) => c.fee?.free).length, 0);
 const priced = list.flatMap((m) => m.courses).filter((c) => typeof c.fee?.amount === 'number');
 
-const title = `${pref}で会社設立｜登録免許税が半額になる市区町村と創業講座${ym}`;
-const description = `${pref}で会社を設立すると登録免許税が15万円→7万5千円に。掲載している${list.length}市区町村の対象講座${totalCourses}件を、受講料・開催日つきで比較できます。`;
+const empty = list.length === 0;
+
+const title = empty
+  ? `${pref}で会社設立｜登録免許税が半額になる制度の調べ方`
+  : `${pref}で会社設立｜登録免許税が半額になる市区町村と創業講座${ym}`;
+const description = empty
+  ? `${pref}は調査中です。会社設立時の登録免許税を15万円→7万5千円にする「特定創業支援等事業」の仕組みと、掲載済みの市区町村をご案内します。`
+  : `${pref}で会社を設立すると登録免許税が15万円→7万5千円に。掲載している${list.length}市区町村の対象講座${totalCourses}件を、受講料・開催日つきで比較できます。`;
 
 const breadcrumbs = [{ name: pref, url: `/area/${Astro.params.prefSlug}/` }];
 ---
-<Base title={title} description={description} breadcrumbs={breadcrumbs}>
+<Base title={title} description={description} breadcrumbs={breadcrumbs} noindex={empty}>
   <p class="eyebrow">{pref} <span class="sep"></span> 創業・会社設立</p>
   <h1><span class="nb">{pref}で会社を設立するとき、</span><span class="nb">登録免許税は半額にできる</span></h1>
   <p class="standfirst">
     市区町村の「特定創業支援等事業」に指定された講座を受けると、株式会社の設立時の登録免許税が
     <strong>15万円から7万5千円</strong>になります。受ける講座は市区町村ごとに違うため、
-    {pref}については{list.length}市区町村を掲載しています。
+    {empty
+      ? `${pref}は現在調査中で、まだ掲載できる市区町村がありません。`
+      : `${pref}については${list.length}市区町村を掲載しています。`}
   </p>
 
+  {!empty && (
   <div class="figs">
     <div class="fig">
       <p class="k">掲載市区町村</p>
@@ -53,7 +67,10 @@ const breadcrumbs = [{ name: pref, url: `/area/${Astro.params.prefSlug}/` }];
       <p class="u">{priced.length ? `最高 ${yen(Math.max(...priced.map((c) => c.fee.amount)))}` : '判明分なし'}</p>
     </div>
   </div>
+  )}
 
+  {!empty && (
+  <>
   <h2>{pref}の市区町村</h2>
   <div class="scroller">
     <table>
@@ -91,6 +108,8 @@ const breadcrumbs = [{ name: pref, url: `/area/${Astro.params.prefSlug}/` }];
     受講料は市区町村や実施機関によって大きく異なります。
     <a href="/compare/fee/">全国の受講料くらべ</a>もご覧ください。
   </p>
+  </>
+  )}
 
   <h2>制度から調べる</h2>
   <dl class="local">

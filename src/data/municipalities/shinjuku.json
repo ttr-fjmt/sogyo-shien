@@ -1,0 +1,98 @@
+{
+  "slug": "shinjuku", "prefSlug": "tokyo", "pref": "東京都", "prefKana": "とうきょう", "kana": "しんじゅく",
+  "name": "新宿区", "kind": "特別区",
+  "lastVerified": "2026-09-09", "sourceUpdatedAt": "2026-09-01",
+  "publish": { "ready": true, "blockers": [] },
+  "taxReduction": {
+    "kabushiki": { "before": 150000, "after": 75000 },
+    "godo": { "before": 60000, "after": 30000 },
+    "rate": { "before": "0.7%", "after": "0.35%" },
+    "notes": []
+  },
+  "requirement": {
+    "minSessions": 4, "minMonths": 1,
+    "subjects": ["経営", "財務", "人材育成", "販路開拓"],
+    "notes": [
+      "動画セミナーや創業スクールは、原則として修了までに約1か月（全4回）かかります。",
+      "申請できるのは支援を受けた本人だけで、代理申請はできません。",
+      "区へ申請書類が到達してから証明書の発行まで3営業日かかります。"
+    ]
+  },
+  "courses": [
+    {
+      "name": "動画セミナー", "org": "新宿区",
+      "fee": { "free": true },
+      "format": "online", "sessions": "全4回",
+      "schedule": "10月分は10月7日・14日・21日・28日（いずれも水曜日）正午に動画のURLをメールで案内。オンデマンド配信のため時間に合わせて待機する必要はありません",
+      "capacity": null,
+      "deadline": "10月分の募集締切は9月30日（水曜日）17時（厳守）",
+      "target": "事業を営んでいない個人で6か月以内に区内を本拠として創業する具体的な計画がある方、または区内に事業所があり創業後5年未満の方",
+      "content": "受講申込の翌月から、週に一度メールで動画セミナーのURLが案内されます。全4回・約1か月で修了します。",
+      "contact": "新宿区文化観光産業部産業振興課（特定創業支援等事業担当）／申込は区の申込フォームから",
+      "status": "open",
+      "statusBasis": "区のページに「随時受付中」と記載。10月分の募集締切は9月30日"
+    },
+    {
+      "name": "創業スクール", "org": "新宿区立高田馬場創業支援センター",
+      "fee": { "unknown": true }, "format": "offline",
+      "sessions": null, "schedule": null, "capacity": null, "deadline": null,
+      "status": "closed", "statusBasis": "区のページに「申込受付は終了しました」と記載"
+    },
+    {
+      "name": "創業スクール", "org": "西京信用金庫",
+      "fee": { "unknown": true }, "format": "offline",
+      "sessions": null, "schedule": null, "capacity": null, "deadline": null,
+      "status": "closed", "statusBasis": "区のページに「申込受付は終了しました」と記載"
+    },
+    {
+      "name": "創業スクール", "org": "東京三協信用金庫",
+      "fee": { "unknown": true }, "format": "offline",
+      "sessions": null, "schedule": null, "capacity": null, "deadline": null,
+      "status": "closed", "statusBasis": "区のページに「申込受付は終了しました」と記載"
+    },
+    {
+      "name": "創業セミナー（オンライン）", "org": "東京商工会議所新宿支部",
+      "fee": { "unknown": true }, "format": "online",
+      "sessions": null, "schedule": null, "capacity": null, "deadline": null,
+      "status": "closed", "statusBasis": "区のページに「申込受付は終了しました」と記載"
+    },
+    {
+      "name": "オンラインセミナー／オンライン面談", "org": "銀座セカンドライフ株式会社",
+      "fee": { "unknown": true }, "format": "online",
+      "sessions": null, "schedule": null, "capacity": null, "deadline": null,
+      "status": "open", "statusBasis": "区のページに「随時受付中」と記載"
+    }
+  ],
+  "coursesNote": "新宿区の6事業のうち、掲載時点で受け付けているのは区の動画セミナーと銀座セカンドライフのオンラインセミナー／面談の2つです。信用金庫や商工会議所の創業スクールは受付を終了しています。区の動画セミナーは無料・オンデマンドで、毎月申込を受け付けています。",
+  "unknowns": {
+    "title": "区のページから分からないこと",
+    "items": [
+      { "label": "区以外の5事業の受講料", "body": "高田馬場創業支援センター・西京信用金庫・東京三協信用金庫・東京商工会議所新宿支部・銀座セカンドライフは費用の記載がありません" },
+      { "label": "創業スクールの次回開催時期", "body": "「申込受付は終了しました」とだけ書かれており、次回の予定は掲載されていません" }
+    ],
+    "action": "急がないのであれば、無料の動画セミナーが確実です。毎月の締切は前月末の17時です。"
+  },
+  "highlight": {
+    "title": "無料・オンデマンド動画・毎月開講。全国でもかなり通しやすい部類です",
+    "body": "新宿区の動画セミナーは**受講料無料、全4回、オンデマンド配信**です。決まった時間に集まる必要がなく、週1回メールで届くURLを自分の都合で見るだけで修了できます。締切は毎月末で、翌月から配信が始まります。ただし**区外で創業する予定の方は対象外**なので、そこだけ注意してください。"
+  },
+  "applicationSteps": [
+    { "text": "動画セミナーに申し込む（前月末17時締切）", "sub": "@city.shinjuku.lg.jp からのメールを受信できるよう設定しておきます" },
+    { "text": "翌月から週1回届くURLで、全4回の動画を視聴する", "sub": "オンデマンドなので視聴のタイミングは自由です" },
+    { "text": "申請書兼証明書・同意書・受領書・受講レポートを提出する", "sub": "申請できるのは受講した本人だけです。代理申請はできません" },
+    { "text": "3営業日後に証明書を受け取る", "sub": "設立登記の日程から逆算して申請してください" }
+  ],
+  "otherBenefits": [
+    { "title": "創業関連保証の特例", "body": "無担保・第三者保証人なしの創業関連保証を、事業開始の6か月前から利用できます。" },
+    { "title": "日本政策金融公庫", "body": "新規開業・スタートアップ支援資金の貸付利率が引き下げられます。" },
+    { "title": "持続化補助金", "body": "小規模事業者持続化補助金〈創業型〉の申請対象になります。" }
+  ],
+  "localSupport": [
+    { "title": "対象になるかどうかの線引きがはっきりしています", "body": "新宿区は対象外の条件を明記しています。**現在行っている事業を継続しつつ新たに事業を立ち上げる方**、証明書の発行時点で**区外で事業を始める予定の方**、**区外へ移転済み・移転予定の方**は対象外です。判断に迷わずに済みます。" },
+    { "title": "高田馬場創業支援センターがあります", "body": "区立の創業支援センターが高田馬場にあり、創業スクールのほか相談窓口としても使えます。" }
+  ],
+  "sources": [
+    { "title": "新宿区「新宿区特定創業支援等事業について」", "url": "https://www.city.shinjuku.lg.jp/jigyo/sangyo01_002168.html" },
+    { "title": "新宿区「特定創業支援等事業 動画セミナーについて」", "url": "https://www.city.shinjuku.lg.jp/jigyo/sangyo01_000001_00066.html" }
+  ]
+}
