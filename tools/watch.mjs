@@ -90,15 +90,21 @@ const stale = [];
 let checked = 0;
 
 for (const m of municipalities) {
-  const url = m.sources?.[0]?.url;
-  if (!url) continue;
+  const sources = (m.sources ?? []).filter((s) => s?.url);
+  if (!sources.length) continue;
 
   // 最終確認からの経過日数（サイトの売りが鮮度なので、これ自体を報告する）
   const days = Math.floor((today - new Date(m.lastVerified)) / 86400000);
   if (days >= 90) stale.push({ name: m.name, days, lastVerified: m.lastVerified });
 
+  // 出典が複数ある自治体は、講座ページ側で受講料や日程が変わることがある。
+  // 1件目（制度ページ）だけを見ていると取りこぼすので、全部を巡回する。
+  for (const [i, src] of sources.entries()) {
+  const url = src.url;
+  const label = sources.length > 1 ? `${m.name}（出典${i + 1}）` : m.name;
+
   if (!(await allowed(url))) {
-    failed.push({ name: m.name, url, reason: 'robots.txt により Disallow' });
+    failed.push({ name: label, url, reason: 'robots.txt により Disallow' });
     continue;
   }
 
@@ -109,18 +115,19 @@ for (const m of municipalities) {
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     html = await r.text();
   } catch (e) {
-    failed.push({ name: m.name, url, reason: e.message });
+    failed.push({ name: label, url, reason: e.message });
     continue;
   }
   checked++;
 
   const now = extract(toText(html));
-  const snapPath = path.join(snapDir, `${m.slug}.json`);
+  // 1件目は既存のスナップショット名を保つ（過去の記録を捨てないため）
+  const snapPath = path.join(snapDir, i === 0 ? `${m.slug}.json` : `${m.slug}--${i}.json`);
   const prev = fs.existsSync(snapPath) ? JSON.parse(fs.readFileSync(snapPath, 'utf8')) : null;
 
   if (!prev) {
     if (UPDATE) fs.writeFileSync(snapPath, JSON.stringify({ url, ...now }, null, 2));
-    console.error(`  初回記録 ${m.name}`);
+    console.error(`  初回記録 ${label}`);
     continue;
   }
 
@@ -137,8 +144,9 @@ for (const m of municipalities) {
     d.status.added.length || d.status.removed.length;
 
   if (meaningful || d.body) {
-    changed.push({ name: m.name, slug: m.slug, url, lastVerified: m.lastVerified, meaningful: !!meaningful, d });
+    changed.push({ name: label, slug: m.slug, url, lastVerified: m.lastVerified, meaningful: !!meaningful, d });
     if (UPDATE) fs.writeFileSync(snapPath, JSON.stringify({ url, ...now }, null, 2));
+  }
   }
 }
 
