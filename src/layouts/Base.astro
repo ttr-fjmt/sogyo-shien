@@ -101,6 +101,69 @@ const allLd = [siteLd, breadcrumbLd, faqLd, ...jsonLd].filter(Boolean);
       <script type="application/ld+json" set:html={JSON.stringify(d)} />
     ))}
 
+
+    <!-- 自分のアクセスを計測から外す。?ga=off で除外、?ga=on で解除、?ga=status で現在の状態を表示。
+         gtag の読み込みより前に置く必要がある（後ろだと初回のページビューを止められない）。 -->
+    <script is:inline>
+      (function () {
+        var MEASUREMENT_ID = 'G-4N0ZKF117P';
+        var KEY = 'analytics-opt-out';
+        var mode = null;
+        try {
+          mode = new URLSearchParams(location.search).get('ga');
+          if (mode === 'off') localStorage.setItem(KEY, '1');
+          if (mode === 'on') localStorage.removeItem(KEY);
+          if (localStorage.getItem(KEY) === '1') window['ga-disable-' + MEASUREMENT_ID] = true;
+        } catch (e) {
+          // プライベートモード等で localStorage が使えなくても、サイト本体は動かす。
+        }
+        if (mode !== 'off' && mode !== 'on' && mode !== 'status') return;
+
+        // 効いているかどうかを画面で分かるようにする（操作した本人にだけ出る）。
+        var off = false;
+        try { off = localStorage.getItem(KEY) === '1'; } catch (e) { off = false; }
+        var text = off
+          ? 'このブラウザからのアクセスは計測しません（解除するには ?ga=on）'
+          : 'このブラウザからのアクセスを計測します（除外するには ?ga=off）';
+        document.addEventListener('DOMContentLoaded', function () {
+          var el = document.createElement('div');
+          el.textContent = text;
+          el.style.cssText = 'position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:9999;' +
+            'background:#1A2238;color:#FBFAF7;font-size:13px;line-height:1.6;padding:12px 18px;border-radius:4px;' +
+            'box-shadow:0 4px 16px rgba(0,0,0,.25);max-width:calc(100vw - 32px);text-align:center';
+          document.body.appendChild(el);
+          setTimeout(function () { el.remove(); }, 8000);
+        });
+      })();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4N0ZKF117P"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4N0ZKF117P');
+    </script>
+
+    <!-- 外部リンクのクリックを計測する。このサイトの価値は実施機関への送客なので、
+         どの自治体からどこへ流れたかが分からないと改善できない。個人情報は送らない。 -->
+    <script is:inline>
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href^="http"]');
+        if (!a) return;
+        try {
+          var u = new URL(a.href);
+          if (u.hostname === location.hostname) return;
+          gtag('event', 'outbound_click', {
+            link_domain: u.hostname,
+            link_url: a.href,
+            source_page: location.pathname,
+          });
+        } catch (_) {}
+      }, true);
+    </script>
+
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5761092657360295"

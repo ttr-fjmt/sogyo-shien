@@ -85,9 +85,14 @@ const payload = published.map((m) => ({
       if (!state.city || !state.stage || !state.form) { out.hidden = true; return; }
       const m = data.find((d) => d.slug === state.city);
       out.hidden = false;
+      // どの自治体が選ばれ、どの判定になったかを記録する（個人情報は送らない）
+      var track = function (v) {
+        if (window.gtag) gtag("event", "diagnosis_complete", { city: m.slug, verdict: v, form: state.form });
+      };
 
       // 対象外の判定を先に出す。ここで詰まる人が多いことが各自治体のQ&Aから分かっている。
       if (state.stage === 'over5') {
+        track('ng');
         out.className = 'dx-result is-ng';
         out.innerHTML = `<p class="dx-verdict">対象外です</p>
           <p>特定創業支援等事業の証明書は、創業前または<b>事業開始から5年を経過していない方</b>が対象です。創業から5年以上経過している場合は交付を受けられません。</p>`;
@@ -101,6 +106,7 @@ const payload = published.map((m) => ({
         return;
       }
       if (state.form === 'ko') {
+        track('partial');
         out.className = 'dx-result is-partial';
         out.innerHTML = `<p class="dx-verdict">登録免許税の軽減は対象外。ただし他の優遇は使えます</p>
           <p>登録免許税の軽減は<b>株式会社または合同会社を設立するとき</b>の制度です。個人事業のままなら軽減される税はありません。</p>
@@ -119,6 +125,7 @@ const payload = published.map((m) => ({
             : '受講料は公表されていません';
       const net = m.cheapest === 0 ? saved : m.cheapest ? saved - m.cheapest : null;
 
+      track('ok');
       out.className = 'dx-result is-ok';
       out.innerHTML = `
         <p class="dx-verdict">対象です</p>
