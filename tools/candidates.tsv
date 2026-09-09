@@ -1,0 +1,28 @@
+# 掲載候補のキュー。tools/scan.mjs が毎週これを巡回し、
+# 判定が上がったものだけを Issue で知らせる。
+#
+# 形式: URL <TAB> slug <TAB> prefSlug <TAB> pref <TAB> 表示名
+#
+# ルール:
+#   - URLは推測で書かない。実際に開けたものだけを入れる
+#   - 登録済みの自治体と同じ slug は書かない（重複して取りに行くため無視される）
+#   - 登録済み自治体の「補足ページ」（商工会議所の講座ページなど）は
+#     slug に接尾辞を付ける（例: kitakyushu-cci）。日程が出た時点で拾える
+#
+# 未登録の自治体
+https://www.city.sakai.lg.jp/sangyo/shienyuushi/sogyo/tokutei.html	sakai	osaka	大阪府	堺市
+https://www.akitachallenge.jp/	akita	akita	秋田県	秋田市
+https://www.city.takasaki.gunma.jp/page/3334.html	takasaki	gunma	群馬県	高崎市
+#
+# 掲載保留の自治体の補足ページ（ここに日程・受講料が出る可能性がある）
+https://hachioji-kigyo.com/	hachioji-kigyo	tokyo	東京都	八王子起業家応援プロジェクト
+https://www.kitakyushucci.or.jp/keiei/sogyo/	kitakyushu-cci	fukuoka	福岡県	北九州商工会議所 創業支援
+https://www.kashiwa-cci.or.jp/manage/practice	kashiwa-cci	chiba	千葉県	柏商工会議所 開業・創業支援
+https://r.goope.jp/sr-16-162013s0154/	toyama-kita	toyama	富山県	富山市北商工会 創業塾
+https://www.city.toshima.lg.jp/584/machizukuri/sangyo/kigyo/019176.html	toshima-kaigyo	tokyo	東京都	豊島区 開業支援コース
+https://www.pio-ota.jp/management_founding/startup_support/startup_consultation/	ota-pio	tokyo	東京都	大田区産業振興協会 創業相談
+#
+# 掲載済み自治体の補足ページ（受講料が判明していない講座の主催者）
+https://www.kyo.or.jp/kyoto/management/sougyou.html	kyoto-cci	kyoto	京都府	京都商工会議所 創業
+https://www.kobe-cci.or.jp/support/sougyou/	kobe-cci	hyogo	兵庫県	神戸商工会議所 創業支援
+https://sogyo.city.sagamihara.kanagawa.jp/event_tax/sort01/	sagamihara-events	kanagawa	神奈川県	さがみはら創業サポートNavi セミナー

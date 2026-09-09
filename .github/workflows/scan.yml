@@ -1,0 +1,58 @@
+name: 掲載候補のスクリーニング
+
+on:
+  schedule:
+    - cron: '0 23 * * 0'   # 毎週月曜 8:00 JST（差分検知の1時間後にずらす）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: 候補を巡回して仕分ける
+        id: scan
+        run: |
+          set +e
+          node tools/scan.mjs --update --limit 60 > report.md
+          echo "changed=$?" >> $GITHUB_OUTPUT
+          cat report.md
+
+      - name: ダイジェストを成果物として残す
+        uses: actions/upload-artifact@v4
+        with:
+          name: digests
+          path: tools/out/
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: 判定が変わったらIssueを立てる
+        if: steps.scan.outputs.changed == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "掲載候補に動きがありました（$(date -u +%Y-%m-%d)）" \
+            --body-file report.md \
+            --label "data-check" || \
+          gh issue create \
+            --title "掲載候補に動きがありました（$(date -u +%Y-%m-%d)）" \
+            --body-file report.md
+
+      - name: 判定の記録を更新
+        run: |
+          if [ -n "$(git status --porcelain tools/scan-state.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add tools/scan-state.json
+            git commit -m "候補の判定を更新（自動）"
+            git push
+          fi

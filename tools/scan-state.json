@@ -1,0 +1,155 @@
+{
+  "seen": {
+    "https://www.city.hachioji.tokyo.jp/jigyosha/004/003/p024405.html": {
+      "verdict": "maybe",
+      "money": "",
+      "name": "八王子市",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.city.kashiwa.lg.jp/shoko/jigyosha/promotion/sangyoshinko/2237.html": {
+      "verdict": "maybe",
+      "money": "",
+      "name": "柏市",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.city.kawaguchi.lg.jp/soshiki/01110/021/12/2066.html": {
+      "verdict": "pass",
+      "money": "",
+      "name": "川口市",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.city.kitakyushu.lg.jp/contents/10700156.html": {
+      "verdict": "fail",
+      "money": "",
+      "name": "北九州市",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.city.matsuyama.ehime.jp/kurashi/sangyo/chusyoukigyou/sougyo-shienjigyo.html": {
+      "verdict": "pass",
+      "money": "",
+      "name": "松山市",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.city.nerima.tokyo.jp/jigyoshamuke/jigyosha/shoko/tokuteisougyousienn.html": {
+      "verdict": "fail",
+      "money": "",
+      "name": "練馬区（出典1）",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.nerima-idc.or.jp/bsc/kigyousien/post_14.html": {
+      "verdict": "fail",
+      "money": "",
+      "name": "練馬区（出典2）",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.city.osaka.lg.jp/keizaisenryaku/page/0000650806.html": {
+      "verdict": "maybe",
+      "money": "",
+      "name": "大阪市（出典1）",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.sansokan.jp/events/": {
+      "verdict": "pass",
+      "money": "無料",
+      "name": "大阪市（出典2）",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.city.ota.tokyo.jp/sangyo/sogyoshien/tokuteisougyousiennsyoumeisyo.html": {
+      "verdict": "pass",
+      "money": "無料",
+      "name": "大田区",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.city.toshima.lg.jp/584/machizukuri/sangyo/kigyo/019176.html": {
+      "verdict": "maybe",
+      "money": "",
+      "name": "豊島区",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.city.toyama.lg.jp/business/kigyoshien/1010594/1005676.html": {
+      "verdict": "maybe",
+      "money": "",
+      "name": "富山市",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.city.toyota.aichi.jp/jigyousha/shogyoshinko/1013970.html": {
+      "verdict": "maybe",
+      "money": "",
+      "name": "豊田市",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.city.wakayama.wakayama.jp/1016047/sangyoukigyousien/1001200/1003193.html": {
+      "verdict": "maybe",
+      "money": "",
+      "name": "和歌山市",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.city.sakai.lg.jp/sangyo/shienyuushi/sogyo/tokutei.html": {
+      "verdict": "fail",
+      "money": "",
+      "name": "堺市",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.akitachallenge.jp/": {
+      "verdict": "maybe",
+      "money": "",
+      "name": "秋田市",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.city.takasaki.gunma.jp/page/3334.html": {
+      "verdict": "maybe",
+      "money": "",
+      "name": "高崎市",
+      "checkedAt": "2026-09-09"
+    },
+    "https://hachioji-kigyo.com/": {
+      "verdict": "maybe",
+      "money": "",
+      "name": "八王子起業家応援プロジェクト",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.kitakyushucci.or.jp/keiei/sogyo/": {
+      "verdict": "fail",
+      "money": "",
+      "name": "北九州商工会議所 創業支援",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.kashiwa-cci.or.jp/manage/practice": {
+      "verdict": "maybe",
+      "money": "",
+      "name": "柏商工会議所 開業・創業支援",
+      "checkedAt": "2026-09-09"
+    },
+    "https://r.goope.jp/sr-16-162013s0154/": {
+      "verdict": "maybe",
+      "money": "1,000円",
+      "name": "富山市北商工会 創業塾",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.pio-ota.jp/management_founding/startup_support/startup_consultation/": {
+      "verdict": "maybe",
+      "money": "",
+      "name": "大田区産業振興協会 創業相談",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.kyo.or.jp/kyoto/management/sougyou.html": {
+      "verdict": "maybe",
+      "money": "",
+      "name": "京都商工会議所 創業",
+      "checkedAt": "2026-09-09"
+    },
+    "https://www.kobe-cci.or.jp/support/sougyou/": {
+      "verdict": "maybe",
+      "money": "",
+      "name": "神戸商工会議所 創業支援",
+      "checkedAt": "2026-09-09"
+    },
+    "https://sogyo.city.sagamihara.kanagawa.jp/event_tax/sort01/": {
+      "verdict": "fail",
+      "money": "",
+      "name": "さがみはら創業サポートNavi セミナー",
+      "checkedAt": "2026-09-09"
+    }
+  },
+  "scannedAt": "2026-09-09"
+}
