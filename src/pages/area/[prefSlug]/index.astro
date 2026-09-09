@@ -1,0 +1,127 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { published, municipalities } from '../../../lib/catalog.js';
+import { yen } from '../../../lib/fmt.js';
+
+export async function getStaticPaths() {
+  const byPref = published.reduce((acc, m) => {
+    (acc[m.prefSlug] ??= []).push(m);
+    return acc;
+  }, {});
+  return Object.entries(byPref).map(([prefSlug, list]) => ({
+    params: { prefSlug },
+    props: { list: list.sort((a, b) => a.kana.localeCompare(b.kana, 'ja')), pref: list[0].pref },
+  }));
+}
+
+const { list, pref } = Astro.props;
+const now = new Date();
+const ym = `【${now.getFullYear()}年${now.getMonth() + 1}月更新】`;
+
+const totalCourses = list.reduce((n, m) => n + m.courses.length, 0);
+const freeCount = list.reduce((n, m) => n + m.courses.filter((c) => c.fee?.free).length, 0);
+const priced = list.flatMap((m) => m.courses).filter((c) => typeof c.fee?.amount === 'number');
+
+const title = `${pref}で会社設立｜登録免許税が半額になる市区町村と創業講座${ym}`;
+const description = `${pref}で会社を設立すると登録免許税が15万円→7万5千円に。掲載している${list.length}市区町村の対象講座${totalCourses}件を、受講料・開催日つきで比較できます。`;
+
+const breadcrumbs = [{ name: pref, url: `/area/${Astro.params.prefSlug}/` }];
+---
+<Base title={title} description={description} breadcrumbs={breadcrumbs}>
+  <p class="eyebrow">{pref} <span class="sep"></span> 創業・会社設立</p>
+  <h1><span class="nb">{pref}で会社を設立するとき、</span><span class="nb">登録免許税は半額にできる</span></h1>
+  <p class="standfirst">
+    市区町村の「特定創業支援等事業」に指定された講座を受けると、株式会社の設立時の登録免許税が
+    <strong>15万円から7万5千円</strong>になります。受ける講座は市区町村ごとに違うため、
+    {pref}については{list.length}市区町村を掲載しています。
+  </p>
+
+  <div class="figs">
+    <div class="fig">
+      <p class="k">掲載市区町村</p>
+      <p class="v">{list.length}</p>
+      <p class="u">{pref}内</p>
+    </div>
+    <div class="fig">
+      <p class="k">対象講座</p>
+      <p class="v">{totalCourses}件</p>
+      <p class="u">うち無料{freeCount}件</p>
+    </div>
+    <div class="fig">
+      <p class="k">受講料</p>
+      <p class="v">{priced.length ? `${yen(Math.min(...priced.map((c) => c.fee.amount)))}〜` : '公表なし'}</p>
+      <p class="u">{priced.length ? `最高 ${yen(Math.max(...priced.map((c) => c.fee.amount)))}` : '判明分なし'}</p>
+    </div>
+  </div>
+
+  <h2>{pref}の市区町村</h2>
+  <div class="scroller">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">市区町村</th>
+          <th scope="col">対象講座</th>
+          <th scope="col">受講料</th>
+          <th scope="col">最終確認</th>
+        </tr>
+      </thead>
+      <tbody>
+        {list.map((m) => {
+          const p = m.courses.filter((c) => typeof c.fee?.amount === 'number');
+          const free = m.courses.some((c) => c.fee?.free);
+          return (
+            <tr>
+              <td class="name">
+                <a href={`/area/${m.prefSlug}/${m.slug}/`}>{m.name}</a>
+                <span class="org">{m.kind}</span>
+              </td>
+              <td class="meta">{m.courses.length}件</td>
+              <td class:list={['fee', { 'is-free': free }]}>
+                {free ? '無料あり' : p.length ? `${yen(Math.min(...p.map((c) => c.fee.amount)))}〜` : '記載なし'}
+              </td>
+              <td class="meta">{m.lastVerified}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    受講料は市区町村や実施機関によって大きく異なります。
+    <a href="/compare/fee/">全国の受講料くらべ</a>もご覧ください。
+  </p>
+
+  <h2>制度から調べる</h2>
+  <dl class="local">
+    <div class="local-row"><dt><a href="/seido/registration-tax/">登録免許税の半額</a></dt><dd>株式会社15万円→7万5千円。最も大きな優遇です。</dd></div>
+    <div class="local-row"><dt><a href="/seido/jizokuka-sogyo/">持続化補助金〈創業型〉</a></dt><dd>補助上限が最大250万円に上がります。</dd></div>
+    <div class="local-row"><dt><a href="/seido/sogyo-hosho/">創業関連保証の特例</a></dt><dd>事業開始の6か月前から利用できます。</dd></div>
+    <div class="local-row"><dt><a href="/seido/jfc-kinri/">公庫の金利引き下げ</a></dt><dd>新規開業・スタートアップ支援資金が対象です。</dd></div>
+  </dl>
+
+  <h2>他の都道府県</h2>
+  <dl class="local">
+    {[...new Set(published.map((m) => m.prefSlug))]
+      .filter((p) => p !== Astro.params.prefSlug)
+      .map((p) => {
+        const one = published.find((m) => m.prefSlug === p);
+        const n = published.filter((m) => m.prefSlug === p).length;
+        return (
+          <div class="local-row">
+            <dt><a href={`/area/${p}/`}>{one.pref}</a></dt>
+            <dd>{n}市区町村を掲載</dd>
+          </div>
+        );
+      })}
+  </dl>
+  <p><a href="/">すべての市区町村から探す</a></p>
+
+  <h2>掲載について</h2>
+  <div class="sources">
+    掲載しているのは、受講料か開催日のいずれかが公表されている市区町村です。
+    どちらも公表されていない市区町村は、掲載しても判断材料にならないため公開していません
+    （調査済み{municipalities.length}市区町村のうち{published.length}市区町村を掲載）。
+    内容は各市区町村および実施機関の公式ページから取得したもので、各ページに出典を記載しています。
+  </div>
+</Base>

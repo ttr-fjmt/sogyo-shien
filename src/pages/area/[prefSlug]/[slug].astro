@@ -30,7 +30,7 @@ const siblings = published.filter((x) => x.prefSlug === m.prefSlug && x.slug !==
 const others = published.filter((x) => x.prefSlug !== m.prefSlug).slice(0, 6);
 const faq = faqFor(m);
 const breadcrumbs = [
-  { name: m.pref, url: `/area/${m.prefSlug}/${m.slug}/` },
+  { name: m.pref, url: `/area/${m.prefSlug}/` },
   { name: m.name, url: `/area/${m.prefSlug}/${m.slug}/` },
 ];
 ---
