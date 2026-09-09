@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import CityFinder from '../components/CityFinder.astro';
+---
+<Base title="ページが見つかりません" description="お探しのページは移動または削除された可能性があります。" noindex={true}>
+  <p class="eyebrow">404</p>
+  <h1><span class="nb">お探しのページが</span><span class="nb">見つかりませんでした</span></h1>
+  <p class="standfirst">
+    移動または削除された可能性があります。市区町村から探すか、
+    <a href="/">トップページ</a>をご覧ください。
+  </p>
+  <CityFinder />
+</Base>

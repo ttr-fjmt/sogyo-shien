@@ -1,0 +1,136 @@
+---
+/**
+ * 3問診断。「どの講座がおすすめか」ではなく「対象かどうか・いくら得するか」を返す。
+ * 選択肢が1件以下の自治体が大半のため、講座の推薦は成立しない。
+ * 判定に使う要件は自治体JSONから読むので、データが増えれば自動で追従する。
+ */
+import { published } from '../lib/catalog.js';
+
+const payload = published.map((m) => ({
+  slug: m.slug,
+  name: m.name,
+  url: `/area/${m.prefSlug}/${m.slug}/`,
+  kabushiki: m.taxReduction.kabushiki,
+  godo: m.taxReduction.godo,
+  courses: m.courses.length,
+  free: m.courses.filter((c) => c.fee?.free).length,
+  open: m.courses.filter((c) => c.status === 'open').length,
+  cheapest: (() => {
+    const p = m.courses.filter((c) => typeof c.fee?.amount === 'number');
+    if (m.courses.some((c) => c.fee?.free)) return 0;
+    return p.length ? Math.min(...p.map((c) => c.fee.amount)) : null;
+  })(),
+}));
+---
+
+<div class="dx" data-dx>
+  <p class="dx-lead">3つ選ぶと、対象かどうかと軽減額が分かります。</p>
+
+  <div class="dx-q">
+    <p class="dx-qt"><span class="dx-no">1</span>創業する市区町村</p>
+    <select class="dx-sel" data-q="city" aria-label="創業する市区町村">
+      <option value="">選んでください</option>
+      {published.map((m) => <option value={m.slug}>{m.name}（{m.pref}）</option>)}
+    </select>
+  </div>
+
+  <div class="dx-q">
+    <p class="dx-qt"><span class="dx-no">2</span>いまの状況</p>
+    <div class="dx-opts" role="radiogroup" aria-label="いまの状況">
+      <button type="button" class="dx-opt" data-q="stage" data-v="before">まだ事業を始めていない</button>
+      <button type="button" class="dx-opt" data-q="stage" data-v="within5">創業して5年未満</button>
+      <button type="button" class="dx-opt" data-q="stage" data-v="over5">創業して5年以上</button>
+      <button type="button" class="dx-opt" data-q="stage" data-v="second">2社目、または事業承継</button>
+    </div>
+  </div>
+
+  <div class="dx-q">
+    <p class="dx-qt"><span class="dx-no">3</span>設立する形</p>
+    <div class="dx-opts" role="radiogroup" aria-label="設立する形">
+      <button type="button" class="dx-opt" data-q="form" data-v="kk">株式会社</button>
+      <button type="button" class="dx-opt" data-q="form" data-v="gk">合同会社</button>
+      <button type="button" class="dx-opt" data-q="form" data-v="ko">個人事業のまま</button>
+    </div>
+  </div>
+
+  <div class="dx-result" data-dx-result hidden></div>
+</div>
+
+<script type="application/json" id="dx-data" set:html={JSON.stringify(payload)} />
+
+<script>
+  const root = document.querySelector('[data-dx]');
+  if (root) {
+    const data = JSON.parse(document.getElementById('dx-data').textContent);
+    const out = root.querySelector('[data-dx-result]');
+    const state = { city: '', stage: '', form: '' };
+    const yen = (n) => n.toLocaleString('ja-JP') + '円';
+
+    root.querySelectorAll('.dx-opt').forEach((b) => {
+      b.addEventListener('click', () => {
+        const q = b.dataset.q;
+        state[q] = b.dataset.v;
+        root.querySelectorAll(`.dx-opt[data-q="${q}"]`).forEach((o) =>
+          o.classList.toggle('is-on', o === b)
+        );
+        update();
+      });
+    });
+    root.querySelector('.dx-sel').addEventListener('change', (e) => {
+      state.city = e.target.value;
+      update();
+    });
+
+    function update() {
+      if (!state.city || !state.stage || !state.form) { out.hidden = true; return; }
+      const m = data.find((d) => d.slug === state.city);
+      out.hidden = false;
+
+      // 対象外の判定を先に出す。ここで詰まる人が多いことが各自治体のQ&Aから分かっている。
+      if (state.stage === 'over5') {
+        out.className = 'dx-result is-ng';
+        out.innerHTML = `<p class="dx-verdict">対象外です</p>
+          <p>特定創業支援等事業の証明書は、創業前または<b>事業開始から5年を経過していない方</b>が対象です。創業から5年以上経過している場合は交付を受けられません。</p>`;
+        return;
+      }
+      if (state.stage === 'second') {
+        out.className = 'dx-result is-ng';
+        out.innerHTML = `<p class="dx-verdict">対象外です</p>
+          <p><b>2社目以降の創業、および事業承継による代表就任は対象外</b>です。すでに経営している会社を続けながら新たに会社を立ち上げる場合も同様です。ただし1社目の代表を退いている、または1社目が廃業している場合は対象になることがあります（自治体により扱いが異なります）。</p>
+          <p><a href="${m.url}">${m.name}の詳細を見る</a></p>`;
+        return;
+      }
+      if (state.form === 'ko') {
+        out.className = 'dx-result is-partial';
+        out.innerHTML = `<p class="dx-verdict">登録免許税の軽減は対象外。ただし他の優遇は使えます</p>
+          <p>登録免許税の軽減は<b>株式会社または合同会社を設立するとき</b>の制度です。個人事業のままなら軽減される税はありません。</p>
+          <p>一方で、<b>創業関連保証の特例（事業開始の6か月前から利用可）</b>、<b>日本政策金融公庫の金利引き下げ</b>、<b>小規模事業者持続化補助金〈創業型〉</b>は個人事業主も対象です。</p>
+          <p><a href="${m.url}">${m.name}で受けられる講座を見る（${m.courses}件）</a></p>`;
+        return;
+      }
+
+      const t = state.form === 'kk' ? m.kabushiki : m.godo;
+      const saved = t.before - t.after;
+      const feeLine =
+        m.cheapest === 0
+          ? '無料の講座があります'
+          : m.cheapest
+            ? `最も安い講座は${yen(m.cheapest)}です`
+            : '受講料は公表されていません';
+      const net = m.cheapest === 0 ? saved : m.cheapest ? saved - m.cheapest : null;
+
+      out.className = 'dx-result is-ok';
+      out.innerHTML = `
+        <p class="dx-verdict">対象です</p>
+        <div class="dx-amount">
+          <span class="dx-was">${yen(t.before)}</span><span class="dx-arrow">→</span><span class="dx-now">${yen(t.after)}</span>
+        </div>
+        <p class="dx-sub">${m.name}で${state.form === 'kk' ? '株式会社' : '合同会社'}を設立する場合、登録免許税が<b>${yen(saved)}</b>安くなります（最低税額のケース）。</p>
+        <p>${m.name}の対象講座は<b>${m.courses}件</b>、うち現在申し込めるのは<b>${m.open}件</b>。${feeLine}。${
+          net !== null ? `受講料を差し引いた手残りは約<b>${yen(net)}</b>です。` : ''
+        }</p>
+        <p class="dx-caution">軽減を受けるには<b>設立登記の前に</b>受講と証明書の取得を終えている必要があります。登記後は適用できません。</p>
+        <p><a href="${m.url}">${m.name}の講座と申請手順を見る</a></p>`;
+    }
+  }
+</script>

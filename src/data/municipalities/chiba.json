@@ -1,0 +1,50 @@
+{
+  "slug": "chiba", "prefSlug": "chiba", "pref": "千葉県", "prefKana": "ちば", "kana": "ちば",
+  "name": "千葉市", "kind": "政令指定都市",
+  "lastVerified": "2026-09-09", "sourceUpdatedAt": "2026-09-07",
+  "publish": { "ready": true, "blockers": [] },
+  "taxReduction": {
+    "kabushiki": { "before": 150000, "after": 75000 },
+    "godo": { "before": 60000, "after": 30000 },
+    "rate": { "before": "0.7%", "after": "0.35%" },
+    "notes": []
+  },
+  "requirement": {
+    "minSessions": 4, "minMonths": 1,
+    "subjects": ["経営", "財務", "人材育成", "販路開拓"],
+    "notes": ["証明書を取得した方には、後日、市から創業に関するアンケートの依頼がある場合があります。"]
+  },
+  "courses": [
+    { "name": "創業者研修（第3回）", "org": "公益財団法人千葉市産業振興財団", "fee": { "unknown": true }, "format": "offline", "sessions": "全4回＋個別相談", "schedule": "令和9年1月30日、2月6日、2月13日、2月27日（土曜日開催）", "capacity": null, "deadline": null, "contact": "043-201-9506", "status": "open", "statusBasis": "市の一覧の受付状況欄が空欄（第1回・第2回は「受付終了」と明記）" },
+    { "name": "創業者研修（第2回）", "org": "公益財団法人千葉市産業振興財団", "fee": { "unknown": true }, "format": "offline", "sessions": "全8回＋個別相談", "schedule": "令和8年9月2日〜11月4日（水曜日夜間開催）", "capacity": null, "deadline": null, "contact": "043-201-9506", "status": "closed", "statusBasis": "受付状況欄が「受付終了」" },
+    { "name": "創業者研修（第1回）", "org": "公益財団法人千葉市産業振興財団", "fee": { "unknown": true }, "format": "offline", "sessions": "全4回＋個別相談", "schedule": "令和8年5月23日、5月30日、6月6日、6月20日（土曜日開催）", "capacity": null, "deadline": null, "contact": "043-201-9506", "status": "closed", "statusBasis": "受付状況欄が「受付終了」" },
+    { "name": "創業スクール", "org": "千葉県信用保証協会", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": "上期・下期の2回開催", "capacity": null, "deadline": null, "contact": "043-239-3281", "status": "unknown", "statusBasis": "市の一覧に具体的な日程の記載なし" }
+  ],
+  "coursesNote": "千葉市の一覧は**受付状況の列**を持っており（受付終了／空欄）、随時更新されると明記されています。本調査で受付状況が明示されていた数少ない自治体のひとつです。ただし受講料は記載されていないため、申込方法とあわせて各実施機関へお問い合わせください。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      { "label": "受講料", "body": "創業者研修・創業スクールとも金額の記載がありません" },
+      { "label": "定員・申込締切", "body": "記載がありません" },
+      { "label": "創業スクールの日程", "body": "「上期」「下期」とあるのみで具体的な日付がありません" }
+    ],
+    "action": "千葉市産業振興財団（043-201-9506）または千葉県信用保証協会（043-239-3281）へお問い合わせください。"
+  },
+  "highlight": {
+    "title": "受付状況が明示されている、数少ない自治体です",
+    "body": "千葉市の一覧には**受付状況の列**があり、「受付終了」が明記されています。多くの自治体は受付状況を出しておらず、開催日から推測するしかありません。千葉市は随時更新するとも明記しており、掲載情報の信頼度が相対的に高いといえます。"
+  },
+  "applicationSteps": [],
+  "otherBenefits": [
+    { "title": "創業関連保証", "body": "創業関連保証の特例が利用できます。" },
+    { "title": "日本政策金融公庫", "body": "新規開業・スタートアップ支援資金の貸付利率引き下げの対象になります。" },
+    { "title": "持続化補助金", "body": "小規模事業者持続化補助金〈創業型〉の申請対象になります。" }
+  ],
+  "localSupport": [
+    { "title": "千葉市創業促進事業補助金", "body": "会社設立にかかる費用を補助する市独自の制度があります。**株式会社は上限75,000円、合同会社は上限30,000円、定款認証手数料は上限50,000円（株式会社）**が対象です。登録免許税の軽減と組み合わせられます。" },
+    { "title": "その他の創業補助金", "body": "補助限度額30万円・50万円・200万円の複数の補助制度が市のページに掲載されています。" }
+  ],
+  "sources": [
+    { "title": "千葉市「特定創業支援等事業のご案内」", "url": "https://www.city.chiba.jp/keizainosei/keizai/sangyo/sougyoshienkeikaku.html" }
+  ]
+}

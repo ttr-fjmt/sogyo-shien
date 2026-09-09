@@ -1,0 +1,213 @@
+{
+  "slug": "yokohama",
+  "prefSlug": "kanagawa",
+  "pref": "神奈川県",
+  "name": "横浜市",
+  "kind": "政令指定都市",
+  "lastVerified": "2026-09-09",
+  "sourceUpdatedAt": "2026-09-08",
+  "publish": {
+    "ready": true,
+    "blockers": []
+  },
+  "taxReduction": {
+    "kabushiki": {
+      "before": 150000,
+      "after": 75000
+    },
+    "godo": {
+      "before": 60000,
+      "after": 30000
+    },
+    "rate": {
+      "before": "0.7%",
+      "after": "0.35%"
+    },
+    "notes": [
+      "令和6年4月1日より、合名会社および合資会社は軽減の対象外となりました。",
+      "登録免許税の減免を受けるには、登記時にセミナー等受講の証明書を法務局に提出する必要があります。既に登記が終了している方は減免を受けられません。",
+      "2社目の創業の場合、登録免許税の減免を受けることはできません。"
+    ]
+  },
+  "requirement": {
+    "minSessions": null,
+    "minMonths": null,
+    "subjects": [],
+    "lead": "「経営」「財務」「人材育成」「販路開拓」の知識を学べる継続的な支援を行うセミナー等を受講すること",
+    "notes": [
+      "セミナーは法人であれば代表者が受講する必要があります。役員や社員の方の受講ではメリットを受けられません。",
+      "令和7年10月1日から、証明書発行対象者は「直近5か年度内に横浜市特定創業支援等事業による支援を受け修了した方」のうち一定の要件を満たす方に変更されました。"
+    ]
+  },
+  "courses": [
+    {
+      "name": "創業スクール",
+      "org": "横浜市信用保証協会",
+      "fee": {
+        "free": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "令和8年10月28日（水）〜12月2日（水）",
+      "capacity": null,
+      "deadline": "令和8年10月12日（月）まで",
+      "status": "open",
+      "statusBasis": "締切日が未来"
+    },
+    {
+      "name": "よこはま地域創業スクール",
+      "org": "（特非）横浜中小企業診断士会",
+      "fee": {
+        "amount": 16500,
+        "taxIncluded": true
+      },
+      "format": "hybrid",
+      "sessions": null,
+      "schedule": "令和8年10月17日（土）〜11月7日（土）",
+      "capacity": "先着順",
+      "deadline": null,
+      "status": "open",
+      "statusBasis": "開催日が未来"
+    },
+    {
+      "name": "起業セミナー・インキュベーション事業",
+      "org": "銀座セカンドライフ（株）",
+      "fee": {
+        "amount": 16500,
+        "taxIncluded": true,
+        "note": "会員になることで無料（条件あり）"
+      },
+      "format": "hybrid",
+      "sessions": "全4回",
+      "schedule": "随時",
+      "capacity": null,
+      "deadline": "随時",
+      "status": "open",
+      "statusBasis": "随時受付"
+    },
+    {
+      "name": "起業実現ゼミ10",
+      "org": "（株）アイ・エス・オー",
+      "fee": {
+        "amount": 16500,
+        "taxIncluded": true
+      },
+      "format": "ondemand",
+      "sessions": "全10回",
+      "schedule": "週2回アーカイブ配信（受講終了まで最短5週間）",
+      "capacity": null,
+      "deadline": "随時",
+      "status": "open",
+      "statusBasis": "随時受付"
+    },
+    {
+      "name": "横浜女性起業家特定創業支援セミナー",
+      "org": "（株）ブルーコンパス",
+      "fee": {
+        "amount": 16500,
+        "taxIncluded": true,
+        "note": "会員になることで無料（条件あり）"
+      },
+      "format": "ondemand",
+      "sessions": "全4回",
+      "schedule": "随時（オンライン動画講座）※希望者は追加で対面面談可",
+      "capacity": null,
+      "deadline": "随時",
+      "status": "open",
+      "statusBasis": "随時受付",
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "name": "マスマスカレッジ実践創業講座オンデマンド",
+      "org": "関内イノベーションイニシアティブ（株）",
+      "fee": {
+        "amount": 33000,
+        "taxIncluded": true,
+        "note": "mass×mass関内フューチャーセンター利用契約者は半額"
+      },
+      "format": "ondemand",
+      "sessions": "全26動画",
+      "schedule": "随時",
+      "capacity": null,
+      "deadline": "令和8年度のメリットを希望する場合は1月末まで",
+      "status": "open",
+      "statusBasis": "随時受付"
+    },
+    {
+      "name": "インキュベート入居企業成長支援",
+      "org": "（公財）神奈川産業振興センター",
+      "fee": {
+        "unknown": true,
+        "note": "利用する部屋により変動"
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "随時（施設入居企業のみ対象）",
+      "capacity": null,
+      "deadline": "随時",
+      "status": "open",
+      "statusBasis": "随時受付"
+    }
+  ],
+  "coursesNote": "市の一覧は「申込受付中のセミナー等の詳細」として掲載されているものです。空き状況・内容・料金の詳細は各セミナー実施企業へ直接お問い合わせください。",
+  "highlight": {
+    "title": "無料で証明書を取りたいなら、横浜市信用保証協会の創業スクール",
+    "body": "横浜市の対象講座7件のうち、無料は横浜市信用保証協会の創業スクール1件だけです。他は16,500円が中心で、最も高いマスマスカレッジは33,000円。ただしオンデマンドで完結する講座が3件あり、通いにくい方はそちらを選べます。"
+  },
+  "applicationSteps": [
+    {
+      "text": "セミナー等一覧から申込のうえ、セミナーを受講する",
+      "sub": null
+    },
+    {
+      "text": "受講完了後、横浜市に証明書の発行を申請し、受け取る",
+      "sub": null
+    },
+    {
+      "text": "受けたいメリットの受付先に証明書を提出する",
+      "sub": null
+    }
+  ],
+  "otherBenefits": [
+    {
+      "title": "創業おうえん資金",
+      "body": "横浜市中小企業融資制度「創業おうえん資金」が事業開始6か月前から利用可能になります（通常は個人1か月前、会社2か月前）。"
+    },
+    {
+      "title": "スタートアップおうえん資金",
+      "body": "融資利率が軽減され、保証料率が全額助成されます。※会社のみ利用可能。"
+    },
+    {
+      "title": "日本政策金融公庫",
+      "body": "新規開業・スタートアップ支援資金における貸付利率引き下げの対象となります。"
+    },
+    {
+      "title": "持続化補助金",
+      "body": "小規模事業者持続化補助金の『創業型（補助上限額200万円）』に申請可能となります。"
+    }
+  ],
+  "localSupport": [
+    {
+      "title": "商店街空き店舗開業支援事業",
+      "body": "横浜市独自の制度で、証明書があると申請可能になります。"
+    },
+    {
+      "title": "ワンストップ経営相談窓口",
+      "body": "（公財）横浜企業経営支援財団で、中小企業診断士や税理士などの専門相談員に無料で相談できます。事前予約制です。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "横浜市の創業支援（創業セミナー等）",
+      "url": "https://www.city.yokohama.lg.jp/business/keizai/sougyo/sogyoshien/sougyoshien2019.html"
+    },
+    {
+      "title": "横浜市 サイトポリシー",
+      "url": "https://www.city.yokohama.lg.jp/aboutweb/sitepolicy.html"
+    }
+  ],
+  "kana": "よこはま",
+  "prefKana": "かながわ"
+}

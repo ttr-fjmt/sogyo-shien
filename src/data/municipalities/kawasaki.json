@@ -1,0 +1,288 @@
+{
+  "slug": "kawasaki",
+  "prefSlug": "kanagawa",
+  "pref": "神奈川県",
+  "name": "川崎市",
+  "kind": "政令指定都市",
+  "lastVerified": "2026-09-09",
+  "sourceUpdatedAt": null,
+  "taxReduction": {
+    "kabushiki": {
+      "before": 150000,
+      "after": 75000
+    },
+    "godo": {
+      "before": 60000,
+      "after": 30000
+    },
+    "rate": {
+      "before": "0.7%",
+      "after": "0.35%"
+    },
+    "notes": [
+      "軽減を受けるには、登記申請のときに証明書を法務局へ提出する必要があります。設立登記が済んでしまうと、あとから軽減を受けることはできません。"
+    ]
+  },
+  "requirement": {
+    "minSessions": 4,
+    "minMonths": 1,
+    "subjects": [
+      "経営",
+      "財務",
+      "人材育成",
+      "販路開拓"
+    ],
+    "notes": [
+      "複数の事業を組み合わせても構いません。",
+      "法人の場合は代表者本人が受講する必要があり、役員や社員が受けても軽減は受けられません。",
+      "2社目の創業、事業承継した2代目代表は対象外です。"
+    ]
+  },
+  "courses": [
+    {
+      "name": "K-NIC起業相談プログラム",
+      "org": "K-NIC事務局",
+      "fee": {
+        "free": true
+      },
+      "format": "online",
+      "sessions": "通年",
+      "schedule": "通年",
+      "capacity": null,
+      "deadline": null,
+      "status": "open",
+      "statusBasis": "通年受付"
+    },
+    {
+      "name": "かわさき創業塾",
+      "org": "川崎商工会議所",
+      "fee": {
+        "free": true
+      },
+      "format": "offline",
+      "sessions": "全5回",
+      "schedule": "10/3・10・17・24・31",
+      "capacity": "定員30名・先着",
+      "deadline": "9月30日〆切",
+      "status": "open",
+      "statusBasis": "締切日が未来"
+    },
+    {
+      "name": "初めての創業・実践スタートアップ講座",
+      "org": "神奈川県行政書士会",
+      "fee": {
+        "free": true
+      },
+      "format": "offline",
+      "sessions": "全5回",
+      "schedule": "11/14・21・28、12/5・12",
+      "capacity": "定員50名・先着",
+      "deadline": null,
+      "status": "open",
+      "statusBasis": "開催日が未来"
+    },
+    {
+      "name": "オンライン創業支援セミナー「みらい海図」",
+      "org": "横浜銀行",
+      "fee": {
+        "free": true
+      },
+      "format": "online",
+      "sessions": "全5回",
+      "schedule": "8/29、9/5・12・26、10/3",
+      "capacity": null,
+      "deadline": null,
+      "status": "closed",
+      "statusBasis": "初回開催日を経過"
+    },
+    {
+      "name": "ソーシャルビジネス起業スクール",
+      "org": "K-NIC事務局",
+      "fee": {
+        "free": true
+      },
+      "format": "offline",
+      "sessions": "全6回",
+      "schedule": "9/4・11・18・25、10/2・17",
+      "capacity": "先着30名",
+      "deadline": null,
+      "status": "closed",
+      "statusBasis": "初回開催日を経過"
+    },
+    {
+      "name": "想いをカタチに「想業セミナー」",
+      "org": "川崎信用金庫",
+      "fee": {
+        "free": true
+      },
+      "format": "offline",
+      "sessions": "全5回",
+      "schedule": "8/29、9/5・12・26、10/3",
+      "capacity": "定員20名",
+      "deadline": "8月21日〆切",
+      "status": "closed",
+      "statusBasis": "締切日を経過"
+    },
+    {
+      "name": "女性起業家ビギナーズ向け「起業プラン作成支援講座」",
+      "org": "川崎市男女共同参画センター すくらむ21",
+      "fee": {
+        "amount": 6000,
+        "taxIncluded": true
+      },
+      "format": "offline",
+      "sessions": "全5回",
+      "schedule": "10/18〜11/29",
+      "capacity": "先着",
+      "deadline": "9月1日募集開始",
+      "status": "open",
+      "statusBasis": "開催日が未来",
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "name": "かわさき起業家塾",
+      "org": "川崎市産業振興財団 中小企業サポートセンター",
+      "fee": {
+        "amount": 10000,
+        "taxIncluded": true
+      },
+      "format": "offline",
+      "sessions": "全8回",
+      "schedule": "令和8年度は日程未定",
+      "capacity": null,
+      "deadline": null,
+      "status": "tbd",
+      "statusBasis": "市のページに「R8未定」と記載"
+    },
+    {
+      "name": "つばめ創業セミナー",
+      "org": "フリー株式会社",
+      "fee": {
+        "amount": 16500,
+        "taxIncluded": true
+      },
+      "format": "online",
+      "sessions": "通年",
+      "schedule": "eラーニング・通年",
+      "capacity": null,
+      "deadline": null,
+      "status": "open",
+      "statusBasis": "通年受付"
+    },
+    {
+      "name": "かわさき店舗出店支援プログラム（NOREN）",
+      "org": "川崎市 商業・サービス業振興担当",
+      "fee": {
+        "amount": 20000,
+        "taxIncluded": true
+      },
+      "format": "offline",
+      "sessions": "全10回",
+      "schedule": "10/25〜12/12",
+      "capacity": "定員15名程度・選考あり",
+      "deadline": "9月24日〆切",
+      "status": "open",
+      "statusBasis": "締切日が未来"
+    },
+    {
+      "name": "KSPビジネスイノベーションスクール",
+      "org": "ケイエスピー インキュベート投資事業部",
+      "fee": {
+        "amount": 396000,
+        "taxIncluded": true
+      },
+      "format": "offline",
+      "sessions": "全13回",
+      "schedule": "7/22〜令和9年1/27",
+      "capacity": null,
+      "deadline": null,
+      "status": "closed",
+      "statusBasis": "初回開催日を経過"
+    },
+    {
+      "name": "起業セミナー・インキュベーション事業",
+      "org": "銀座セカンドライフ アントレサロン",
+      "fee": {
+        "unknown": true,
+        "note": "実施機関に要確認"
+      },
+      "format": "online",
+      "sessions": "通年",
+      "schedule": "通年",
+      "capacity": null,
+      "deadline": null,
+      "status": "open",
+      "statusBasis": "通年受付"
+    }
+  ],
+  "coursesNote": "「受付」は市の一覧に受付状況の記載がないため、公表されている日程・締切から判定したものです。定員到達により締め切られている場合があります。申込前に各実施機関へご確認ください。",
+  "highlight": {
+    "title": "無料でオンライン完結を狙うなら、通年受付の「K-NIC起業相談プログラム」",
+    "body": "費用をかけずに証明書を取りたい場合、対面の無料講座は開講時期が限られます。通年受付かつオンラインで完結するのはK-NICの起業相談プログラムです。日程の合う無料の対面講座（かわさき創業塾・行政書士会の講座）が募集中であれば、そちらでも同じ証明書が出ます。"
+  },
+  "applicationSteps": [
+    {
+      "text": "特定創業支援等事業を受講し、各事業で定められた修了条件を満たす",
+      "sub": "受講回数・期間の要件は事業ごとに異なります"
+    },
+    {
+      "text": "実施機関から修了証等の交付を受ける",
+      "sub": null
+    },
+    {
+      "text": "川崎市へ証明書の交付を申請する",
+      "sub": "オンライン申請フォームからの手続きが可能です"
+    },
+    {
+      "text": "証明書を受け取り、登記申請時に法務局へ提出する",
+      "sub": "登記が終わってからでは軽減を受けられません"
+    }
+  ],
+  "otherBenefits": [
+    {
+      "title": "創業関連保証",
+      "body": "無担保・第三者保証人なしの創業関連保証を、事業開始の6か月前から利用できます（通常は個人1か月前・法人2か月前）。"
+    },
+    {
+      "title": "日本政策金融公庫",
+      "body": "新規開業・スタートアップ支援資金の貸付利率引き下げの対象になります。"
+    },
+    {
+      "title": "持続化補助金",
+      "body": "小規模事業者持続化補助金〈創業型〉の申請対象になります。"
+    }
+  ],
+  "localSupport": [
+    {
+      "title": "起業家オーディション",
+      "body": "川崎市産業振興財団主催の「かわさき起業家オーディション」で最終選考会へ進出した方は、講座を受講しなくても特定創業支援等事業を修了したものとして証明書が発行されます。"
+    },
+    {
+      "title": "インキュベーション施設",
+      "body": "かながわサイエンスパーク（KSP）内の施設、または明治大学地域産学連携研究センターのテクノロジーインキュベーション室に1か月以上入居し、インキュベーションマネージャーの支援を4回以上受けた方も証明書の対象です。"
+    },
+    {
+      "title": "証明書の交付対象",
+      "body": "令和6年8月1日から、営利法人の設立後の方は原則として交付対象外です。創業前、または個人事業主として創業後5年未満の方が対象になります。"
+    }
+  ],
+  "unknowns": [],
+  "sources": [
+    {
+      "title": "川崎市「特定創業支援等事業について」",
+      "url": "https://www.city.kawasaki.jp/280/page/0000061862.html"
+    },
+    {
+      "title": "川崎市 著作権・リンク・免責事項",
+      "url": "https://www.city.kawasaki.jp/main/site_policy/0000000027.html"
+    }
+  ],
+  "publish": {
+    "ready": true,
+    "blockers": []
+  },
+  "kana": "かわさき",
+  "prefKana": "かながわ"
+}

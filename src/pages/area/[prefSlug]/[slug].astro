@@ -1,0 +1,289 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {
+  mdBold, yen, feeLabel, isFree, byFee, STATUS, FORMAT,
+  pageTitle, metaDescription, eventJsonLd,
+} from '../../../lib/fmt.js';
+import { published } from '../../../lib/catalog.js';
+
+export async function getStaticPaths() {
+  const files = import.meta.glob('../../../data/municipalities/*.json', { eager: true });
+  return Object.values(files).map((mod) => {
+    const m = mod.default ?? mod;
+    return { params: { prefSlug: m.prefSlug, slug: m.slug }, props: { m } };
+  });
+}
+
+const { m } = Astro.props;
+const courses = [...(m.courses ?? [])].sort(byFee);
+// 3件未満はテーブルが成り立たないのでカード表示に切り替える
+const asTable = courses.length >= 3;
+const freeCount = courses.filter(isFree).length;
+const title = pageTitle(m);
+const description = metaDescription(m);
+const jsonLd = eventJsonLd(m, Astro.site?.href ?? '');
+// 同一都道府県の他の自治体へ回遊させる（内部リンク）
+const siblings = published.filter((x) => x.prefSlug === m.prefSlug && x.slug !== m.slug);
+const others = published.filter((x) => x.prefSlug !== m.prefSlug).slice(0, 6);
+---
+
+<Base title={title} description={description} jsonLd={jsonLd} noindex={!m.publish?.ready}>
+  <p class="eyebrow">
+    {m.pref} <span class="sep"></span> {m.name} <span class="sep"></span> 創業・会社設立
+  </p>
+
+  <h1>
+    <span class="nb">{m.name}で会社を設立すると、</span><span class="nb"
+      >登録免許税が{yen(m.taxReduction.kabushiki.before - m.taxReduction.kabushiki.after)}安くなる</span
+    >
+  </h1>
+
+  <p class="standfirst">
+    条件は、{m.name}の「特定創業支援等事業」に指定された講座を
+    {m.requirement.minSessions
+      ? `${m.requirement.minSessions}回以上・${m.requirement.minMonths}か月以上`
+      : '規定の回数以上'}受けること。
+    対象講座は{courses.length}件{freeCount > 0 ? `（うち無料${freeCount}件）` : ''}です。
+  </p>
+
+  <p class="stamp">最終確認 <b>{m.lastVerified}</b>　—　出典は各実施機関の公式ページ</p>
+
+  <h2>いくら安くなるか</h2>
+  <div class="ledger">
+    <div class="ledger-cell">
+      <p class="kind">株式会社を設立する場合</p>
+      <p class="amounts">
+        <span class="was">{yen(m.taxReduction.kabushiki.before)}</span>
+        <span class="arrow">→</span>
+        <span class="now">{yen(m.taxReduction.kabushiki.after)}</span>
+      </p>
+      <p class="note">
+        資本金の{m.taxReduction.rate.before}が{m.taxReduction.rate.after}に軽減。
+        最低税額{yen(m.taxReduction.kabushiki.before)}のケースで{yen(
+          m.taxReduction.kabushiki.before - m.taxReduction.kabushiki.after
+        )}の軽減。
+      </p>
+    </div>
+    <div class="ledger-cell">
+      <p class="kind">合同会社を設立する場合</p>
+      <p class="amounts">
+        <span class="was">{yen(m.taxReduction.godo.before)}</span>
+        <span class="arrow">→</span>
+        <span class="now">{yen(m.taxReduction.godo.after)}</span>
+      </p>
+      <p class="note">
+        同じく{m.taxReduction.rate.before}→{m.taxReduction.rate.after}。
+        最低税額{yen(m.taxReduction.godo.before)}のケースで{yen(
+          m.taxReduction.godo.before - m.taxReduction.godo.after
+        )}の軽減。
+      </p>
+    </div>
+  </div>
+
+  {m.taxReduction.notes?.map((n) => <p>{n}</p>)}
+
+  {/* 自治体間で記載が食い違う点は、断定せず確認先を出す */}
+  {m.conflicts?.map((c) => (
+    <div class="gaps">
+      <h3>{c.title}</h3>
+      <ul>{c.points.map((p) => <li set:html={mdBold(p)} />)}</ul>
+      <p class="who">{c.action}</p>
+    </div>
+  ))}
+
+  <h2>{m.name}で受けられる講座</h2>
+
+  {asTable ? (
+    <>
+      <p class="tablenote">
+        <span>
+          受講料の安い順。同じ「特定創業支援等事業」の証明書が出るため、
+          <strong>どの講座を選んでも軽減額は変わりません</strong>。
+        </span>
+      </p>
+      <div class="scroller">
+        <table>
+          <caption>{m.name}創業支援等事業計画に定める特定創業支援等事業（{courses.length}件）</caption>
+          <thead>
+            <tr>
+              <th scope="col">受講料</th>
+              <th scope="col">講座 / 実施機関</th>
+              <th scope="col">形式</th>
+              <th scope="col">回数</th>
+              <th scope="col">日程・定員</th>
+              <th scope="col">受付</th>
+            </tr>
+          </thead>
+          <tbody>
+            {courses.map((c) => (
+              <tr>
+                <td class:list={['fee', { 'is-free': isFree(c) }]}>{feeLabel(c.fee)}</td>
+                <td class="name">{c.name}<span class="org">{c.org}</span></td>
+                <td><span class:list={['badge', FORMAT[c.format].cls]}>{FORMAT[c.format].label}</span></td>
+                <td class="meta">{c.sessions ?? '—'}</td>
+                <td class="meta">
+                  {c.schedule}
+                  {c.capacity && <><br />{c.capacity}</>}
+                  {c.deadline && <><br />{c.deadline}</>}
+                </td>
+                <td><span class:list={['badge', STATUS[c.status].cls]}>{STATUS[c.status].label}</span></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {m.coursesNote && (
+        <p class="tablenote" style="margin-top:var(--s2)"><span>{m.coursesNote}</span></p>
+      )}
+    </>
+  ) : (
+    <>
+      {m.coursesIntro && (
+        <p class="only">
+          <span class="count">{courses.length}</span>
+          <span set:html={mdBold(m.coursesIntro.replace(/^\d+件だけです。/, ''))} />
+        </p>
+      )}
+      {courses.map((c) => (
+        <div class="course">
+          <div class="course-head">
+            <div>
+              <p class="t">{c.name}</p>
+              <p class="org">{c.org}</p>
+            </div>
+            <span class="course-fee">{feeLabel(c.fee)}</span>
+          </div>
+          <dl class="spec">
+            <dt>開催期間</dt><dd>{c.schedule ?? <span class="miss">記載なし</span>}</dd>
+            <dt>回数</dt><dd>{c.sessions ?? <span class="miss">記載なし</span>}</dd>
+            <dt>会場</dt>
+            <dd>
+              {c.venue ?? FORMAT[c.format].label}
+              <span class:list={['badge', FORMAT[c.format].cls]}>{FORMAT[c.format].label}</span>
+            </dd>
+            <dt>受講料</dt>
+            <dd>{feeLabel(c.fee)}{c.fee?.note ? `（${c.fee.note}）` : ''}</dd>
+            {c.content && <><dt>内容</dt><dd>{c.content}</dd></>}
+            <dt>定員</dt><dd>{c.capacity ?? <span class="miss">記載なし</span>}</dd>
+            <dt>申込締切</dt><dd>{c.deadline ?? <span class="miss">記載なし</span>}</dd>
+            <dt>対象者</dt><dd>{c.target ?? <span class="miss">記載なし</span>}</dd>
+            {c.contact && <><dt>問合せ</dt><dd>{c.contact}</dd></>}
+          </dl>
+        </div>
+      ))}
+    </>
+  )}
+
+  {/* 記載のない項目は空欄にせず、問い合わせ先に送る */}
+  {m.unknowns?.items && (
+    <div class="gaps">
+      <h3>{m.unknowns.title}</h3>
+      <ul>
+        {m.unknowns.items.map((u) => (
+          <li><strong>{u.label}</strong> — {u.body}</li>
+        ))}
+      </ul>
+      <p class="who" set:html={mdBold(m.unknowns.action)} />
+    </div>
+  )}
+
+  {m.highlight && (
+    <div class="pull">
+      <p class="big">{m.highlight.title}</p>
+      <p set:html={mdBold(m.highlight.body)} />
+    </div>
+  )}
+
+  {m.applicationSteps?.length > 0 && (
+    <>
+      <h2>証明書の申請手順</h2>
+      <ol class="steps">
+        {m.applicationSteps.map((s) => (
+          <li>
+            <p>{s.text}</p>
+            {s.sub && <p class="sub">{s.sub}</p>}
+          </li>
+        ))}
+      </ol>
+    </>
+  )}
+
+  {m.requirement.lead && (
+    <>
+      <h2>半額にするための条件</h2>
+      <div class="cond">
+        <p class="lead">{m.requirement.lead}</p>
+        {m.requirement.notes?.map((n) => <p>{n}</p>)}
+      </div>
+    </>
+  )}
+
+  {m.requirement.minSessions && (
+    <>
+      <h2>半額にするための条件</h2>
+      <div class="cond">
+        <p class="lead">次の2つを両方満たすこと</p>
+        <p>
+          ① {m.name}の特定創業支援等事業を
+          <strong>{m.requirement.minSessions}回以上、原則{m.requirement.minMonths}か月以上</strong>
+          の期間にわたって受ける<br />
+          ② 「{m.requirement.subjects.join('」「')}」の{m.requirement.subjects.length}分野すべての知識を得る
+        </p>
+      </div>
+      {m.requirement.notes?.map((n) => <p>{n}</p>)}
+    </>
+  )}
+
+  <h2>証明書で使える他の優遇</h2>
+  <dl class="local">
+    {m.otherBenefits.map((b) => (
+      <div class="local-row"><dt>{b.title}</dt><dd set:html={mdBold(b.body)} /></div>
+    ))}
+  </dl>
+
+  {m.localSupport?.length > 0 && (
+    <>
+      <h2>{m.name}だけの取り扱い</h2>
+      <dl class="local">
+        {m.localSupport.map((b) => (
+          <div class="local-row"><dt>{b.title}</dt><dd set:html={mdBold(b.body)} /></div>
+        ))}
+      </dl>
+    </>
+  )}
+
+  <h2>他の市区町村を調べる</h2>
+  {siblings.length > 0 && (
+    <>
+      <h3>{m.pref}内の他の市区町村</h3>
+      <dl class="local">
+        {siblings.map((x) => (
+          <div class="local-row">
+            <dt><a href={`/area/${x.prefSlug}/${x.slug}/`}>{x.name}</a></dt>
+            <dd>対象講座 {x.courses.length}件・最終確認 {x.lastVerified}</dd>
+          </div>
+        ))}
+      </dl>
+    </>
+  )}
+  <h3>他の都道府県</h3>
+  <dl class="local">
+    {others.map((x) => (
+      <div class="local-row">
+        <dt><a href={`/area/${x.prefSlug}/${x.slug}/`}>{x.name}</a></dt>
+        <dd>{x.pref}・対象講座 {x.courses.length}件</dd>
+      </div>
+    ))}
+  </dl>
+  <p><a href="/">すべての市区町村から探す</a>　／　<a href="/compare/fee/">受講料を比べる</a></p>
+
+  <h2>出典</h2>
+  <div class="sources">
+    本ページの内容は、{m.lastVerified}に以下の公式ページから取得した情報にもとづいています。受講料・日程は年度により変わります。
+    <ul>
+      {m.sources.map((s) => (
+        <li>{s.title} <a href={s.url} rel="nofollow">{s.url}</a></li>
+      ))}
+    </ul>
+  </div>
+</Base>

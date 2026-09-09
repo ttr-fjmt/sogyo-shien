@@ -1,0 +1,172 @@
+{
+  "slug": "naha",
+  "prefSlug": "okinawa",
+  "pref": "沖縄県",
+  "name": "那覇市",
+  "kind": "中核市",
+  "lastVerified": "2026-09-09",
+  "sourceUpdatedAt": "2026-09-04",
+  "publish": {
+    "ready": false,
+    "blockers": [
+      "市のページに講座が1件も掲載されていない（支援機関名とメニュー名のみ）",
+      "受講料・開催日ともに記載が一切ない"
+    ]
+  },
+  "taxReduction": {
+    "kabushiki": {
+      "before": 150000,
+      "after": 75000
+    },
+    "godo": {
+      "before": 60000,
+      "after": 30000
+    },
+    "rate": {
+      "before": "0.7%",
+      "after": "0.35%"
+    },
+    "notes": [
+      "株式会社・合同会社の設立時のみが対象です。"
+    ]
+  },
+  "requirement": {
+    "minSessions": 4,
+    "minMonths": 1,
+    "subjects": [
+      "経営",
+      "財務",
+      "人材育成",
+      "販路開拓"
+    ],
+    "notes": [
+      "創業予定または創業後の事業等が公序良俗を害するおそれがないことが要件に含まれます。"
+    ]
+  },
+  "courses": [
+    {
+      "name": "創業塾",
+      "org": "那覇商工会議所",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに日程・費用の記載なし。那覇商工会議所に令和8年度創業塾の告知あり"
+    },
+    {
+      "name": "コザしん創業スクール",
+      "org": "コザ信用金庫",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに日程・費用の記載なし"
+    },
+    {
+      "name": "起業・創業セミナー",
+      "org": "一般社団法人アントレプレナーシップラボ沖縄",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに日程・費用の記載なし"
+    },
+    {
+      "name": "女性・若年社会人向け創業セミナー",
+      "org": "一般社団法人ひとまちcreateなは",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに日程・費用の記載なし",
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "name": "創業相談",
+      "org": "琉球ミライ株式会社",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに日程・費用の記載なし"
+    }
+  ],
+  "coursesNote": "那覇市のページは「支援機関」と「支援メニュー」の2列表のみで、開催日・受講料・定員・締切・申込URLはいずれも記載がありません。上記は支援メニュー名を講座として並べたものです。実際の日程は各支援機関へお問い合わせください。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      {
+        "label": "開催日",
+        "body": "日付情報がページ内に一切ありません"
+      },
+      {
+        "label": "受講料・定員・締切",
+        "body": "いずれも記載がありません"
+      },
+      {
+        "label": "申込先",
+        "body": "各機関のトップページへの外部リンクのみで、申込ページへの導線がありません"
+      }
+    ],
+    "action": "那覇商工会議所（nahacci.com）のセミナー情報に令和8年度創業塾の告知があります。他の機関についてはそれぞれの公式サイトをご確認ください。"
+  },
+  "otherBenefits": [
+    {
+      "title": "創業関連保証",
+      "body": "創業関連保証の特例について、事業開始の2か月前から6か月前に前倒しで利用可能になります。"
+    },
+    {
+      "title": "沖縄振興開発金融公庫",
+      "body": "新規開業支援資金の貸付利率が引き下げられます。"
+    }
+  ],
+  "localSupport": [
+    {
+      "title": "沖縄県「創業者支援資金」の要件緩和",
+      "body": "沖縄県の創業者支援資金について、所要資金の自己資金要件が**20%から10%以上に緩和**されます。沖縄県内ならではの優遇です。"
+    },
+    {
+      "title": "沖縄振興開発金融公庫",
+      "body": "本土の日本政策金融公庫ではなく、沖縄振興開発金融公庫が窓口になります。"
+    },
+    {
+      "title": "沖縄海邦銀行のフォローアップ",
+      "body": "「かいぎん創業支援塾」「事業計画策定支援」「資金調達支援」等のフォローアップが受けられます。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "那覇市「特定創業支援等事業」",
+      "url": "https://www.city.naha.okinawa.jp/business/kigyouricchi/1003647/1008741.html"
+    }
+  ],
+  "kana": "なは",
+  "prefKana": "おきなわ"
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "niigata",
+  "prefSlug": "niigata",
+  "pref": "新潟県",
+  "prefKana": "にいがた",
+  "kana": "にいがた",
+  "name": "新潟市",
+  "kind": "政令指定都市",
+  "lastVerified": "2026-09-09",
+  "sourceUpdatedAt": "2026-08-06",
+  "publish": {
+    "ready": false,
+    "blockers": [
+      "受講料が1件も判明していない",
+      "具体的な開催日が1件もない",
+      "新潟商工会議所の創業塾スケジュールはPDFのみで、掲載されているのは2025年版"
+    ]
+  },
+  "taxReduction": {
+    "kabushiki": { "before": 150000, "after": 75000 },
+    "godo": { "before": 60000, "after": 30000 },
+    "rate": { "before": "0.7%", "after": "0.35%" },
+    "notes": [
+      "対象は株式会社と合同会社です。",
+      "証明書に記載の「商号（屋号）」「本店所在地」「資本額」が登記時のものと異なると、メリットを受けることができません。",
+      "軽減を受けるためには登記時に証明書を法務局に提出する必要があります。登記後に軽減措置を受けることはできません。"
+    ]
+  },
+  "requirement": {
+    "minSessions": 4,
+    "minMonths": 1,
+    "subjects": ["経営", "財務", "人材育成", "販路開拓"],
+    "notes": [
+      "セミナーや相談を通して4つの知識を身につけるもので、支援の形は事業者により異なります。"
+    ]
+  },
+  "courses": [
+    { "name": "創業塾（にいがた創業塾 全4回＋個別相談会）", "org": "新潟商工会議所", "fee": { "unknown": true, "note": "スケジュールと受講料はPDFのチラシのみで公開" }, "format": "offline", "sessions": "全4回＋個別相談会", "schedule": null, "capacity": null, "deadline": null, "contact": "025-290-4212（経営相談課）", "status": "unknown", "statusBasis": "サイト掲載のスケジュールは2025年版のPDF。令和8年度の日程は未確認" },
+    { "name": "創業セミナー／ワンストップ相談窓口", "org": "新潟IPC財団", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "contact": "025-226-0550", "status": "unknown", "statusBasis": "市のページは事業者一覧のみで、日程・費用の記載なし" },
+    { "name": "創業塾（セミナー）／創業相談窓口", "org": "株式会社大光銀行", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "contact": "0258-36-4111", "status": "unknown", "statusBasis": "同上" },
+    { "name": "創業アカデミー（セミナー）／創業相談窓口", "org": "新潟縣信用組合", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "contact": "025-228-4111", "status": "unknown", "statusBasis": "同上" },
+    { "name": "創業相談窓口／創業セミナー", "org": "市内商工会（豊栄・新潟こうなん・小須戸・新潟みなみ・西新潟・新潟にしかん）", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "同上" },
+    { "name": "創業相談窓口", "org": "新津商工会議所", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "contact": "0250-22-0121", "status": "unknown", "statusBasis": "同上" },
+    { "name": "創業相談窓口", "org": "亀田商工会議所", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "contact": "025-382-5111", "status": "unknown", "statusBasis": "同上" },
+    { "name": "創業相談窓口", "org": "第四北越銀行／第四北越リサーチ&コンサルティング／新潟信用金庫", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "同上" }
+  ],
+  "coursesNote": "新潟市のページは創業支援事業者11者の一覧（事業者名・支援事業・問い合わせ先）であり、講座の日程や受講料は掲載されていません。新潟商工会議所の創業塾もスケジュールがPDFのチラシのみで公開されており、掲載されているのは2025年版です。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      { "label": "受講料", "body": "11事業者すべてについて費用の記載がありません" },
+      { "label": "開催日", "body": "市のページには日程情報がなく、事業者の連絡先のみが掲載されています" },
+      { "label": "商工会議所の創業塾の日程", "body": "PDFのチラシでのみ公開されており、サイト上のものは2025年版です" }
+    ],
+    "action": "新潟商工会議所 経営相談課（025-290-4212）または新潟IPC財団（025-226-0550）へ直接お問い合わせください。"
+  },
+  "highlight": {
+    "title": "新潟市の独自支援は、調査したなかで最も踏み込んでいます",
+    "body": "証明書があると、中小企業開業資金（創業関連保証）の借入時に**3年間の利子を市が全額負担**します。さらに保証料の補助対象となる借入限度額が**1,000万円から2,000万円に拡大**されます。対象は「市内で6か月以内に創業もしくは会社設立をする方、市内で開業後6か月未満の方」です。"
+  },
+  "applicationSteps": [],
+  "otherBenefits": [
+    { "title": "持続化補助金", "body": "小規模事業者持続化補助金〈創業型〉の申請が可能になります。" },
+    { "title": "創業関連保証", "body": "創業関連保証の特例が利用できます。" }
+  ],
+  "localSupport": [
+    { "title": "開業資金の利子を3年間市が全額負担", "body": "中小企業開業資金（創業関連保証）を借り入れる方に対し、**3年間の利子を新潟市が全額負担**します。窓口は新潟市経済部商業振興課です。" },
+    { "title": "保証料補助の限度額を2倍に拡大", "body": "保証料の補助対象となる借入限度額が、**1,000万円から2,000万円まで拡大**されます。" },
+    { "title": "証明書の記載内容に注意", "body": "証明書に記載の「商号（屋号）」「本店所在地」「資本額」が登記時のものと異なると、登録免許税の軽減を受けられません。他の自治体には見られない明示的な注意書きです。" }
+  ],
+  "sources": [
+    { "title": "新潟市「新潟市創業支援等事業計画」", "url": "https://www.city.niigata.lg.jp/business/shoko/shokoshien/sogyoshien/sogyoshienn.html" },
+    { "title": "新潟商工会議所「創業塾」", "url": "https://www.niigata-cci.or.jp/%E5%89%B5%E6%A5%AD%E5%A1%BE" },
+    { "title": "にいがた創業塾スケジュール（PDF・2025年版）", "url": "https://www.niigata-cci.or.jp/wp/wp-content/uploads/2025/06/92f33a496810cdcbcc3fc9a7ae3e08db.pdf" }
+  ]
+}

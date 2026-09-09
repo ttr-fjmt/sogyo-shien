@@ -1,0 +1,52 @@
+{
+  "slug": "koto", "prefSlug": "tokyo", "pref": "東京都", "prefKana": "とうきょう", "kana": "こうとう",
+  "name": "江東区", "kind": "特別区",
+  "lastVerified": "2026-09-09", "sourceUpdatedAt": "2026-09-01",
+  "publish": { "ready": true, "blockers": [] },
+  "taxReduction": {
+    "kabushiki": { "before": 150000, "after": 75000 },
+    "godo": { "before": 60000, "after": 30000 },
+    "rate": { "before": "0.7%", "after": "0.35%" },
+    "notes": []
+  },
+  "requirement": {
+    "minSessions": 4, "minMonths": 1,
+    "subjects": ["経営", "財務", "人材育成", "販路開拓"],
+    "notes": ["1か月以上かけて、全4回の講義を受けます。", "支援には一定の期間を要するため、事前に区の経済課融資相談係へ連絡が必要です。"]
+  },
+  "courses": [
+    { "name": "江東区創業塾（第4回）", "org": "江東区経済課", "fee": { "unknown": true }, "format": "offline", "sessions": "全5回", "schedule": "令和8年9月10日〜10月8日", "capacity": null, "deadline": null, "status": "open", "statusBasis": "年8回の開催予定のうち開催期間が未来。受付状況の記載はなし" },
+    { "name": "江東区創業塾（第5回）", "org": "江東区経済課", "fee": { "unknown": true }, "format": "offline", "sessions": "全5回", "schedule": "令和8年10月15日〜11月12日", "capacity": null, "deadline": null, "status": "open", "statusBasis": "同上" },
+    { "name": "江東区創業塾（第6回）", "org": "江東区経済課", "fee": { "unknown": true }, "format": "offline", "sessions": "全5回", "schedule": "令和8年11月19日〜12月17日", "capacity": null, "deadline": null, "status": "open", "statusBasis": "同上" },
+    { "name": "江東区創業塾（第7回）", "org": "江東区経済課", "fee": { "unknown": true }, "format": "offline", "sessions": "全5回", "schedule": "令和9年1月9日〜2月6日", "capacity": null, "deadline": null, "status": "open", "statusBasis": "同上" },
+    { "name": "江東区創業塾（第8回）", "org": "江東区経済課", "fee": { "unknown": true }, "format": "offline", "sessions": "全5回", "schedule": "令和9年2月20日〜3月27日", "capacity": null, "deadline": null, "status": "open", "statusBasis": "同上" },
+    { "name": "ひがしん創業塾", "org": "東京東信用金庫", "fee": { "unknown": true }, "format": "offline", "sessions": "全6日間", "schedule": "令和8年10月10日〜12月12日（土曜日開催）", "capacity": null, "deadline": null, "status": "open", "statusBasis": "開催期間が未来。申込は東京東信用金庫のサイトから" },
+    { "name": "こうとう創業塾", "org": "東栄信用金庫", "fee": { "unknown": true }, "format": "offline", "sessions": "全6日間", "schedule": "令和8年8月22日〜9月26日（毎週土曜日）", "capacity": null, "deadline": null, "status": "closed", "statusBasis": "区のページに「（募集終了）」と明記" }
+  ],
+  "coursesNote": "江東区創業塾は年8回実施（各回全5回）で、区のページに全8回の日程が掲載されています。上表は開催期間が未来のものを抜粋しました。受講料は区のページに記載がないため、各実施機関へお問い合わせください。",
+  "unknowns": {
+    "title": "区のページから分からないこと",
+    "items": [
+      { "label": "受講料", "body": "江東区創業塾・ひがしん創業塾いずれも金額の記載がありません" },
+      { "label": "定員・申込締切", "body": "記載がありません" },
+      { "label": "受付状況", "body": "「募集終了」の表記はありますが、開催予定分に受付中かどうかの表示はありません" }
+    ],
+    "action": "江東区 地域振興部 経済課 融資相談係（03-3699-6111／区役所4階28番窓口）へお問い合わせください。"
+  },
+  "highlight": {
+    "title": "年8回開催なので、日程が合わないという理由で諦めなくて済みます",
+    "body": "江東区創業塾は**年8回**実施され、各回とも全5回・1か月程度で完結します。4月から翌3月までほぼ毎月どこかで開講しているため、他の自治体のように「年1回を逃すと翌年度」ということになりません。加えて信用金庫2行も創業塾を開いています。"
+  },
+  "applicationSteps": [],
+  "otherBenefits": [
+    { "title": "創業関連保証", "body": "創業関連保証の特例が利用できます。" },
+    { "title": "持続化補助金", "body": "小規模事業者持続化補助金の補助上限額が引き上げられます。" }
+  ],
+  "localSupport": [
+    { "title": "江東区創業支援資金の特定創業者特例", "body": "区内でこれから創業する場合または創業後1年未満の場合、区様式の創業計画書を作成し経営相談員の審査を受けると、**利子補助率が優遇**されます。" },
+    { "title": "アジアスタートアップオフィスMONO", "body": "江東区青海のインキュベーション施設に入居する際、**利用料が1か月無料、1年間50％割引**の優遇対象になります（別途審査および上限条件あり）。" }
+  ],
+  "sources": [
+    { "title": "江東区「江東区創業支援等事業・特定創業支援等事業について」", "url": "https://www.city.koto.lg.jp/102010/sangyoshigoto/chusho/kekaku/jigyokeikaku.html" }
+  ]
+}

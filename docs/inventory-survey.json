@@ -1,0 +1,1016 @@
+{
+  "meta": {
+    "survey_date": "2026-09-09",
+    "surveyor_note": "実地取得。1リクエストあたり3秒ウェイト、直列アクセスのみ。UAは一般的なChromeのものを使用。robots.txtのDisallow配下にはアクセスしていない。ページに記載のない項目はunknown/nullとし、推測で埋めていない。",
+    "user_agent_used": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "request_interval_seconds": 3,
+    "parallel_requests": false,
+    "pdf_policy": "URLとファイル名の記録のみ。ダウンロード・解析はしていない。",
+    "counting_definitions": {
+      "listed": "一覧ページに掲載されている事業/イベントの件数（過去分・終了分を含む）",
+      "open_now": "2026-09-09時点で申込受付中と判断できる件数",
+      "open_dated": "open_nowのうち、具体的な開催日が明示されているもの（随時・通年・オンデマンドを除く）",
+      "caveat": "多くのサイトは受付状況フラグを持たないため、open_nowは開催日・締切日からの推定を含む。推定を含む場合は open_now_basis に明記した。"
+    }
+  },
+
+  "series_a_municipalities": [
+    {
+      "id": "A1",
+      "name": "横浜市",
+      "type": "政令指定都市",
+      "top_url": "https://www.city.yokohama.lg.jp/",
+      "list_page_url": "https://www.city.yokohama.lg.jp/business/keizai/sougyo/sogyoshien/sougyoshien2019.html",
+      "list_page_exists": true,
+      "list_format": "HTMLテーブル（7列・単一ページ・随時更新）",
+      "pagination": "なし",
+      "feeds": { "rss": false, "atom": false, "ical": false, "json_api": false, "urls": [] },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "unknown（generatorメタなし。静的.html＋Dreamweaver系Library(.lbi)の痕跡）",
+      "page_last_updated": "2026-09-08",
+      "inventory": {
+        "listed": 7,
+        "open_now": 7,
+        "open_dated": 2,
+        "open_now_basis": "一覧の見出しが「申込受付中のセミナー等の詳細」であり掲載＝受付中。うち5件は「随時」でオンデマンド型",
+        "past_year_count": null,
+        "past_year_basis": "アーカイブページなし。現行年度分のみ掲載のため計数不能",
+        "pdf_dependency": "低（PDFは注意事項1件のみ。告知はHTML本文）"
+      },
+      "field_granularity": {
+        "title": "HTML本文",
+        "datetime": "HTML本文（ただし5/7件は『随時』で日付なし）",
+        "venue_or_online": "HTML本文（対面/オンライン/オンデマンドの別のみ。会場住所は記載なし）",
+        "target_audience": "記載なし",
+        "capacity": "記載なし",
+        "fee": "HTML本文（税込金額）",
+        "application_deadline": "HTML本文（『募集時期』列。『先着順』『随時』等の曖昧値を含む）",
+        "application_url": "HTML本文（外部サイトへのリンク）",
+        "organizer": "HTML本文（開催者・運営者＋電話番号）",
+        "number_of_sessions": "HTML本文（一部のみ。全4回/全10回/全26動画など）",
+        "is_certified_tokutei_sogyo": "HTML本文（ページ全体が特定創業支援等事業の一覧なので全件該当）"
+      },
+      "collection": {
+        "robots_txt_exists": false,
+        "robots_txt_status": "404（robots.txtが存在しない）",
+        "robots_disallow_relevant": false,
+        "terms_page_url": "https://www.city.yokohama.lg.jp/aboutweb/sitepolicy.html",
+        "link_freely_allowed": true,
+        "link_notification_required": false,
+        "reuse_note": "著作権は原則市に帰属し、私的使用・引用を除き無断複製・転用は不可。ただし『数値データ、簡単な表・グラフ等は著作権による保護の対象ではありませんので、自由に利用できます』と明記。CCライセンス明記ページも一部存在。",
+        "concern_level": "低"
+      },
+      "fetch_status": "成功"
+    },
+    {
+      "id": "A2",
+      "name": "川崎市",
+      "type": "政令指定都市",
+      "top_url": "https://www.city.kawasaki.jp/",
+      "list_page_url": "https://www.city.kawasaki.jp/280/page/0000061862.html",
+      "list_page_exists": true,
+      "list_format": "HTMLテーブル（7列・単一ページ）。年度計画の静的表であり、終了分も掲載され続ける",
+      "pagination": "なし",
+      "feeds": { "rss": false, "atom": false, "ical": false, "json_api": false, "urls": [] },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "unknown（URL規則 /NNN/page/{10桁}.html ＋ cmsfiles/contents/ 。日本の自治体CMSで一般的なパターン）",
+      "page_last_updated": null,
+      "inventory": {
+        "listed": 12,
+        "open_now": 7,
+        "open_dated": 4,
+        "open_now_basis": "推定。ページに受付状況フラグがないため、応募期間・実施期間の日付から判定。締切済4件・開催済1件を除外。通年3件を含む",
+        "past_year_count": null,
+        "past_year_basis": "アーカイブなし。年度計画表のみ",
+        "pdf_dependency": "低（PDF6件はすべて申請書・要綱・パンフ等の事務書類。イベント告知ではない）"
+      },
+      "field_granularity": {
+        "title": "HTML本文",
+        "datetime": "HTML本文（実施期間＋全N回。R8/10/25〜12/12(全10回) 形式）",
+        "venue_or_online": "HTML本文（対面/オンラインの別のみ。会場住所は記載なし）",
+        "target_audience": "HTML本文（『主な受講対象者』列。詳細な文章）",
+        "capacity": "HTML本文（『応募期間』列に混在。定員15名程度(選考あり)/先着30名 等）",
+        "fee": "HTML本文（対面・受講料2万円（税込）等）",
+        "application_deadline": "HTML本文（『応募期間』列。9/24〆切 等）",
+        "application_url": "HTML本文（『申込先HP』外部リンク）",
+        "organizer": "HTML本文（実施機関＋電話番号）",
+        "number_of_sessions": "HTML本文（全10回/全6回 等）",
+        "is_certified_tokutei_sogyo": "HTML本文（表全体が特定創業支援等事業一覧）"
+      },
+      "collection": {
+        "robots_txt_exists": true,
+        "robots_txt_content": "User-agent: * / Disallow: /koho/koji/ ; User-agent: ndl-japan / Disallow:（全許可）",
+        "robots_disallow_relevant": false,
+        "terms_page_url": "https://www.city.kawasaki.jp/main/site_policy/0000000027.html",
+        "link_freely_allowed": true,
+        "link_notification_required": false,
+        "reuse_note": "リンクは自由・許可依頼不要（川崎市コンテンツであることを明示）。著作権は原則市に帰属し、私的使用・引用を除き無断複製・転載を禁止、転載希望は事前連絡かつ改変不可。横浜市のような『簡単な表は自由』の明記はない。",
+        "concern_level": "中"
+      },
+      "fetch_status": "成功"
+    },
+    {
+      "id": "A3",
+      "name": "東京都板橋区",
+      "type": "特別区",
+      "top_url": "https://www.city.itabashi.tokyo.jp/",
+      "list_page_url": "https://www.city.itabashi.tokyo.jp/bunka/kigyo/sougyo/1005564.html",
+      "list_page_exists": false,
+      "list_format": "区サイトには日程一覧が存在しない（tables=0）。外部の板橋区産業振興公社へ委譲",
+      "delegated_to": {
+        "org": "公益財団法人 板橋区産業振興公社",
+        "schedule_url": "https://itabashi-kohsha.com/pages/ms-schedule2026.html",
+        "program_url": "https://itabashi-kohsha.com/archives/19543",
+        "list_format": "HTMLテーブル。『受付状況』列を持つ（受付中/受付終了）＝本調査中で数少ない明示的ステータス",
+        "cms_guess": "独自CMS（/cms-data/ パス、JS注入ヘッダ/フッタ、/archives/{id}と/pages/*.html。WordPressではない）",
+        "robots_txt_exists": false,
+        "json_api": "https://itabashi-kohsha.com/cms-data/json/article-list.json（44件。title/link/excerpt/tag[]/categoryKey。日付は含まれないため詳細ページ要）＋ /cms-data/json/tag-list.json",
+        "js_rendered_listing": true,
+        "listing_meta_robots": "noindex（/tag/ の一覧ページに meta name=robots content=noindex）"
+      },
+      "pagination": "なし（年度単位の静的ページ）",
+      "feeds": {
+        "rss": false, "atom": false, "ical": false, "json_api": true,
+        "urls": [
+          "https://itabashi-kohsha.com/cms-data/json/article-list.json",
+          "https://itabashi-kohsha.com/cms-data/json/tag-list.json"
+        ]
+      },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "区サイト側 unknown",
+      "page_last_updated": "2026-07-09（区サイト）",
+      "inventory": {
+        "listed": 20,
+        "listed_unit": "セッション（令和8年度＝5期 × 各4コマ）。コース単位では5件",
+        "open_now": 1,
+        "open_now_unit": "コース（2月講座）。セッション単位では4",
+        "open_dated": 1,
+        "open_now_basis": "実測。受付状況列が『受付中』4コマ（2月講座）、『受付終了』16コマ",
+        "past_year_count": 5,
+        "past_year_basis": "令和8年度の開催が年5回（昼間3・夜間2）とページに明記。1コース＝全5科目",
+        "pdf_dependency": "低"
+      },
+      "field_granularity": {
+        "title": "HTML本文（科目名：経営/販路開拓/財務/交流会/人材育成）",
+        "datetime": "HTML本文（月日＋時間帯）",
+        "venue_or_online": "HTML本文（オンライン、または会場：ハイライフプラザ）",
+        "target_audience": "HTML本文（プログラムページ側）",
+        "capacity": "HTML本文（定員25名に達し次第締切）",
+        "fee": "HTML本文（受講料5千円・全5日分テキスト送料税込）",
+        "application_deadline": "HTML本文（定員到達次第。受付状況列で代替）",
+        "application_url": "HTML本文（form.run の外部フォーム）",
+        "organizer": "HTML本文（板橋区産業振興公社）",
+        "number_of_sessions": "HTML本文（全5科目）",
+        "is_certified_tokutei_sogyo": "HTML本文（明記）"
+      },
+      "collection": {
+        "robots_txt_exists": true,
+        "robots_txt_content": "区サイト: Disallow /cgi-bin/ /cgi-mgr/ /cgi-evt/ /cgi-opd/ /cgi-crm/ /insta_view/ /lib_cal/ ＋個別2ページ。公社サイト: robots.txtなし(404)",
+        "robots_disallow_relevant": false,
+        "robots_note": "区サイトは /cgi-evt/（イベント系CGI）と /lib_cal/（カレンダー）をDisallowしている。今回の対象パスは非該当だが、区のイベントカレンダー機能を将来使う場合は抵触する",
+        "terms_page_url": null,
+        "link_freely_allowed": null,
+        "link_notification_required": null,
+        "reuse_note": "未確認（区の利用規約ページまでは到達していない）",
+        "concern_level": "中（公社一覧ページのnoindex指定、区のイベントCGIのDisallow）"
+      },
+      "fetch_status": "成功"
+    },
+    {
+      "id": "A4",
+      "name": "大阪市",
+      "type": "政令指定都市",
+      "top_url": "https://www.city.osaka.lg.jp/",
+      "list_page_url": "https://www.city.osaka.lg.jp/keizaisenryaku/page/0000650806.html",
+      "list_anchor": "#15（5 大阪市の特定創業支援等事業）",
+      "list_page_exists": true,
+      "list_format": "HTMLテーブル（4列）。ただし『事業カタログ』でありイベント一覧ではない",
+      "pagination": "なし",
+      "feeds": {
+        "rss": true, "atom": false, "ical": false, "json_api": false,
+        "urls": [
+          "https://www.city.osaka.lg.jp/keizaisenryaku/rss/rss.xml",
+          "https://www.city.osaka.lg.jp/main/rss/rss.xml"
+        ]
+      },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "unknown（/NNN/page/{10桁}.html 形式）",
+      "page_last_updated": "2025-04-01",
+      "page_staleness_note": "調査時点(2026-09-09)で約17か月未更新",
+      "inventory": {
+        "listed": 12,
+        "open_now": 0,
+        "open_dated": 0,
+        "open_now_basis": "実測。具体的な開催日を持つ行が0。実施時期は『めやす』（5月、10月、1月／不定期／随時／－／終了）のみ",
+        "past_year_count": null,
+        "past_year_basis": "アーカイブなし",
+        "pdf_dependency": "低（PDF4件は事務書類）"
+      },
+      "field_granularity": {
+        "title": "HTML本文（事業名）",
+        "datetime": "記載なし（『実施時期（めやす）』の月名のみ）",
+        "venue_or_online": "HTML本文（実施場所＝施設名のみ）",
+        "target_audience": "記載なし",
+        "capacity": "記載なし",
+        "fee": "記載なし",
+        "application_deadline": "記載なし",
+        "application_url": "記載なし（問合せ電話番号のみ）",
+        "organizer": "HTML本文（問い合わせ先）",
+        "number_of_sessions": "記載なし",
+        "is_certified_tokutei_sogyo": "HTML本文（表全体が該当）"
+      },
+      "real_inventory_delegated_to": ["大阪産業創造館 sansokan.jp（B1参照）", "大阪商工会議所"],
+      "collection": {
+        "robots_txt_exists": false,
+        "robots_txt_status": "404",
+        "robots_disallow_relevant": false,
+        "terms_page_url": null,
+        "link_freely_allowed": null,
+        "link_notification_required": null,
+        "reuse_note": "当該ページ内に『CC（クリエイティブコモンズ）ライセンス』表記あり。本調査サンプル中で最も再利用しやすい法的位置づけ。",
+        "concern_level": "低"
+      },
+      "fetch_status": "成功"
+    },
+    {
+      "id": "A5",
+      "name": "福岡市",
+      "type": "政令指定都市",
+      "top_url": "https://www.city.fukuoka.lg.jp/",
+      "list_page_url": "https://www.city.fukuoka.lg.jp/keizai/r-support/business/tokutei-sougyou-sientoujigyou.html",
+      "list_anchor": "6 福岡市で行っている特定創業支援等事業",
+      "list_page_exists": true,
+      "list_format": "散文ブロック型（事業ごとに見出し＋ラベル行）。テーブルではない",
+      "pagination": "なし",
+      "feeds": { "rss": false, "atom": false, "ical": false, "json_api": false, "urls": [] },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "unknown",
+      "page_last_updated": null,
+      "inventory": {
+        "listed": 16,
+        "listed_breakdown": "有料12 / 無料4",
+        "open_now": 0,
+        "open_dated": 0,
+        "open_now_basis": "実測。開催日を持つ記載が0件。事業カタログ形式",
+        "past_year_count": null,
+        "past_year_basis": "アーカイブなし",
+        "pdf_dependency": "低（当該ページのPDF0件）"
+      },
+      "field_granularity": {
+        "title": "HTML本文（事業名）",
+        "datetime": "記載なし",
+        "venue_or_online": "HTML本文（『（受講方法）』対面/オンライン/併用）",
+        "target_audience": "HTML本文（『（対象）』詳細な文章）",
+        "capacity": "記載なし",
+        "fee": "HTML本文（『（費用）』有料 or 無料 のみ。金額の記載なし）",
+        "application_deadline": "記載なし",
+        "application_url": "記載なし（事業者名のみ）",
+        "organizer": "HTML本文（『（事業者）』）",
+        "number_of_sessions": "一部（『（内容）』の散文中に『4日以上』『計4日間』等）",
+        "is_certified_tokutei_sogyo": "HTML本文（節全体が該当）"
+      },
+      "parse_note": "『（事業者）：』『（対象）：』『（内容）：』『（受講方法）：』『（費用）：』のラベルが一貫しており正規表現で抽出可能",
+      "collection": {
+        "robots_txt_exists": true,
+        "robots_txt_content": "Disallow行が751行。個別ページ単位で大量に指定（例: /keizai/r-support/sougyou/003.html）",
+        "robots_disallow_relevant": false,
+        "robots_note": "対象パスは完全一致でDisallowリストに含まれない＝許可。ただしリストが長大かつ個別ページ指定のため、クロールのたびに再取得・再照合が必須",
+        "terms_page_url": null,
+        "link_freely_allowed": null,
+        "link_notification_required": null,
+        "reuse_note": "未確認",
+        "concern_level": "中（robots.txtの個別ページ指定が751行と多く、運用で見落とすリスク）"
+      },
+      "fetch_status": "成功"
+    },
+    {
+      "id": "A6",
+      "name": "名古屋市",
+      "type": "政令指定都市",
+      "top_url": "https://www.city.nagoya.jp/",
+      "list_page_url": "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1035070/1035071/1026436.html",
+      "list_page_exists": true,
+      "list_format": "散文＋小テーブル（回ごとの開催日/会場）。単一プログラムのページで一覧ではない",
+      "pagination": "なし",
+      "feeds": { "rss": false, "atom": false, "ical": false, "json_api": false, "urls": [] },
+      "jsonld_event": false,
+      "jsonld_types_found": ["Article", "WebPage", "BreadcrumbList", "Organization", "ListItem"],
+      "jsonld_note": "JSON-LDは存在するがEvent型はない",
+      "cms_guess": "unknown",
+      "page_last_updated": "2026-09-07",
+      "inventory": {
+        "listed": 2,
+        "listed_unit": "期（第1期 全8回＝4日×昼夜2部／第2期 令和9年1〜2月開催予定・詳細未定）",
+        "open_now": 0,
+        "open_dated": 0,
+        "open_now_basis": "実測。『各回とも定員に達しましたので申込を締め切りました。』と明記",
+        "past_year_count": 2,
+        "past_year_basis": "年2期制がページ構成から明らか",
+        "pdf_dependency": "低（PDF0件）"
+      },
+      "field_granularity": {
+        "title": "HTML本文",
+        "datetime": "HTML本文（日付＋昼の部/夜の部の時刻）",
+        "venue_or_online": "HTML本文（ウインクあいち＋住所＋階＋会議室名まで。サンプル中最も詳細）",
+        "target_audience": "記載なし",
+        "capacity": "HTML本文（定員各20名）",
+        "fee": "HTML本文（参加費無料）",
+        "application_deadline": "HTML本文（各回の受講日の2日前まで／定員になり次第締切）",
+        "application_url": "HTML本文（外部リンク）",
+        "organizer": "HTML本文（公益財団法人名古屋産業振興公社 名古屋市新事業支援センター）",
+        "number_of_sessions": "HTML本文（全8回）",
+        "is_certified_tokutei_sogyo": "HTML本文（明記）"
+      },
+      "collection": {
+        "robots_txt_exists": true,
+        "robots_txt_content": "User-agent: * / Disallow: /cgi-bin/ / Disallow: /cgi-mgr/",
+        "robots_disallow_relevant": false,
+        "robots_note": "サンプル中で最も緩い",
+        "terms_page_url": null,
+        "link_freely_allowed": null,
+        "link_notification_required": null,
+        "reuse_note": "未確認",
+        "concern_level": "低"
+      },
+      "fetch_status": "成功"
+    },
+    {
+      "id": "A7",
+      "name": "那覇市",
+      "type": "中核市（沖縄）",
+      "top_url": "https://www.city.naha.okinawa.jp/",
+      "list_page_url": "https://www.city.naha.okinawa.jp/business/kigyouricchi/1003647/1008741.html",
+      "list_page_exists": false,
+      "list_format": "支援機関×支援メニューの2列テーブルのみ。イベント一覧ではない",
+      "pagination": "なし",
+      "feeds": { "rss": false, "atom": false, "ical": false, "json_api": false, "urls": [] },
+      "jsonld_event": false,
+      "jsonld_types_found": ["Article", "WebPage", "BreadcrumbList", "Organization", "ListItem"],
+      "cms_guess": "unknown",
+      "page_last_updated": "令和8年9月4日（2026-09-04）",
+      "inventory": {
+        "listed": 0,
+        "listed_institutions": 6,
+        "institutions": [
+          "那覇商工会議所",
+          "コザ信用金庫",
+          "一般社団法人アントレプレナーシップラボ沖縄",
+          "一般社団法人ひとまちcreateなは",
+          "琉球ミライ株式会社",
+          "沖縄海邦銀行（本文中）"
+        ],
+        "open_now": 0,
+        "open_dated": 0,
+        "open_now_basis": "実測。日付情報がページ内に一切ない",
+        "past_year_count": null,
+        "past_year_basis": "アーカイブなし",
+        "pdf_dependency": "中（申請案内がPDF）"
+      },
+      "field_granularity": {
+        "title": "HTML本文（支援メニュー名のみ）",
+        "datetime": "記載なし",
+        "venue_or_online": "記載なし",
+        "target_audience": "記載なし",
+        "capacity": "記載なし",
+        "fee": "記載なし",
+        "application_deadline": "記載なし",
+        "application_url": "記載なし（機関トップページへの外部リンクのみ）",
+        "organizer": "HTML本文（支援機関名）",
+        "number_of_sessions": "記載なし",
+        "is_certified_tokutei_sogyo": "HTML本文（赤字表記で特定創業対象を区別）"
+      },
+      "collection": {
+        "robots_txt_exists": true,
+        "robots_txt_content": "User-agent: * / Disallow: /mlmainte/ /mldata/ /bousaidata/",
+        "robots_disallow_relevant": false,
+        "terms_page_url": null,
+        "link_freely_allowed": null,
+        "link_notification_required": null,
+        "reuse_note": "未確認",
+        "concern_level": "低"
+      },
+      "assessment": "サンプル中で最も情報量が少ない。在庫を得るには6機関を個別にクロールする必要がある",
+      "fetch_status": "成功"
+    },
+    {
+      "id": "A8",
+      "name": "松本市",
+      "type": "中規模市（長野）",
+      "top_url": "https://www.city.matsumoto.nagano.jp/",
+      "list_page_url": "https://www.city.matsumoto.nagano.jp/soshiki/75/3206.html",
+      "list_anchor": "特定創業支援事業の今後の予定",
+      "list_page_exists": true,
+      "list_format": "完全な散文（tables=0）。単一プログラムのみ",
+      "pagination": "なし",
+      "feeds": { "rss": false, "atom": false, "ical": false, "json_api": false, "urls": [] },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "unknown（/uploaded/attachment/{id}.pdf 形式の添付）",
+      "page_last_updated": "2026-07-30",
+      "inventory": {
+        "listed": 1,
+        "open_now": 1,
+        "open_dated": 1,
+        "open_now_basis": "推定。開催日（令和8年10月15日〜11月17日）が未来だが、申込状況・締切の記載がないため受付中かは確認できない",
+        "past_year_count": 1,
+        "past_year_basis": "年1回開催（松本地域創業スクール）とページ構成から判断",
+        "pdf_dependency": "低〜中（チラシPDFはあるが、日時・会場・受講料の核心情報はHTML本文にある）"
+      },
+      "field_granularity": {
+        "title": "HTML本文（松本地域創業スクール）",
+        "datetime": "HTML本文（期間＋全8日間＋曜日＋時刻）",
+        "venue_or_online": "HTML本文（松本商工会館 会議室＋住所）",
+        "target_audience": "記載なし",
+        "capacity": "記載なし",
+        "fee": "HTML本文（11,000円 テキスト代・消費税込）",
+        "application_deadline": "記載なし",
+        "application_url": "記載なし（商工会議所の詳細ページへの外部リンクのみ）",
+        "organizer": "HTML本文（松本商工会議所 中小企業振興部＋電話番号）",
+        "number_of_sessions": "HTML本文（全8日間）",
+        "is_certified_tokutei_sogyo": "HTML本文（明記）"
+      },
+      "pdf_refs": [
+        "/uploaded/attachment/106563.pdf",
+        "/uploaded/attachment/133154.pdf",
+        "/uploaded/attachment/132349.pdf（松本地域創業スクールチラシ 3.26MB）"
+      ],
+      "collection": {
+        "robots_txt_exists": false,
+        "robots_txt_status": "404",
+        "robots_disallow_relevant": false,
+        "terms_page_url": null,
+        "link_freely_allowed": null,
+        "link_notification_required": null,
+        "reuse_note": "未確認",
+        "concern_level": "低"
+      },
+      "fetch_status": "成功"
+    },
+    {
+      "id": "A9",
+      "name": "高松市",
+      "type": "中規模市（四国）",
+      "top_url": "https://www.city.takamatsu.kagawa.jp/",
+      "list_page_url": "https://www.city.takamatsu.kagawa.jp/jigyosha/sangyou/shoukougyou/sougyousienn/ninteitokutei.html",
+      "list_page_exists": true,
+      "list_format": "箇条書き（事業名＋括弧内に実施機関）のみ",
+      "pagination": "なし",
+      "feeds": { "rss": false, "atom": false, "ical": false, "json_api": false, "urls": [] },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "独自CMS（/js/cms.smartphone.js。ベンダー特定に至らず）",
+      "page_last_updated": "2026-08-20",
+      "inventory": {
+        "listed": 5,
+        "programs": [
+          "ワンストップ創業相談窓口（高松商工会議所）",
+          "個別指導事業（高松商工会議所・高松市中央商工会・高松市牟礼庵治商工会）",
+          "たかまつ創業塾（高松商工会議所）",
+          "キャリスタセカンド（高松信用金庫）",
+          "高松市中央創業塾（高松市中央商工会）"
+        ],
+        "open_now": 0,
+        "open_dated": 0,
+        "open_now_basis": "実測。日付情報が一切なく『受講については、各実施機関にお問合せください』と明記",
+        "past_year_count": null,
+        "past_year_basis": "アーカイブなし",
+        "pdf_dependency": "中（当該ページにPDF5件。案内・優遇措置・注意事項）"
+      },
+      "field_granularity": {
+        "title": "HTML本文（事業名）",
+        "datetime": "記載なし",
+        "venue_or_online": "記載なし",
+        "target_audience": "記載なし",
+        "capacity": "記載なし",
+        "fee": "記載なし",
+        "application_deadline": "記載なし",
+        "application_url": "記載なし（各事業への個別リンクすらない）",
+        "organizer": "HTML本文（実施機関名）",
+        "number_of_sessions": "記載なし",
+        "is_certified_tokutei_sogyo": "HTML本文（節全体が該当）"
+      },
+      "sibling_pages_checked": [
+        "/sougyousienn/sapo.html",
+        "/sougyousienn/kigyousienevent.html（＝起業家創出イベント応援補助金。イベント一覧ではない）"
+      ],
+      "note": "検索結果に出た /jigyosha/sangyou/sougyousienn/sougyouzyuku.html は404だった（URLが陳腐化）",
+      "real_inventory_delegated_to": [
+        "高松商工会議所 takacci.or.jp",
+        "香川県スタートアップポータル startup.pref.kagawa.lg.jp（/event/event-{ID}/ 形式のイベントページを持つ県レベルの集約サイト）"
+      ],
+      "collection": {
+        "robots_txt_exists": false,
+        "robots_txt_status": "404",
+        "robots_disallow_relevant": false,
+        "terms_page_url": null,
+        "link_freely_allowed": null,
+        "link_notification_required": null,
+        "reuse_note": "未確認",
+        "concern_level": "低"
+      },
+      "fetch_status": "成功"
+    },
+    {
+      "id": "A10",
+      "name": "埼玉県川口市",
+      "type": "中規模市（中核市）",
+      "top_url": "https://www.city.kawaguchi.lg.jp/",
+      "list_page_url": "https://www.city.kawaguchi.lg.jp/soshiki/01110/021/12/2066.html",
+      "list_page_exists": true,
+      "list_format": "番号付き散文リスト（7項目）。実施機関はリンク",
+      "pagination": "なし",
+      "feeds": { "rss": false, "atom": false, "ical": false, "json_api": false, "urls": [] },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "unknown",
+      "page_last_updated": "2026-03-02",
+      "page_staleness_note": "調査時点で約6か月未更新",
+      "inventory": {
+        "listed": 7,
+        "open_now": 0,
+        "open_dated": 0,
+        "open_now_basis": "実測。開催日の記載が0件。『定員や時期によってご希望に添えない場合があります』として各実施機関に委ねている",
+        "annual_frequency_stated_in_prose": {
+          "専門家相談窓口事業（川口商工会議所）": "随時",
+          "創業塾（川口商工会議所）": "年4回",
+          "創業窓口相談（創業支援センター）": "随時",
+          "各種創業セミナー（創業支援センター）": "随時",
+          "AFEKT女性の活躍・創業支援事業 連続講座": "毎年9〜10月頃 全5回",
+          "市と創業支援センター共催の創業セミナー": "年4回程度",
+          "盛人大学 社会起業・ビジネス講座": "毎年4月頃募集"
+        },
+        "annual_dated_runs_estimate": 10,
+        "past_year_count": null,
+        "past_year_basis": "アーカイブなし。ただし頻度が散文で明示されているため年間回数は推定可能",
+        "pdf_dependency": "低（PDF5件はすべて事務書類。ただし『創業の手引き』が5.1MB）"
+      },
+      "field_granularity": {
+        "title": "HTML本文（事業名）",
+        "datetime": "記載なし（頻度のみ散文で記載）",
+        "venue_or_online": "記載なし",
+        "target_audience": "記載なし",
+        "capacity": "記載なし",
+        "fee": "記載なし",
+        "application_deadline": "記載なし",
+        "application_url": "記載なし（実施機関ページへのリンクのみ）",
+        "organizer": "HTML本文（実施機関名・リンクあり）",
+        "number_of_sessions": "一部（AFEKTのみ全5回）",
+        "is_certified_tokutei_sogyo": "HTML本文（節全体が該当）"
+      },
+      "collection": {
+        "robots_txt_exists": false,
+        "robots_txt_status": "404（404ページ自体に meta robots noindex,nofollow が付与されている）",
+        "robots_disallow_relevant": false,
+        "terms_page_url": null,
+        "link_freely_allowed": null,
+        "link_notification_required": null,
+        "reuse_note": "未確認",
+        "concern_level": "低"
+      },
+      "fetch_status": "成功"
+    }
+  ],
+
+  "series_b_institutions": [
+    {
+      "id": "B1",
+      "name": "大阪産業創造館（公益財団法人 大阪産業局）",
+      "category": "都道府県レベルの産業振興公社/財団",
+      "top_url": "https://www.sansokan.jp/",
+      "list_page_url": "https://www.sansokan.jp/events/",
+      "list_page_exists": true,
+      "list_format": "月別HTMLカレンダー表",
+      "pagination": "?ym=YYYY-MM（月別。予測可能で最も扱いやすい）",
+      "feeds": { "rss": false, "atom": false, "ical": false, "json_api": false, "urls": [] },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "独自システム（.san 拡張子のアプリケーション）",
+      "inventory": {
+        "listed": 60,
+        "listed_breakdown": { "2026-09": 0, "2026-10": 37, "2026-11": 16, "2026-12": 7 },
+        "open_now": 60,
+        "open_dated": 60,
+        "open_now_basis": "実測。一覧に○（受付中）/△（残席僅）/×（受付終了）の明示的ステータス列がある。過去分は自動的に一覧から消える（2026-09が0件）",
+        "past_year_count": null,
+        "past_year_basis": "過去月のカレンダーは空になるためアーカイブから計数できない",
+        "pdf_dependency": "低（一覧にPDF0件）",
+        "note": "60件は全ジャンル。創業・補助金系はその一部"
+      },
+      "field_granularity": {
+        "title": "HTML本文（一覧）",
+        "datetime": "HTML本文（一覧に開催日・曜日・時間）",
+        "venue_or_online": "HTML本文（一覧に開催場所。建物名＋階＋部屋名まで）",
+        "target_audience": "記載なし",
+        "capacity": "記載なし（一覧・詳細とも定員の記載0件）",
+        "fee": "HTML本文（一覧は有/無の2値のみ。金額は不明）",
+        "application_deadline": "HTML本文（一覧に『9月14日締切』等）",
+        "application_url": "HTML本文（詳細ページ /events/eve_detail.san?H_A_NO={6桁}）",
+        "organizer": "HTML本文（公益財団法人大阪産業局）",
+        "number_of_sessions": "一部（タイトル中に第N期等）",
+        "is_certified_tokutei_sogyo": "HTML本文（詳細ページに『大阪市が国から認定を受けた特定創業支援等事業』という定型文。文字列一致で機械判定可能）"
+      },
+      "detail_page_note": "詳細ページは約1.7MBと重い。開催日時/会場/定員/参加費というラベルは詳細ページに存在せず（出現数0）、これらは一覧側にしかない。定員はどこにも記載がない。",
+      "collection": {
+        "robots_txt_exists": false,
+        "robots_txt_status": "404",
+        "robots_disallow_relevant": false,
+        "terms_page_url": null,
+        "reuse_note": "未確認。ただし詳細ページに『公益財団法人大阪産業局が主催するプログラムの無断録音・撮影は禁止』の記載あり（コンテンツ転載の話ではない）",
+        "concern_level": "低"
+      },
+      "fetch_status": "成功"
+    },
+    {
+      "id": "B2",
+      "name": "公益財団法人 東京都中小企業振興公社",
+      "category": "都道府県レベルの産業振興公社/財団",
+      "top_url": "https://www.tokyo-kosha.or.jp/",
+      "list_page_url": "https://www.tokyo-kosha.or.jp/topics/event/",
+      "list_page_exists": true,
+      "list_format": "サーバレンダリングHTML。3か月分（2026-09/10/11）を1ページに日付グループで掲載",
+      "pagination": "なし（3か月が1ページ）",
+      "feeds": { "rss": false, "atom": false, "ical": false, "json_api": false, "urls": [] },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "unknown（/assets/js/event.bundle.js はjQueryのみでAPI呼び出しなし）",
+      "inventory": {
+        "listed": 76,
+        "open_now": 76,
+        "open_dated": 76,
+        "open_now_basis": "掲載＝今後の開催予定。ただし受付状況フラグはない",
+        "category_breakdown": {
+          "人材支援": 26,
+          "知的財産": 18,
+          "事業承継": 11,
+          "海外展開": 9,
+          "デジタル活用": 9,
+          "創業・新事業": 2,
+          "経営相談": 1
+        },
+        "portal_relevant_count": 2,
+        "portal_relevant_note": "76件中『創業・新事業』はわずか2件。補助金説明会カテゴリは存在しない。機関の規模と創業在庫は比例しない",
+        "past_year_count": null,
+        "past_year_basis": "過去分のアーカイブページは未確認",
+        "pdf_dependency": "低（一覧にPDF0件）"
+      },
+      "field_granularity": {
+        "title": "HTML本文",
+        "datetime": "HTML本文（日付。時刻は詳細ページ）",
+        "venue_or_online": "一部（タイトル中に『オンライン』等が埋め込まれる）",
+        "target_audience": "記載なし（一覧）",
+        "capacity": "記載なし（一覧）",
+        "fee": "一部（タイトル中に『（無料）』が埋め込まれる）",
+        "application_deadline": "記載なし（一覧）",
+        "application_url": "HTML本文（詳細ページ /topics/{YYMM}/{NNNN}_xxx.html）",
+        "organizer": "暗黙（公社主催）",
+        "number_of_sessions": "一部（タイトル中に『全25回』『【DAY2】』『【1日目／全2日間】』）",
+        "is_certified_tokutei_sogyo": "該当なし（系統B）"
+      },
+      "collection": {
+        "robots_txt_exists": true,
+        "robots_txt_content": "User-agent: * / Disallow: /_mm/ /_notes/ /_baks/ /MMWIP/ ; User-agent: googlebot / Disallow: *.csi",
+        "robots_disallow_relevant": false,
+        "terms_page_url": null,
+        "reuse_note": "未確認",
+        "concern_level": "低"
+      },
+      "fetch_status": "成功"
+    },
+    {
+      "id": "B3",
+      "name": "公益財団法人 沖縄県産業振興公社",
+      "category": "都道府県レベルの産業振興公社/財団",
+      "top_url": "https://okinawa-ric.jp/",
+      "list_page_url": "https://okinawa-ric.jp/news/seminar/",
+      "list_page_exists": true,
+      "list_format": "ニュース型フラットリスト（投稿日＋カテゴリ『セミナー』＋タイトル）",
+      "pagination": "なし（フラット。ページ送りのUIを確認できず）",
+      "feeds": {
+        "rss": true, "atom": false, "ical": false, "json_api": false,
+        "urls": ["https://okinawa-ric.jp/info/index.xml"],
+        "rss_note": "RSS 2.0。lastBuildDateは生きている（2026-09-09 09:33）が、サイト全体の新着フィードでセミナー専用ではなく、15件しか遡れない"
+      },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "Movable Type",
+      "inventory": {
+        "listed": 28,
+        "open_now": null,
+        "open_dated": null,
+        "open_now_basis": "判定不能。受付状況フラグがなく、一覧の日付は投稿日であって開催日ではない",
+        "past_year_count": null,
+        "past_year_basis": "投稿日ベースのため開催実績としては数えられない",
+        "pdf_dependency": "低（一覧にPDF0件）",
+        "portal_relevant_note": "創業・起業・補助金のキーワードを含むタイトルは1件のみ。大半が人手不足・ブランディング・製造原価・物価高騰対策"
+      },
+      "parse_hazard": "開催日はタイトル内に【11/5開催】【10月13日(火)開催】の形で埋め込まれる。ステータスも【キャンセル待ち】等タイトル埋め込み。構造化フィールドではないため正規表現に依存する",
+      "field_granularity": {
+        "title": "HTML本文",
+        "datetime": "タイトル内埋め込み（構造化フィールドとしては記載なし）",
+        "venue_or_online": "一部タイトル内（in石垣島/in宮古島 等）",
+        "target_audience": "記載なし（一覧）",
+        "capacity": "記載なし（一覧）",
+        "fee": "記載なし（一覧）",
+        "application_deadline": "一部タイトル内（7/31〆切 等）",
+        "application_url": "HTML本文（詳細ページ /news/seminar/{slug}.html。slugは不規則）",
+        "organizer": "一部タイトル内（【沖縄よろず＆生産性向上支援センター 主催】等）",
+        "number_of_sessions": "一部タイトル内（全8回 等）",
+        "is_certified_tokutei_sogyo": "該当なし（系統B）"
+      },
+      "collection": {
+        "robots_txt_exists": true,
+        "robots_txt_content": "User-agent: * / Disallow: /.shared/ /.service/ /.preview/ /.not-found/ ; Sitemap: https://okinawa-ric.jp/sitemap.xml",
+        "robots_disallow_relevant": false,
+        "sitemap_url": "https://okinawa-ric.jp/sitemap.xml",
+        "terms_page_url": null,
+        "reuse_note": "未確認",
+        "concern_level": "低"
+      },
+      "fetch_status": "成功"
+    },
+    {
+      "id": "B4",
+      "name": "関東経済産業局",
+      "category": "経済産業局",
+      "top_url": "https://www.kanto.meti.go.jp/",
+      "list_page_url": "https://www.kanto.meti.go.jp/event/index.html",
+      "list_page_exists": true,
+      "list_format": "HTMLテーブル。2列のみ（イベント等 / 期日）",
+      "pagination": "なし",
+      "feeds": { "rss": false, "atom": false, "ical": false, "json_api": false, "urls": [] },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "unknown（静的HTML）",
+      "inventory": {
+        "listed": 11,
+        "open_now": null,
+        "open_dated": null,
+        "open_now_basis": "判定不能。受付状況フラグがなく、かつ既に終了したイベント（2026/8/26, 8/28）が調査日時点でも掲載され続けている＝自動失効しない",
+        "portal_relevant_count": 1,
+        "portal_relevant_note": "11件中、創業関連は『起業の一歩を、地域の支援とともに 先輩起業家と支援機関から学ぶ』(2026/9/2)の1件のみ",
+        "past_year_count": null,
+        "past_year_basis": "過去のお知らせページは別途存在（past_kanto_info.html）だが未調査",
+        "pdf_dependency": "低（一覧にPDF0件）"
+      },
+      "field_granularity": {
+        "title": "HTML本文",
+        "datetime": "HTML本文（開催日＋開催時刻）",
+        "venue_or_online": "記載なし",
+        "target_audience": "記載なし",
+        "capacity": "記載なし",
+        "fee": "記載なし",
+        "application_deadline": "記載なし",
+        "application_url": "記載なし（詳細ページへのリンクのみ）",
+        "organizer": "暗黙（関東経済産業局主催）",
+        "number_of_sessions": "記載なし",
+        "is_certified_tokutei_sogyo": "該当なし（系統B）"
+      },
+      "collection": {
+        "robots_txt_exists": false,
+        "robots_txt_status": "404",
+        "robots_disallow_relevant": false,
+        "terms_page_url": null,
+        "reuse_note": "未確認",
+        "concern_level": "低"
+      },
+      "fetch_status": "成功"
+    },
+    {
+      "id": "B5",
+      "name": "独立行政法人 中小企業基盤整備機構（中小機構）",
+      "category": "中小機構（J-Net21は指示により調査対象外）",
+      "top_url": "https://www.smrj.go.jp/",
+      "list_page_url": "https://www.smrj.go.jp/event/index.html",
+      "list_page_exists": false,
+      "list_format": "ハブページのみ。本文の『イベント一覧へ』リンクはソースHTMLに存在せずJSで注入される",
+      "regional_pages_checked": [
+        {
+          "url": "https://www.smrj.go.jp/regional_hq/kanto/event/index.html",
+          "size_bytes": 85669,
+          "upcoming_events_in_raw_html": 0
+        },
+        {
+          "url": "https://www.smrj.go.jp/regional_hq/chubu/event/index.html",
+          "size_bytes": 73373,
+          "upcoming_events_in_raw_html": 0
+        }
+      ],
+      "pagination": "年度別アーカイブの規則 /regional_hq/{region}/event/{YYYY}/index.html が検索結果上は存在するが未検証",
+      "feeds": { "rss": false, "atom": false, "ical": false, "json_api": false, "urls": [] },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "unknown",
+      "inventory": {
+        "listed": null,
+        "open_now": null,
+        "open_dated": null,
+        "open_now_basis": "取得失敗として扱う。下記 fetch_status 参照",
+        "past_year_count": null,
+        "pdf_dependency": null
+      },
+      "field_granularity": null,
+      "collection": {
+        "robots_txt_exists": true,
+        "robots_txt_content": "Sitemap宣言あり。User-agent: * / Disallow: /fsw/ /fsw-sy-navi/ /fsw-kyosai/ /*/exclusive/ /*/exclusive.html /*/*_ex/ 。gsa-crawler と msnbot には Crawl-Delay: 5 を明示",
+        "robots_disallow_relevant": false,
+        "crawl_delay_signal": "運営者が明示的に5秒のクロール間隔を要求している（本調査の3秒より厳しい）",
+        "sitemap_url": "https://www.smrj.go.jp/sitemap.xml",
+        "terms_page_url": null,
+        "reuse_note": "未確認",
+        "concern_level": "中（Crawl-Delay 5秒の明示要求あり）"
+      },
+      "fetch_status": "部分失敗",
+      "failure_reason": "取得したHTMLソースには開催予定イベントの記載が一切なく、サイドナビのみがレンダリングされていた。イベント一覧が(a)本当に空なのか(b)クライアントサイドでレンダリングされるのかを静的HTMLからは判別できない。また /event/calendar/index.html は404（検索結果のURLが陳腐化）。ヘッドレスブラウザでの再検証が必要。成功扱いにしない。"
+    },
+    {
+      "id": "B6",
+      "name": "東京商工会議所",
+      "category": "商工会議所",
+      "top_url": "https://www.tokyo-cci.or.jp/",
+      "list_page_url": "https://myevent.tokyo-cci.or.jp/tile.php",
+      "list_page_exists": true,
+      "list_format": "サーバレンダリングHTML。全件（約1.08MB）を1ページに掲載",
+      "pagination": "不要（全398件が1ページ）",
+      "feeds": { "rss": false, "atom": false, "ical": false, "json_api": false, "urls": [] },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "独自PHPアプリケーション（tile.php / detail.php?event_kanri_id={id}）",
+      "inventory": {
+        "listed": 398,
+        "open_now": 398,
+        "open_dated": null,
+        "open_now_basis": "掲載＝募集中。ただし『満席』8件、『締切間近』16件のフラグあり。多数が動画配信・通年枠で開催日が数か月にまたがる",
+        "category_breakdown": {
+          "ＩＴ活用": 101,
+          "経営戦略・マネジメント": 125,
+          "財務・経理": 42,
+          "広報・宣伝": 41,
+          "資金調達": 37,
+          "海外ビジネス": 28,
+          "起業・創業": 26,
+          "補助金・助成金情報": 26,
+          "新事業": 24,
+          "交流会": 26,
+          "貿易実務": 22
+        },
+        "format_breakdown": { "セミナー・講習会": 345, "相談会": 27, "説明会": 10 },
+        "portal_relevant_count": 52,
+        "portal_relevant_note": "『起業・創業』26＋『補助金・助成金情報』26＝最大52件（重複の可能性あり）。本調査中で単一機関としては最大の関連在庫",
+        "past_year_count": null,
+        "past_year_basis": "過去分アーカイブは未調査",
+        "pdf_dependency": "低（一覧にPDF1件）"
+      },
+      "field_granularity": {
+        "title": "HTML本文",
+        "datetime": "HTML本文（開催日。YYYY年MM月DD日〜YYYY年MM月DD日の範囲形式）",
+        "venue_or_online": "HTML本文（『会場』ラベル。398件に付与。オンライン/動画配信/実会場名）",
+        "target_audience": "HTML本文（構造化タグ：代表・経営者向け249／役員・幹部向け206／管理職向け258／係長・主任向け／若手・新入社員向け126）※本調査中で対象者が構造化されている唯一の例",
+        "capacity": "記載なし（『定員』の出現は2件のみで実質なし）",
+        "fee": "HTML本文（『料金』ラベル。無料401／東商会員無料19／有料2）",
+        "application_deadline": "記載なし（明示的な締切日は稀。『締切間近』フラグ16件のみ）",
+        "application_url": "HTML本文（/detail.php?event_kanri_id={id}）",
+        "organizer": "暗黙（東商主催）",
+        "number_of_sessions": "一部（タイトル内）",
+        "is_certified_tokutei_sogyo": "該当なし（系統B）"
+      },
+      "collection": {
+        "robots_txt_exists": false,
+        "robots_txt_status": "404（myeventサブドメイン）",
+        "robots_disallow_relevant": false,
+        "terms_page_url": null,
+        "reuse_note": "未確認",
+        "concern_level": "低"
+      },
+      "fetch_status": "成功"
+    },
+    {
+      "id": "B7",
+      "name": "神奈川県よろず支援拠点",
+      "category": "よろず支援拠点",
+      "top_url": "https://www.kanagawa-yorozu.go.jp/",
+      "list_page_url": "https://www.kanagawa-yorozu.go.jp/event/",
+      "list_page_exists": true,
+      "list_format": "ニュース型リスト。各項目に開催日・タイトル・抜粋・状態バッジ",
+      "pagination": "なし（35件がフラットに1ページ）",
+      "feeds": { "rss": false, "atom": false, "ical": false, "json_api": false, "urls": [] },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "Movable Type（沖縄県産業振興公社と同系統）",
+      "inventory": {
+        "listed": 35,
+        "open_now": 1,
+        "open_dated": 1,
+        "open_now_basis": "実測。35件中34件に『開催終了』バッジ（span class=c-label cl-important）。バッジのない1件（2026/9/17）のみが受付中と判断できる",
+        "past_year_count": 35,
+        "past_year_basis": "掲載35件が2025/11〜2026/09の約1年に分布。実質的に直近1年のアーカイブ＝年間約35件",
+        "pdf_dependency": "低（一覧にPDF0件）",
+        "portal_relevant_note": "創業・起業・補助金のキーワードを含むのは35件中9件"
+      },
+      "reliability_caveat": "『開催終了』バッジは手動設定のラベルであり、日付から自動導出されていない。付け忘れの可能性がある",
+      "field_granularity": {
+        "title": "HTML本文",
+        "datetime": "HTML本文（一覧に開催日が構造化されている）",
+        "venue_or_online": "抜粋文中（構造化されていない）",
+        "target_audience": "抜粋文中（構造化されていない）",
+        "capacity": "抜粋文中（『定員 30名（先着順』等。構造化されていない）",
+        "fee": "記載なし（一覧）",
+        "application_deadline": "記載なし（一覧）",
+        "application_url": "HTML本文（詳細ページ /event/{MMDD}.html）",
+        "organizer": "一部タイトル内",
+        "number_of_sessions": "記載なし",
+        "is_certified_tokutei_sogyo": "該当なし（系統B）"
+      },
+      "collection": {
+        "robots_txt_exists": true,
+        "robots_txt_content": "User-agent: * / Disallow: /.shared/ /.service/ /.preview/ /.not-found/ ; Sitemap: https://www.kanagawa-yorozu.go.jp/sitemap.xml",
+        "robots_disallow_relevant": false,
+        "sitemap_url": "https://www.kanagawa-yorozu.go.jp/sitemap.xml",
+        "terms_page_url": "https://www.kanagawa-yorozu.go.jp/ 内に『ご利用にあたっての留意事項』へのリンクあり（内容未確認）",
+        "reuse_note": "未確認",
+        "concern_level": "低"
+      },
+      "fetch_status": "成功"
+    },
+    {
+      "id": "B8",
+      "name": "東京都よろず支援拠点",
+      "category": "よろず支援拠点",
+      "top_url": "https://tokyoyorozu.go.jp/",
+      "list_page_url": null,
+      "list_page_exists": false,
+      "list_format": "セミナー/イベント専用の一覧セクションが存在しない。/news/ の一般お知らせにセミナーが埋没する『お知らせ埋没型』",
+      "site_sections": ["about", "consultation", "contents", "faq", "news", "newsletter", "quartet", "staff", "yoyaku"],
+      "pagination": "unknown",
+      "feeds": {
+        "rss": true, "atom": false, "ical": false, "json_api": false,
+        "urls": ["https://tokyoyorozu.go.jp/feed/"],
+        "rss_note": "WordPress標準RSS。10件取得できたが中身は経営お役立ちコラム記事でイベントではない"
+      },
+      "wp_rest_api": {
+        "advertised_in_head": true,
+        "advertised_url": "https://tokyoyorozu.go.jp/wp-json/wp/v2/pages/27",
+        "actually_available": false,
+        "probe_result": "GET /wp-json/wp/v2/types および /wp-json/wp/v2/posts はいずれも HTTP 401 {code: disable_rest_api, message: REST API が無効化されています} を返す",
+        "conclusion": "head内のlinkタグに反してREST APIは無効化されている。収集経路として当てにできない"
+      },
+      "jsonld_event": false,
+      "jsonld_types_found": [],
+      "cms_guess": "WordPress（All in One SEO 5.0.1.1、wp-content参照141件）",
+      "inventory": {
+        "listed": 0,
+        "open_now": 0,
+        "open_dated": 0,
+        "open_now_basis": "実測。/news/ の直近約12件中セミナーは2件のみ（8/7 首都圏よろずサミット、設立記念セミナー）でいずれも開催済",
+        "past_year_count": null,
+        "past_year_basis": "セミナー専用カテゴリがないため計数不能",
+        "pdf_dependency": "unknown"
+      },
+      "field_granularity": null,
+      "field_granularity_note": "イベントとして構造化された掲載がないため、項目別の分類が成立しない",
+      "collection": {
+        "robots_txt_exists": true,
+        "robots_txt_content": "User-agent: * / Disallow: /wp-admin/ / Allow: /wp-admin/admin-ajax.php ; Sitemap: https://tokyoyorozu.go.jp/sitemap.xml",
+        "robots_disallow_relevant": false,
+        "robots_note": "本調査中で最も緩いrobots.txt",
+        "sitemap_url": "https://tokyoyorozu.go.jp/sitemap.xml",
+        "terms_page_url": "https://tokyoyorozu.go.jp/privacy-policy/",
+        "reuse_note": "未確認",
+        "concern_level": "低"
+      },
+      "fetch_status": "成功（ただし在庫は0件）"
+    }
+  ],
+
+  "failures_and_caveats": [
+    {
+      "target": "中小機構 (B5)",
+      "status": "部分失敗",
+      "detail": "regional_hq のイベント一覧が静的HTMLに現れない。空なのかJSレンダリングなのか判別不能。ヘッドレスブラウザでの再検証が必要。/event/calendar/index.html は404。"
+    },
+    {
+      "target": "高松市 (A9)",
+      "status": "URL陳腐化",
+      "detail": "検索結果に出た /jigyosha/sangyou/sougyousienn/sougyouzyuku.html が404。公式サイト内リンクから辿り直した ninteitokutei.html を採用。"
+    },
+    {
+      "target": "大阪市 (A4) / 沖縄RIC (B3) / 関東経済産業局 (B4) など",
+      "status": "open_now判定不能",
+      "detail": "受付状況フラグを持たないサイトでは『募集中』は日付からの推定であり、実際の残席・締切とは一致しない可能性がある。"
+    },
+    {
+      "target": "各自治体の利用規約",
+      "status": "未確認",
+      "detail": "利用条件/著作権ページを本文まで確認したのは横浜市・川崎市の2件のみ。他8自治体はrobots.txtのみ確認し、規約本文は未取得。JSONでは reuse_note を『未確認』としている。"
+    },
+    {
+      "target": "全対象の直近1年開催件数",
+      "status": "ほぼ計数不能",
+      "detail": "アーカイブページを持つのは神奈川よろず（35件≒1年分）のみ。他はすべて現行分のみの掲載で、過去実績は数えられない。"
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "slug": "kawaguchi",
+  "prefSlug": "saitama",
+  "pref": "埼玉県",
+  "name": "川口市",
+  "kind": "中核市",
+  "lastVerified": "2026-09-09",
+  "sourceUpdatedAt": "2026-03-02",
+  "publish": {
+    "ready": false,
+    "blockers": [
+      "受講料が1件も判明していない",
+      "具体的な開催日が1件もない（年間頻度の記載のみ）",
+      "市のページが約6か月更新されていない"
+    ]
+  },
+  "taxReduction": {
+    "kabushiki": {
+      "before": 150000,
+      "after": 75000
+    },
+    "godo": {
+      "before": 60000,
+      "after": 30000
+    },
+    "rate": {
+      "before": "0.7%",
+      "after": "0.35%"
+    },
+    "notes": [
+      "他の市町村で創業または会社を設立する場合には、登録免許税の軽減を受けることができません。"
+    ]
+  },
+  "requirement": {
+    "minSessions": 4,
+    "minMonths": 1,
+    "subjects": [
+      "経営",
+      "財務",
+      "人材育成",
+      "販路開拓"
+    ],
+    "notes": [
+      "1〜7の事業を組み合わせて要件を満たすことも可能です。"
+    ]
+  },
+  "courses": [
+    {
+      "name": "創業塾",
+      "org": "川口商工会議所",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "年4回実施",
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに具体的な日程・費用の記載なし"
+    },
+    {
+      "name": "AFEKT（アフェクト）内の連続講座",
+      "org": "川口市経営支援課（女性の活躍・創業支援事業）",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": "全5回",
+      "schedule": "毎年9〜10月頃に実施",
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに具体的な日程・費用の記載なし",
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "name": "市と創業支援センター共催の創業セミナー",
+      "org": "川口市経営支援課／創業支援センター",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "年4回程度開催予定",
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに具体的な日程・費用の記載なし"
+    },
+    {
+      "name": "盛人大学 内の社会起業・ビジネス講座",
+      "org": "川口市協働推進課",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "毎年4月頃募集",
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに具体的な日程・費用の記載なし",
+      "target": "50歳以上"
+    },
+    {
+      "name": "専門家相談窓口事業",
+      "org": "川口商工会議所",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "随時実施",
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに具体的な日程・費用の記載なし"
+    },
+    {
+      "name": "創業窓口相談",
+      "org": "創業支援センター",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "随時実施",
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに具体的な日程・費用の記載なし"
+    },
+    {
+      "name": "各種創業セミナー",
+      "org": "創業支援センター",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "随時実施",
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに具体的な日程・費用の記載なし"
+    }
+  ],
+  "coursesNote": "川口市のページには年間の開催頻度（年4回など）は書かれていますが、具体的な開催日・受講料・定員・締切の記載はありません。「定員や時期によってご希望に添えない場合があります」として、各実施機関に委ねられています。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      {
+        "label": "受講料",
+        "body": "7事業すべてについて金額の記載がありません"
+      },
+      {
+        "label": "開催日",
+        "body": "「年4回」「毎年9〜10月頃」といった頻度の記載のみで、具体的な日付はありません"
+      },
+      {
+        "label": "定員・締切",
+        "body": "記載がありません"
+      }
+    ],
+    "action": "川口商工会議所・創業支援センター・川口市経営支援課へ直接お問い合わせください。"
+  },
+  "highlight": {
+    "title": "年間で少なくとも10回程度は開講されています",
+    "body": "具体的な日程は公表されていませんが、創業塾が年4回、市と創業支援センターの共催セミナーが年4回程度、AFEKTの連続講座が毎年9〜10月に全5回、盛人大学が毎年4月頃募集。加えて窓口相談は随時受け付けています。組み合わせて要件を満たすことも可能です。"
+  },
+  "otherBenefits": [
+    {
+      "title": "創業関連保証",
+      "body": "創業関連保証の特例が利用できます。"
+    },
+    {
+      "title": "日本政策金融公庫",
+      "body": "新規開業・スタートアップ支援資金の貸付利率が引き下げられます。"
+    },
+    {
+      "title": "持続化補助金",
+      "body": "小規模事業者持続化補助金〈創業型〉の申請対象になります。"
+    }
+  ],
+  "localSupport": [
+    {
+      "title": "旧「起業人育成講座」も対象",
+      "body": "公益財団法人川口産業振興公社で令和6年度まで実施していた「起業人育成講座」も特定創業支援等事業の対象です。過去に受講した方も申請できます。"
+    },
+    {
+      "title": "証明書の有効期限",
+      "body": "令和9年3月31日、または開業日・法人設立日から5年を経過しない日のうち、先に到来する日が有効期限となります。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "川口市「創業支援事業」",
+      "url": "https://www.city.kawaguchi.lg.jp/soshiki/01110/021/12/2066.html"
+    }
+  ],
+  "kana": "かわぐち",
+  "prefKana": "さいたま"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "sogyo-portal",
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "astro dev --port 4321",
+    "build": "astro build",
+    "preview": "astro preview --port 4321"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@esbuild/win32-x64": "^0.28.2",
+    "@rollup/rollup-win32-x64-msvc": "^4.63.1",
+    "astro": "^5.18.2"
+  }
+}

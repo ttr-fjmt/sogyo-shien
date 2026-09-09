@@ -1,0 +1,139 @@
+---
+/**
+ * 市区町村コンボボックス＋都道府県別リンク一覧。
+ * リンク一覧は素のHTMLなので、JSが動かなくてもクローラーと利用者が全ページに到達できる。
+ * 入力欄はプログレッシブエンハンスメントで、JSが動くときだけ絞り込みが有効になる。
+ */
+import { published } from '../lib/catalog.js';
+
+const byPref = published.reduce((acc, m) => {
+  (acc[m.pref] ??= []).push(m);
+  return acc;
+}, {});
+const prefs = Object.entries(byPref).sort((a, b) =>
+  a[1][0].prefKana.localeCompare(b[1][0].prefKana, 'ja')
+);
+
+// 絞り込み用の索引。漢字・かな・ローマ字のいずれでも引けるようにする。
+const index = published.map((m) => ({
+  n: m.name,
+  k: m.kana,
+  r: m.slug,
+  p: m.pref,
+  pk: m.prefKana,
+  u: `/area/${m.prefSlug}/${m.slug}/`,
+  c: m.courses.length,
+}));
+---
+
+<div class="finder" data-finder>
+  <label class="finder-label" for="city-input">創業する市区町村を選ぶ</label>
+  <div class="finder-box">
+    <input
+      id="city-input"
+      type="text"
+      class="finder-input"
+      placeholder="市区町村名・よみがな・ローマ字で絞り込む"
+      autocomplete="off"
+      role="combobox"
+      aria-expanded="false"
+      aria-controls="city-listbox"
+      aria-autocomplete="list"
+      hidden
+    />
+    <ul id="city-listbox" class="finder-list" role="listbox" aria-label="市区町村の候補" hidden></ul>
+    <p class="finder-empty" hidden>該当する市区町村がありません。下の一覧からお探しください。</p>
+  </div>
+
+  <div class="finder-index">
+    {prefs.map(([pref, list]) => (
+      <div class="pref">
+        <p class="pref-name">{pref}</p>
+        <ul class="pref-cities">
+          {list.map((m) => (
+            <li>
+              <a href={`/area/${m.prefSlug}/${m.slug}/`}>{m.name}</a>
+              <span class="n">{m.courses.length}件</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <p class="finder-note">
+    現在{published.length}自治体を掲載しています。全国の認定市区町村は約1,459で、順次追加しています。
+  </p>
+</div>
+
+<script type="application/json" id="city-index" set:html={JSON.stringify(index)} />
+
+<script>
+  const root = document.querySelector('[data-finder]');
+  if (root) {
+    const data = JSON.parse(document.getElementById('city-index').textContent);
+    const input = root.querySelector('.finder-input');
+    const list = root.querySelector('.finder-list');
+    const empty = root.querySelector('.finder-empty');
+    let active = -1;
+    let shown = [];
+
+    // JSが動くときだけ入力欄を出す
+    input.hidden = false;
+
+    const norm = (s) =>
+      s.toLowerCase().replace(/[ァ-ン]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60));
+
+    function render(q) {
+      const nq = norm(q.trim());
+      shown = nq
+        ? data.filter(
+            (d) =>
+              d.n.includes(q.trim()) ||
+              norm(d.k).includes(nq) ||
+              d.r.includes(nq) ||
+              d.p.includes(q.trim()) ||
+              norm(d.pk).includes(nq)
+          )
+        : [];
+      active = -1;
+      list.innerHTML = shown
+        .map(
+          (d, i) =>
+            `<li role="option" id="city-opt-${i}" aria-selected="false"><a href="${d.u}"><b>${d.n}</b><span class="p">${d.p}</span><span class="n">${d.c}件</span></a></li>`
+        )
+        .join('');
+      const has = shown.length > 0;
+      list.hidden = !has;
+      empty.hidden = !(nq && !has);
+      input.setAttribute('aria-expanded', String(has));
+    }
+
+    function move(step) {
+      if (!shown.length) return;
+      active = (active + step + shown.length) % shown.length;
+      [...list.children].forEach((li, i) => {
+        const on = i === active;
+        li.setAttribute('aria-selected', String(on));
+        li.classList.toggle('is-active', on);
+      });
+      input.setAttribute('aria-activedescendant', `city-opt-${active}`);
+      list.children[active]?.scrollIntoView({ block: 'nearest' });
+    }
+
+    input.addEventListener('input', (e) => render(e.target.value));
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') { e.preventDefault(); move(1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); move(-1); }
+      else if (e.key === 'Enter' && active >= 0) {
+        e.preventDefault();
+        location.href = shown[active].u;
+      } else if (e.key === 'Escape') {
+        input.value = '';
+        render('');
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (!root.contains(e.target)) { list.hidden = true; input.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+</script>

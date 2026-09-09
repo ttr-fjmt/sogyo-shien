@@ -1,0 +1,178 @@
+{
+  "slug": "osaka",
+  "prefSlug": "osaka",
+  "pref": "大阪府",
+  "name": "大阪市",
+  "kind": "政令指定都市",
+  "lastVerified": "2026-09-09",
+  "sourceUpdatedAt": "2025-04-01",
+  "publish": {
+    "ready": false,
+    "blockers": [
+      "受講料が1件も判明していない",
+      "具体的な開催日が1件もない（実施時期は「めやす」の月名のみ）",
+      "市のページが約17か月更新されていない"
+    ]
+  },
+  "taxReduction": {
+    "kabushiki": {
+      "before": 150000,
+      "after": 75000
+    },
+    "godo": {
+      "before": 60000,
+      "after": 30000
+    },
+    "rate": {
+      "before": "0.7%",
+      "after": "0.35%"
+    },
+    "notes": []
+  },
+  "requirement": {
+    "minSessions": null,
+    "minMonths": null,
+    "subjects": [],
+    "lead": "大阪市の特定創業支援等事業を受けること",
+    "notes": [
+      "2社目以降の創業となる方、事業承継した方は、事業開始前であっても申請対象外です。"
+    ]
+  },
+  "courses": [
+    {
+      "name": "創業チャレンジゼミ",
+      "org": "大阪産業創造館",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "実施時期のめやす：5月、10月、1月",
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページは実施時期の「めやす」のみで、具体的な日程・受付状況の記載なし"
+    },
+    {
+      "name": "あきない虎の穴",
+      "org": "大阪産業創造館",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "実施時期のめやす：8月",
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "同上"
+    },
+    {
+      "name": "融資が必要な人のための事業計画作成講座",
+      "org": "大阪産業創造館",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "実施時期のめやす：6月、11月",
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "同上"
+    },
+    {
+      "name": "起業サポート「チョイス！」",
+      "org": "大阪産業創造館",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "随時（予約制）",
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "同上"
+    },
+    {
+      "name": "大商開業スクール",
+      "org": "大阪商工会議所",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "実施時期のめやす：8月",
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "同上"
+    },
+    {
+      "name": "大商個別相談指導",
+      "org": "大阪商工会議所",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "不定期",
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "同上"
+    }
+  ],
+  "coursesNote": "大阪市のページは事業カタログであり、イベント一覧ではありません。実施時期は「めやす」の月名のみで、開催日・受講料・定員・締切・申込URLはいずれも記載がありません。実際の日程は大阪産業創造館（sansokan.jp）のイベントカレンダーで確認できます。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      {
+        "label": "受講料",
+        "body": "12事業すべてについて金額の記載がありません"
+      },
+      {
+        "label": "開催日",
+        "body": "「5月、10月、1月」のような月名のめやすのみです"
+      },
+      {
+        "label": "定員・申込締切・申込URL",
+        "body": "いずれも記載がありません。問い合わせ電話番号のみです"
+      }
+    ],
+    "action": "大阪産業創造館のイベントカレンダー（sansokan.jp/events/）には、開催日・時間・会場・申込状況（受付中／残席僅／受付終了）・締切日が掲載されています。そちらをご確認ください。"
+  },
+  "otherBenefits": [
+    {
+      "title": "創業関連保証",
+      "body": "創業関連保証の特例が利用できます。"
+    },
+    {
+      "title": "日本政策金融公庫",
+      "body": "新規開業・スタートアップ支援資金の貸付利率引き下げの対象になります。"
+    },
+    {
+      "title": "持続化補助金",
+      "body": "小規模事業者持続化補助金〈創業型〉の申請対象になります。"
+    }
+  ],
+  "localSupport": [
+    {
+      "title": "証明書の交付対象拡大",
+      "body": "令和6年9月2日から、申請時点ですでに法人の代表者として事業を開始している創業後5年未満の方も、証明書の交付対象となりました。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "大阪市「特定創業支援等事業について」",
+      "url": "https://www.city.osaka.lg.jp/keizaisenryaku/page/0000650806.html"
+    },
+    {
+      "title": "大阪産業創造館 セミナー・イベントカレンダー",
+      "url": "https://www.sansokan.jp/events/"
+    }
+  ],
+  "kana": "おおさか",
+  "prefKana": "おおさか"
+}

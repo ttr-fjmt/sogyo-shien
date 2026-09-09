@@ -1,0 +1,192 @@
+{
+  "slug": "takamatsu",
+  "prefSlug": "kagawa",
+  "pref": "香川県",
+  "name": "高松市",
+  "kind": "中核市",
+  "lastVerified": "2026-09-09",
+  "sourceUpdatedAt": "2026-08-20",
+  "publish": {
+    "ready": true,
+    "blockers": []
+  },
+  "taxReduction": {
+    "kabushiki": {
+      "before": 150000,
+      "after": 75000
+    },
+    "godo": {
+      "before": 60000,
+      "after": 30000
+    },
+    "rate": {
+      "before": "0.7%",
+      "after": "0.35%"
+    },
+    "notes": [
+      "高松市以外で創業する場合、優遇措置を受けられないことがあります。証明書の提出先に予め確認してください。"
+    ]
+  },
+  "requirement": {
+    "minSessions": 4,
+    "minMonths": 1,
+    "subjects": [
+      "経営",
+      "財務",
+      "人材育成",
+      "販路開拓"
+    ],
+    "notes": [
+      "事業所得を得ている方、法人の代表者や代表権を持つ役員は「事業を営んでいない個人」には該当しません。",
+      "事業承継により創業する（した）方は、交付対象となりません。"
+    ]
+  },
+  "courses": [
+    {
+      "name": "2026たかまつ創業塾 〜秋開講コース〜",
+      "org": "高松商工会議所",
+      "fee": {
+        "free": true
+      },
+      "format": "offline",
+      "sessions": "全4回",
+      "schedule": "2026年10月7日（水）13:30〜／10月14日／10月21日／10月28日 16:30まで",
+      "venue": "高松商工会議所（高松市番町二丁目2-2）",
+      "content": "創業の心構えや創業計画書づくりを4回コースで学びます。人材雇用、先輩創業者との座談会を含みます。",
+      "capacity": "定員40名",
+      "deadline": "2026年9月30日（水）",
+      "contact": "087-825-3505（高松商工会議所 事業推進部 中小企業振興課）",
+      "status": "open",
+      "statusBasis": "商工会議所ページの申込期限が未来"
+    },
+    {
+      "name": "ワンストップ創業相談窓口",
+      "org": "高松商工会議所",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに日程・費用の記載なし"
+    },
+    {
+      "name": "個別指導事業",
+      "org": "高松商工会議所・高松市中央商工会・高松市牟礼庵治商工会",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに日程・費用の記載なし"
+    },
+    {
+      "name": "キャリスタセカンド",
+      "org": "高松信用金庫",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに日程・費用の記載なし"
+    },
+    {
+      "name": "高松市中央創業塾",
+      "org": "高松市中央商工会",
+      "fee": {
+        "unknown": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "status": "unknown",
+      "statusBasis": "市のページに日程・費用の記載なし"
+    }
+  ],
+  "coursesNote": "高松市のページには事業名と実施機関しか掲載されていません。日程・受講料が判明しているのは「たかまつ創業塾」のみで、これは高松商工会議所のイベントページで確認したものです。他の4事業については各実施機関へお問い合わせください。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      {
+        "label": "4事業の受講料",
+        "body": "ワンストップ創業相談窓口・個別指導事業・キャリスタセカンド・高松市中央創業塾は、費用の記載がありません"
+      },
+      {
+        "label": "4事業の日程",
+        "body": "開催時期の記載もありません。「受講については、各実施機関にお問合せください」とされています"
+      }
+    ],
+    "action": "たかまつ創業塾以外の事業を検討する場合は、各実施機関へ直接お問い合わせください。"
+  },
+  "highlight": {
+    "title": "たかまつ創業塾は無料。ただし市のサイトを見てもそれは分かりません",
+    "body": "高松市のページには事業名と実施機関しか載っておらず、受講料の記載がありません。たかまつ創業塾が無料であることは、高松商工会議所のイベントページで初めて確認できます。定員40名、申込期限は9月30日です。"
+  },
+  "applicationSteps": [
+    {
+      "text": "高松市の特定創業支援等事業（創業塾など）を受講する",
+      "sub": null
+    },
+    {
+      "text": "実施機関が高松市に支援実施報告書を提出する",
+      "sub": null
+    },
+    {
+      "text": "高松市に証明書の交付を申請する",
+      "sub": "オンライン申請フォームから申請できます"
+    },
+    {
+      "text": "証明書を受け取る",
+      "sub": null
+    }
+  ],
+  "otherBenefits": [
+    {
+      "title": "創業関連保証",
+      "body": "香川県信用保証協会の「創業関連保証」の特例が利用できます。"
+    },
+    {
+      "title": "日本政策金融公庫",
+      "body": "「新規開業・スタートアップ支援資金」等の貸付利率が引き下げられます。"
+    },
+    {
+      "title": "利子補給",
+      "body": "高松市産業振興課により、上記融資に係る支払利子の一部が補給されます。"
+    }
+  ],
+  "localSupport": [
+    {
+      "title": "co-ba takamatsu の入会金免除",
+      "body": "コワーキングスペース co-ba takamatsu（穴吹エンタープライズ株式会社）の**入会金が免除**されます。高松市独自の優遇です。"
+    },
+    {
+      "title": "起業家創出イベント応援補助金",
+      "body": "市内で起業家創出イベントを開催する法人に対し、開催経費の一部（補助率2分の1）を補助する制度があります。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "高松市特定創業支援等事業",
+      "url": "https://www.city.takamatsu.kagawa.jp/jigyosha/sangyou/shoukougyou/sougyousienn/ninteitokutei.html"
+    },
+    {
+      "title": "高松商工会議所「2026たかまつ創業塾 秋開講コース」",
+      "url": "https://www.takacci.or.jp/eventcalendar/tribe_events-16621/"
+    }
+  ],
+  "kana": "たかまつ",
+  "prefKana": "かがわ"
+}

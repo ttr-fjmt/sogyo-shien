@@ -1,0 +1,212 @@
+{
+  "slug": "fukuoka",
+  "prefSlug": "fukuoka",
+  "pref": "福岡県",
+  "name": "福岡市",
+  "kind": "政令指定都市",
+  "lastVerified": "2026-09-09",
+  "sourceUpdatedAt": null,
+  "publish": {
+    "ready": false,
+    "blockers": [
+      "受講料が金額として1件も判明していない（有料／無料の2値のみ）",
+      "具体的な開催日が1件もない"
+    ]
+  },
+  "taxReduction": {
+    "kabushiki": {
+      "before": 150000,
+      "after": 75000
+    },
+    "godo": {
+      "before": 60000,
+      "after": 30000
+    },
+    "rate": {
+      "before": "0.7%",
+      "after": "0.35%"
+    },
+    "notes": [
+      "会社設立前に証明書を取得し、法人登記時に法務局へ提出する必要があります。会社設立後に事後提出しても軽減は受けられません。"
+    ]
+  },
+  "requirement": {
+    "minSessions": null,
+    "minMonths": 1,
+    "subjects": [
+      "経営",
+      "財務",
+      "販路拡大",
+      "人材育成"
+    ],
+    "lead": "創業支援セミナーや個別創業面談を受け、4つの知識を身につけること",
+    "notes": [
+      "法人であれば代表者かつ発起人が受講する必要があります。",
+      "受講されたセミナーが廃止になっている場合は、証明書の発行ができません。"
+    ]
+  },
+  "courses": [
+    {
+      "name": "スタートアップ応援ネットワークFUKUOKA",
+      "org": "スタートアップカフェ／福岡市経営支援課／日本政策金融公庫／志賀商工会",
+      "fee": {
+        "free": true
+      },
+      "format": "hybrid",
+      "sessions": null,
+      "schedule": "1か月以上かけて4分野を受講",
+      "capacity": null,
+      "deadline": null,
+      "target": "創業前の方、創業後5年未満の方",
+      "status": "unknown",
+      "statusBasis": "市のページに日程・受付状況の記載なし"
+    },
+    {
+      "name": "さわら起業塾",
+      "org": "早良商工会",
+      "fee": {
+        "free": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "target": "起業を予定している方、起業後5年未満の方（法人も可）",
+      "status": "unknown",
+      "statusBasis": "市のページに日程・受付状況の記載なし"
+    },
+    {
+      "name": "女性のための起業ゼミ",
+      "org": "アミカス（福岡市女性活躍推進課）",
+      "fee": {
+        "unknown": true,
+        "note": "有料（金額の記載なし）"
+      },
+      "format": "offline",
+      "sessions": "2か月にわたり5日程度",
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "target": "起業を目指している女性（既に起業している女性も可）",
+      "status": "unknown",
+      "statusBasis": "市のページに日程・受付状況の記載なし",
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "name": "スプラウト創業塾",
+      "org": "一般社団法人女性起業家スプラウト",
+      "fee": {
+        "unknown": true,
+        "note": "有料（金額の記載なし）"
+      },
+      "format": "online",
+      "sessions": "計4日間",
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "target": "起業を検討している女性及び起業して間もない女性",
+      "status": "unknown",
+      "statusBasis": "市のページに日程・受付状況の記載なし",
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "name": "LEADIA Woman Academy",
+      "org": "スタイルクリエイト株式会社",
+      "fee": {
+        "unknown": true,
+        "note": "有料（金額の記載なし）"
+      },
+      "format": "hybrid",
+      "sessions": "6か月間",
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "target": "経営・税務・法務・マーケティング等を体系的に学びたい女性",
+      "status": "unknown",
+      "statusBasis": "市のページに日程・受付状況の記載なし",
+      "audience": [
+        "women"
+      ]
+    },
+    {
+      "name": "福岡起業塾",
+      "org": "福岡商工会議所",
+      "fee": {
+        "unknown": true,
+        "note": "有料（金額の記載なし）"
+      },
+      "format": "offline",
+      "sessions": "4日以上",
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "target": "福岡市内で概ね1年以内に起業予定または創業後1年程度の方",
+      "status": "unknown",
+      "statusBasis": "市のページに日程・受付状況の記載なし"
+    },
+    {
+      "name": "オンライン起業講座",
+      "org": "福岡商工会議所",
+      "fee": {
+        "unknown": true,
+        "note": "有料（金額の記載なし）"
+      },
+      "format": "hybrid",
+      "sessions": null,
+      "schedule": null,
+      "capacity": null,
+      "deadline": null,
+      "target": "福岡市内で概ね1年以内に起業予定または創業後1年程度の方",
+      "status": "unknown",
+      "statusBasis": "市のページに日程・受付状況の記載なし"
+    }
+  ],
+  "coursesNote": "福岡市の対象事業は全16件ですが、市のページは事業ごとに「有料」「無料」を示すのみで、金額・開催日・定員・締切・申込URLの記載がありません。上記は主要な7件を抜粋したものです。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      {
+        "label": "受講料の金額",
+        "body": "16事業すべてが「有料」「無料」の2値のみで、金額の記載は一切ありません（有料12件・無料4件）"
+      },
+      {
+        "label": "開催日・定員・締切",
+        "body": "いずれも記載がありません"
+      },
+      {
+        "label": "申込先URL",
+        "body": "事業者名のみで、申込ページへのリンクがありません"
+      }
+    ],
+    "action": "各事業者へ直接お問い合わせください。受講前に福岡市への同意申請が必要です（スタートアップカフェでの受講の場合は不要）。"
+  },
+  "otherBenefits": [
+    {
+      "title": "創業関連保証",
+      "body": "創業関連保証の利用開始月が前倒しになります。"
+    },
+    {
+      "title": "日本政策金融公庫",
+      "body": "新規開業・スタートアップ支援資金の対象になります。"
+    }
+  ],
+  "localSupport": [
+    {
+      "title": "市が残りの半額を支援",
+      "body": "登録免許税の軽減を活用して会社を設立する創業者に対し、**福岡市が残りの半額相当額を独自に支援**します。実質的に登録免許税の負担がさらに軽くなる、福岡市だけの制度です。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "福岡市「特定創業支援等事業のご案内」",
+      "url": "https://www.city.fukuoka.lg.jp/keizai/r-support/business/tokutei-sougyou-sientoujigyou.html"
+    }
+  ],
+  "kana": "ふくおか",
+  "prefKana": "ふくおか"
+}

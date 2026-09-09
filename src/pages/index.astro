@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+import CityFinder from '../components/CityFinder.astro';
+import Diagnosis from '../components/Diagnosis.astro';
+import { municipalities, published, stats, feeRatio } from '../lib/catalog.js';
+import { yen } from '../lib/fmt.js';
+const pending = municipalities.filter((m) => !m.publish?.ready);
+---
+<Base
+  title="創業支援ポータル｜会社設立の登録免許税を半額にする"
+  description={`市区町村ごとの特定創業支援等事業をまとめています。株式会社の設立で登録免許税が15万円→7万5千円に。現在${published.length}自治体・${stats.courses}講座を掲載。`}
+>
+  <p class="eyebrow">特定創業支援等事業　2026年9月</p>
+  <h1><span class="nb">会社をつくる前に、</span><span class="nb">登録免許税は半額にできる</span></h1>
+  <p class="standfirst">
+    市区町村の「特定創業支援等事業」に指定された講座を受けると、
+    株式会社の設立時の登録免許税が<strong>15万円から7万5千円</strong>になります。
+    受ける講座は市区町村ごとに違うため、ひとつずつ調べてまとめています。
+  </p>
+
+  <CityFinder />
+
+  <h2>自分が対象か調べる</h2>
+  <Diagnosis />
+
+  <h2>講座を比べる</h2>
+  <p>
+    自治体の公式サイトは自市の情報しか載せないため、受講料の比較はどこにもありません。
+    同じ証明書が出る講座でも、<strong>{yen(stats.min)}から{yen(stats.max)}まで{feeRatio}倍の開き</strong>があります。
+  </p>
+  <dl class="local">
+    <div class="local-row"><dt><a href="/compare/fee/">受講料くらべ</a></dt><dd>全{stats.courses}件を安い順に。{feeRatio}倍の差がどこから来るのか。</dd></div>
+    <div class="local-row"><dt><a href="/compare/free/">無料で取れる講座</a></dt><dd>{stats.free}件。無料でも軽減額は変わりません。</dd></div>
+    <div class="local-row"><dt><a href="/compare/online/">オンラインで取れる講座</a></dt><dd>通わずに完結できる講座。</dd></div>
+    <div class="local-row"><dt><a href="/compare/women/">女性起業家向け</a></dt><dd>女性の起業を対象に設計された講座。</dd></div>
+  </dl>
+
+  <h2>制度から調べる</h2>
+  <dl class="local">
+    <div class="local-row"><dt><a href="/seido/registration-tax/">登録免許税の半額</a></dt><dd>株式会社15万円→7万5千円。最も大きな優遇です。</dd></div>
+    <div class="local-row"><dt><a href="/seido/jizokuka-sogyo/">持続化補助金〈創業型〉</a></dt><dd>補助上限が最大250万円に上がります。</dd></div>
+    <div class="local-row"><dt><a href="/seido/sogyo-hosho/">創業関連保証の特例</a></dt><dd>事業開始の6か月前から利用できます。</dd></div>
+    <div class="local-row"><dt><a href="/seido/jfc-kinri/">公庫の金利引き下げ</a></dt><dd>新規開業・スタートアップ支援資金が対象です。</dd></div>
+  </dl>
+
+  {pending.length > 0 && (
+    <>
+      <h2>調査済み・未公開の自治体</h2>
+      <div class="gaps">
+        <h3>{pending.length}自治体は、掲載の基準を満たしていないため公開していません</h3>
+        <ul>
+          {pending.map((m) => (
+            <li><strong>{m.name}</strong> — {m.publish.blockers.join('／')}</li>
+          ))}
+        </ul>
+        <p class="who">
+          受講料か開催日のどちらも公表されていない自治体は、掲載しても利用者が判断できません。
+          実施機関側の情報が取れ次第、公開に切り替えます。
+        </p>
+      </div>
+    </>
+  )}
+</Base>

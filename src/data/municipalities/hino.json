@@ -1,0 +1,49 @@
+{
+  "slug": "hino", "prefSlug": "tokyo", "pref": "東京都", "prefKana": "とうきょう", "kana": "ひの",
+  "name": "日野市", "kind": "中規模市",
+  "lastVerified": "2026-09-09", "sourceUpdatedAt": "2026-08-04",
+  "publish": { "ready": true, "blockers": [] },
+  "taxReduction": {
+    "kabushiki": { "before": 150000, "after": 75000 },
+    "godo": { "before": 60000, "after": 30000 },
+    "rate": { "before": "0.7%", "after": "0.35%" },
+    "notes": []
+  },
+  "requirement": {
+    "minSessions": 4, "minMonths": 1,
+    "subjects": ["経営", "財務", "人材育成", "販路開拓"],
+    "notes": ["日野市特定創業支援等事業計画の計画期間終了日は令和13年3月31日です。"]
+  },
+  "courses": [
+    { "name": "指導・カウンセリング（個別相談）", "org": "一般社団法人Herstory", "fee": { "amount": 11000, "taxIncluded": true, "note": "1回あたり" }, "format": "hybrid", "sessions": "1回1時間", "schedule": "平日 午前10時〜午後5時", "capacity": null, "deadline": null, "target": null, "contact": "info@herstory-hino.net", "status": "open", "statusBasis": "平日随時受付（予約制）" },
+    { "name": "専門家による相談窓口", "org": "日野市商工会", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" },
+    { "name": "創業塾・創業セミナー／個別相談", "org": "多摩信用金庫", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし。詳細は多摩信用金庫のサイト" },
+    { "name": "PlanT個別相談", "org": "株式会社タウンキッチン", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページに日程・費用の記載なし" }
+  ],
+  "coursesNote": "日野市は4つの実施機関が掲載されており、うち一般社団法人Herstoryの個別相談だけが料金（1回11,000円）と実施時間を公開しています。他の3機関は費用・日程の記載がありません。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      { "label": "3機関の受講料", "body": "日野市商工会・多摩信用金庫・タウンキッチンは費用の記載がありません" },
+      { "label": "創業塾の日程", "body": "多摩信用金庫の創業塾・創業セミナーの開催日が記載されていません" },
+      { "label": "何回受ければ要件を満たすか", "body": "個別相談は1回1時間のため、4回以上・1か月以上の要件を満たすには複数回の予約が必要です" }
+    ],
+    "action": "個別相談で要件を満たす場合、1回11,000円×4回で44,000円になります。回数と費用の詳細は各実施機関へご確認ください。"
+  },
+  "highlight": {
+    "title": "個別相談型なので、日程が決まった講座を待たなくて済みます",
+    "body": "日野市の支援は**個別相談・カウンセリング型**が中心です。一般社団法人Herstoryの相談は平日10時〜17時の予約制で、対面とオンラインを選べます。決まった開講日を待つ必要がない反面、4回以上・1か月以上の要件を満たすには複数回の予約が要ります。"
+  },
+  "applicationSteps": [],
+  "otherBenefits": [
+    { "title": "創業関連保証", "body": "創業関連保証の特例が利用できます。" },
+    { "title": "日本政策金融公庫", "body": "新規開業・スタートアップ支援資金の貸付利率引き下げの対象になります。" },
+    { "title": "持続化補助金", "body": "小規模事業者持続化補助金〈創業型〉の申請対象になります。" }
+  ],
+  "localSupport": [
+    { "title": "対面とオンラインを選べる", "body": "Herstoryの個別相談は**相談者の希望に沿って対面かオンラインかを選べます**。市外在住でも相談しやすい形式です。" }
+  ],
+  "sources": [
+    { "title": "日野市「特定創業支援等事業により支援を受けたことの証明書」", "url": "https://www.city.hino.lg.jp/sangyo/sougyo/1027261.html" }
+  ]
+}

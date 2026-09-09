@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# 掲載基準を満たしていない自治体のページは各ページの meta robots で noindex にしています。
+# sitemap にも含めていません。
+
+Sitemap: https://sogyo-shien.com/sitemap-index.xml

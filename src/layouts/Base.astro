@@ -1,0 +1,37 @@
+---
+import '../styles/tokens.css';
+const { title, description, jsonLd = [], noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+    />
+    {jsonLd.map((d) => (
+      <script type="application/ld+json" set:html={JSON.stringify(d)} />
+    ))}
+  </head>
+  <body>
+    <div class="wrap">
+      <slot />
+      <footer class="site-foot">
+        <p><a href="/">トップ</a>　<a href="/about/">このサイトについて・免責事項</a></p>
+        <p class="note">掲載内容は各機関の公式ページから取得したものです。申込前に必ず各実施機関へご確認ください。</p>
+      </footer>
+    </div>
+  </body>
+</html>

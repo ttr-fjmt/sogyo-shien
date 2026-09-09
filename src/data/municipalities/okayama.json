@@ -1,0 +1,89 @@
+{
+  "slug": "okayama",
+  "prefSlug": "okayama",
+  "pref": "岡山県",
+  "prefKana": "おかやま",
+  "kana": "おかやま",
+  "name": "岡山市",
+  "kind": "政令指定都市",
+  "lastVerified": "2026-09-09",
+  "sourceUpdatedAt": null,
+  "publish": { "ready": true, "blockers": [] },
+  "taxReduction": {
+    "kabushiki": { "before": 150000, "after": 75000 },
+    "godo": { "before": 60000, "after": 30000 },
+    "rate": { "before": "0.7%", "after": "0.35%" },
+    "notes": [
+      "他の市区町村で創業する場合には、登録免許税の減免を受けることができません。",
+      "設立登記を行う際に、証明書の原本を法務局に提出する必要があります。",
+      "会社法上の発起人であり、かつ会社の代表者となって会社を設立しようとする個人が対象です。"
+    ]
+  },
+  "requirement": {
+    "minSessions": 4,
+    "minMonths": 1,
+    "subjects": ["経営", "財務", "人材育成", "販路開拓"],
+    "notes": [
+      "既に事業を営んでいる個人または法人の新分野進出は証明の対象外です。例えばA事業の開始から5年を経過していない個人事業主が新たにB事業を始める場合、A事業は対象になりますがB事業は対象になりません。",
+      "証明書の交付を受けた方は、交付を受けた日の属する会計年度の終了後5年間、創業の状況を確認する調査に協力することになります。"
+    ]
+  },
+  "courses": [
+    {
+      "name": "創業スクール（令和8年度）",
+      "org": "岡山商工会議所",
+      "fee": { "amount": 11000, "taxIncluded": true, "note": "消費税・テキスト代含む" },
+      "format": "offline",
+      "sessions": "全5日間",
+      "schedule": "令和8年6月6日・6月13日ほか（土曜 9:30〜16:30）",
+      "venue": "岡山商工会議所 1階会議室（岡山市北区厚生町3-1-15）",
+      "content": "販売促進、税務、WEB活用、開業資金調達等、創業する際のノウハウを習得する5日間の実用セミナー。受講者は窓口での個別相談を何度でも無料で利用できます。",
+      "capacity": null,
+      "deadline": null,
+      "target": "創業を目指す方、創業に興味がある方",
+      "contact": "086-232-2266（岡山商工会議所）",
+      "status": "closed",
+      "statusBasis": "商工会議所のページに「※受付終了」と明記"
+    },
+    { "name": "窓口相談・創業塾・セミナー", "org": "岡山県商工会連合会", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "市のページは事業者一覧のみで、日程・費用の記載なし" },
+    { "name": "窓口相談・創業塾・セミナー", "org": "岡山北商工会", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "同上" },
+    { "name": "窓口相談・創業塾・セミナー", "org": "岡山西商工会", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "同上" },
+    { "name": "窓口相談・創業塾・セミナー", "org": "岡山南商工会", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "同上" },
+    { "name": "窓口相談・創業塾・セミナー", "org": "岡山県中小企業団体中央会", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "同上" },
+    { "name": "創業支援（金融機関）", "org": "中国銀行・トマト銀行・おかやま信用金庫", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "unknown", "statusBasis": "同上" }
+  ],
+  "coursesNote": "岡山市のページは認定連携創業支援等事業者の一覧（事業者名・住所・HP・電話番号）であり、講座の日程や受講料は掲載されていません。日程・受講料が判明しているのは岡山商工会議所の創業スクールのみで、これは商工会議所のページで確認したものです。他の事業者については各機関へお問い合わせください。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      { "label": "商工会議所以外の受講料", "body": "6事業者について費用の記載がありません" },
+      { "label": "開催日", "body": "市のページには日程情報がなく、事業者の連絡先のみが掲載されています" },
+      { "label": "定員・申込締切", "body": "記載がありません" }
+    ],
+    "action": "市のページには各事業者の住所・HP・電話番号が掲載されています。窓口相談は通年で受け付けている事業者が多いため、直接お問い合わせください。"
+  },
+  "highlight": {
+    "title": "岡山市には、当初1年間の融資利率が0%になる独自制度があります",
+    "body": "証明書があると「岡山市創業促進特別資金融資」に申し込めます。**当初1年間の融資利率が0%**という、調査した自治体のなかで最も踏み込んだ独自制度です（別途審査があります）。登録免許税の軽減7万5千円と合わせると、金額面の効果は大きくなります。"
+  },
+  "applicationSteps": [
+    { "text": "認定連携創業支援等事業者の支援を、4回以上・1か月以上にわたって受ける", "sub": "経営・財務・人材育成・販路開拓の4分野すべてが必要です" },
+    { "text": "事業者から証明書交付申請書・同意書・特定創業支援事業報告書を受け取る", "sub": "申請書は提出先の数だけ必要です（法務局と公庫なら2通）" },
+    { "text": "岡山市創業支援・雇用推進課へ郵送または持参で提出する", "sub": null },
+    { "text": "証明書を受け取り、登記申請時に法務局へ提出する", "sub": null }
+  ],
+  "otherBenefits": [
+    { "title": "創業関連保証", "body": "無担保・第三者保証人なしの創業関連保証を事業開始6か月前から利用できます。**他の市区町村で創業する場合でも活用できます。**提出先は岡山県信用保証協会または金融機関です。" },
+    { "title": "日本政策金融公庫", "body": "新規開業・スタートアップ支援資金の貸付利率引き下げの対象になります。ただし他の市区町村で創業する場合はこの特例を活用できません。" },
+    { "title": "持続化補助金", "body": "小規模事業者持続化補助金〈創業型〉の申請対象になります。" }
+  ],
+  "localSupport": [
+    { "title": "岡山市創業促進特別資金融資", "body": "**当初1年間の融資利率が0%**になります。証明書があると申し込みが可能になります（別途審査あり）。" },
+    { "title": "岡山市創業促進助成金", "body": "岡山市が独自に実施している創業者向けの助成金制度があります。" },
+    { "title": "認定連携創業支援等事業者が7機関", "body": "商工会議所・県商工会連合会・北/西/南の各商工会・中小企業団体中央会に加え、中国銀行・トマト銀行・おかやま信用金庫も連携事業者に入っています。金融機関経由でも支援を受けられます。" }
+  ],
+  "sources": [
+    { "title": "岡山市「産業競争力強化法に基づく『特定創業支援等事業』について」", "url": "https://www.city.okayama.jp/jigyosha/0000009171.html" },
+    { "title": "岡山商工会議所「創業スクール」", "url": "https://okayama-cci.or.jp/keiei/sougyou/school.html" }
+  ]
+}

@@ -1,0 +1,184 @@
+---
+import Base from '../../layouts/Base.astro';
+import { feeLabel, isFree, byFee, yen, FORMAT, STATUS } from '../../lib/fmt.js';
+import {
+  allCourses, priced, freeCourses, onlineCourses, womenCourses,
+  stats, feeRatio, chartScale, municipalities,
+} from '../../lib/catalog.js';
+
+export async function getStaticPaths() {
+  return [
+    { params: { slug: 'fee' } },
+    { params: { slug: 'free' } },
+    { params: { slug: 'online' } },
+    { params: { slug: 'women' } },
+  ];
+}
+
+const { slug } = Astro.params;
+
+const VIEWS = {
+  fee: {
+    title: '創業スクール受講料くらべ',
+    h1: ['同じ証明書が出るのに、', '受講料は0円から', '396,000円まで開いている'],
+    lead: '特定創業支援等事業を修了すると、どの講座を選んでも登録免許税の軽減額は同じです。それでも受講料には大きな差があります。',
+    courses: [...allCourses].sort(byFee),
+    chart: true,
+  },
+  free: {
+    title: '無料で取れる創業スクール',
+    h1: ['受講料をかけずに、', '登録免許税を半額にする'],
+    lead: '調査した自治体のうち、受講料が無料の講座を集めました。無料の講座でも、交付される証明書と軽減額は有料の講座と変わりません。',
+    courses: [...freeCourses].sort((a, b) => a.city.localeCompare(b.city, 'ja')),
+    chart: false,
+  },
+  online: {
+    title: 'オンラインで取れる創業スクール',
+    h1: ['通わずに、', 'オンラインだけで', '証明書を取る'],
+    lead: 'オンラインまたはオンデマンドで受講できる講座です。居住地から遠い自治体の講座でも、証明書の交付を受けられる場合があります（登録免許税の軽減はその市区町村内での設立が条件です）。',
+    courses: [...onlineCourses].sort(byFee),
+    chart: false,
+  },
+  women: {
+    title: '女性起業家向け創業スクール',
+    h1: ['女性起業家向けに', '設計された創業スクール'],
+    lead: '女性の起業を対象に設計された講座です。一般向けの講座と同じく、修了すれば特定創業支援等事業の証明書が交付されます。',
+    courses: [...womenCourses].sort(byFee),
+    chart: false,
+  },
+};
+
+const v = VIEWS[slug];
+const scale = chartScale(v.courses);
+const description = `${v.lead.slice(0, 90)} 全${municipalities.length}自治体・${v.courses.length}件を掲載（2026年9月時点）。`;
+const pricedInView = v.courses.filter((c) => typeof c.fee?.amount === 'number');
+---
+
+<Base title={`${v.title}｜${municipalities.length}自治体を横断比較`} description={description}>
+  <p class="eyebrow">{municipalities.length}自治体 横断調査　2026年9月</p>
+  <h1>{v.h1.map((t) => <span class="nb">{t}</span>)}</h1>
+  <p class="standfirst">{v.lead}</p>
+  <p class="stamp">最終確認 <b>2026-09-09</b>　—　出典は各自治体・各実施機関の公式ページ</p>
+
+  {slug === 'fee' && (
+    <div class="figs">
+      <div class="fig">
+        <p class="k">無料で受けられる講座</p>
+        <p class="v free">{stats.free}件</p>
+        <p class="u">全{stats.courses}件中</p>
+      </div>
+      <div class="fig">
+        <p class="k">有料の最安</p>
+        <p class="v">{yen(stats.min)}</p>
+        <p class="u">{priced.find((c) => c.fee.amount === stats.min)?.city}　{priced.find((c) => c.fee.amount === stats.min)?.name}</p>
+      </div>
+      <div class="fig">
+        <p class="k">最高額</p>
+        <p class="v max">{yen(stats.max)}</p>
+        <p class="u">最安との差は{feeRatio}倍</p>
+      </div>
+    </div>
+  )}
+
+  {v.chart && pricedInView.length > 1 && (
+    <>
+      <h2>受講料の分布</h2>
+      <div class="chart">
+        <div class="axis"><span>0円</span><span>{yen(scale)}</span></div>
+        <div class="bars">
+          {pricedInView.map((c) => {
+            const over = c.fee.amount > scale;
+            const w = Math.min(100, (c.fee.amount / scale) * 100);
+            return (
+              <div class:list={['bar-row', { off: over }]}>
+                <p class="bar-label">{c.name}<span class="city">{c.city}</span></p>
+                <div class="bar-track">
+                  <div class="bar-fill" style={`width:${w}%`}></div>
+                  {w > 88 ? (
+                    <span class="bar-val" style="right:.5rem;color:var(--paper)">
+                      {yen(c.fee.amount)}{over ? ' ⟶ スケール外' : ''}
+                    </span>
+                  ) : (
+                    <span class="bar-val" style={`left:calc(${w}% + .5rem)`}>{yen(c.fee.amount)}</span>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <p class="chart-note">
+          目盛りは{yen(scale)}まで。これを超える講座は破線の枠で示しています。
+          無料の{stats.free}講座は0円のため棒が描かれず、下の一覧に含まれます。
+        </p>
+      </div>
+
+      <div class="pull">
+        <p class="big">有料の最安と最高で{feeRatio}倍。それでも交付される証明書は同じです</p>
+        <p>
+          講座の内容・回数・伴走支援の厚みは当然違いますが、
+          <strong>登録免許税の軽減という一点だけを目的にするなら、最も安い講座を選んでも得られる結果は変わりません</strong>。
+        </p>
+      </div>
+    </>
+  )}
+
+  <h2>{v.title}の一覧（{v.courses.length}件）</h2>
+  <div class="scroller">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">受講料</th>
+          <th scope="col">講座 / 実施機関</th>
+          <th scope="col">自治体</th>
+          <th scope="col">形式</th>
+          <th scope="col">受付</th>
+        </tr>
+      </thead>
+      <tbody>
+        {v.courses.map((c) => (
+          <tr>
+            <td class:list={['fee', { 'is-free': isFree(c) }]}>{feeLabel(c.fee)}</td>
+            <td class="name"><a href={c.href}>{c.name}</a><span class="org">{c.org}</span></td>
+            <td class="city">{c.city}</td>
+            <td><span class:list={['badge', FORMAT[c.format].cls]}>{FORMAT[c.format].label}</span></td>
+            <td><span class:list={['badge', STATUS[c.status].cls]}>{STATUS[c.status].label}</span></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  {stats.unknownFee > 0 && (
+    <>
+      <h2>受講料を公表していない自治体</h2>
+      <div class="gaps">
+        <h3>
+          {municipalities.length}自治体のうち{stats.citiesWithNoFee.length}つは、
+          市のページを見ても受講料が分かりません
+        </h3>
+        <ul>
+          {stats.citiesWithNoFee.map((m) => (
+            <li>
+              <strong>{m.name}</strong> — {m.courses.length}事業を掲載していますが、
+              金額の記載がありません。{m.publish?.blockers?.[0] ?? ''}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p>
+        高松市もこれに近く、市のページには金額の記載がありませんでした。
+        <strong>「無料」であることは高松商工会議所のイベントページで初めて確認できています。</strong>
+        市のサイトだけを見ていても、受講料は分かりません。
+      </p>
+    </>
+  )}
+
+  <h2>この比較の範囲</h2>
+  <div class="sources">
+    {municipalities.map((m) => m.name).join('・')}の{municipalities.length}自治体について、
+    2026年9月9日に各自治体および実施機関の公式ページから取得した情報にもとづいています。<br /><br />
+    金額の記載がない講座は「要確認」としており、推定した金額は含めていません。
+    受講料は年度によって変わります。実際の申込前に各実施機関へご確認ください。
+    「受付」欄は、元データに受付状況の記載がない場合は公表されている日程・締切から判定したものです。
+  </div>
+</Base>

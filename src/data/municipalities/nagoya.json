@@ -1,0 +1,109 @@
+{
+  "slug": "nagoya",
+  "prefSlug": "aichi",
+  "pref": "愛知県",
+  "name": "名古屋市",
+  "kind": "政令指定都市",
+  "lastVerified": "2026-09-09",
+  "sourceUpdatedAt": "2026-09-07",
+  "publish": {
+    "ready": true,
+    "blockers": []
+  },
+  "taxReduction": {
+    "kabushiki": {
+      "before": 150000,
+      "after": 75000
+    },
+    "godo": {
+      "before": 60000,
+      "after": 30000
+    },
+    "rate": {
+      "before": "0.7%",
+      "after": "0.35%"
+    },
+    "notes": []
+  },
+  "requirement": {
+    "minSessions": null,
+    "minMonths": null,
+    "subjects": [],
+    "lead": "名古屋市新事業支援センターの創業支援セミナー（全8回）を受講すること",
+    "notes": []
+  },
+  "courses": [
+    {
+      "name": "創業支援セミナー 第1期",
+      "org": "（公財）名古屋産業振興公社 名古屋市新事業支援センター",
+      "fee": {
+        "free": true
+      },
+      "format": "offline",
+      "sessions": "全8回",
+      "schedule": "令和8年9月9日／9月30日／10月7日／10月20日（昼の部14:30-17:00／夜の部18:30-21:00）",
+      "venue": "ウインクあいち（名古屋市中村区名駅4-4-38）15階・16階・9階",
+      "capacity": "定員各20名",
+      "deadline": "各回の受講日の2日前まで（定員になり次第締切）",
+      "status": "closed",
+      "statusBasis": "市のページに「各回とも定員に達しましたので申込を締め切りました」と明記"
+    },
+    {
+      "name": "創業支援セミナー 第2期",
+      "org": "（公財）名古屋産業振興公社 名古屋市新事業支援センター",
+      "fee": {
+        "free": true
+      },
+      "format": "offline",
+      "sessions": null,
+      "schedule": "令和9年1月から2月に開催予定",
+      "capacity": null,
+      "deadline": null,
+      "status": "tbd",
+      "statusBasis": "「詳細が決まり次第ご案内いたします」と記載"
+    }
+  ],
+  "coursesIntro": "名古屋市の創業支援セミナーは**年2期制**です。第1期は締め切られており、次は令和9年1〜2月の第2期になります。",
+  "unknowns": {
+    "title": "第2期について分かっていないこと",
+    "items": [
+      {
+        "label": "開催日",
+        "body": "令和9年1月から2月とだけ記載され、具体的な日程は未定です"
+      },
+      {
+        "label": "募集開始日",
+        "body": "いつから申し込めるかの記載がありません"
+      }
+    ],
+    "action": "「詳細が決まり次第ご案内いたします」とされています。名古屋市新事業支援センターの案内をご確認ください。"
+  },
+  "highlight": {
+    "title": "無料・全8回・定員各20名。ただし第1期は既に満席です",
+    "body": "名古屋市の創業支援セミナーは参加費無料で、昼の部と夜の部が選べます。会場はウインクあいち。締切は各回の受講日の2日前までですが、定員に達し次第締め切られ、第1期は既に満席になりました。"
+  },
+  "applicationSteps": [],
+  "otherBenefits": [
+    {
+      "title": "創業関連保証",
+      "body": "無担保・第三者保証人なしの創業関連保証の特例が利用できます。"
+    },
+    {
+      "title": "日本政策金融公庫",
+      "body": "新規開業・スタートアップ支援資金の貸付利率引き下げの対象になります。"
+    },
+    {
+      "title": "持続化補助金",
+      "body": "小規模事業者持続化補助金〈創業型〉の申請対象になります。"
+    }
+  ],
+  "localSupport": [],
+  "sources": [
+    {
+      "title": "名古屋市「創業支援セミナー」",
+      "url": "https://www.city.nagoya.jp/jigyou/sangyou/1026356/1035070/1035071/1026436.html"
+    }
+  ],
+  "kana": "なごや",
+  "prefKana": "あいち"
+}

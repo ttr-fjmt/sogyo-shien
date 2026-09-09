@@ -1,0 +1,51 @@
+{
+  "slug": "saitama", "prefSlug": "saitama", "pref": "埼玉県", "prefKana": "さいたま", "kana": "さいたま",
+  "name": "さいたま市", "kind": "政令指定都市",
+  "lastVerified": "2026-09-09", "sourceUpdatedAt": null,
+  "publish": { "ready": true, "blockers": [] },
+  "taxReduction": {
+    "kabushiki": { "before": 150000, "after": 75000 },
+    "godo": { "before": 60000, "after": 30000 },
+    "rate": { "before": "0.7%", "after": "0.35%" },
+    "notes": []
+  },
+  "requirement": {
+    "minSessions": 4, "minMonths": 1,
+    "subjects": ["経営", "財務", "人材育成", "販路開拓"],
+    "notes": ["セミナー等の受講前に、対象事業かどうかを事前に確認するよう市が案内しています。"]
+  },
+  "courses": [
+    { "name": "特定創業支援等レクチャー", "org": "公益財団法人さいたま市産業創造財団", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": "随時", "capacity": null, "deadline": null, "status": "open", "statusBasis": "市の一覧の開催状況欄が「随時開催中」" },
+    { "name": "創業支援センター埼玉主催の各種セミナー", "org": "公益財団法人埼玉県産業振興公社", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": "随時", "capacity": null, "deadline": null, "status": "open", "statusBasis": "開催状況欄が「随時開催中」" },
+    { "name": "起業セミナー（オンデマンド配信）", "org": "銀座セカンドライフ株式会社", "fee": { "unknown": true }, "format": "ondemand", "sessions": null, "schedule": "随時", "capacity": null, "deadline": null, "status": "open", "statusBasis": "開催状況欄が「随時開催中」" },
+    { "name": "創業セミナー（オンデマンド配信）", "org": "株式会社コミュニティコム", "fee": { "unknown": true }, "format": "ondemand", "sessions": null, "schedule": "随時", "capacity": null, "deadline": null, "status": "open", "statusBasis": "開催状況欄が「随時開催中」" },
+    { "name": "ABSオンデマンド起業セミナー", "org": "株式会社アクティヴ・ビジネス・サポート", "fee": { "unknown": true }, "format": "ondemand", "sessions": null, "schedule": "随時", "capacity": null, "deadline": null, "status": "open", "statusBasis": "開催状況欄が「随時開催中」" },
+    { "name": "さいたま創業塾", "org": "さいたま商工会議所", "fee": { "unknown": true }, "format": "offline", "sessions": null, "schedule": null, "capacity": null, "deadline": null, "status": "closed", "statusBasis": "市の一覧の開催状況欄が「申込締切」" }
+  ],
+  "coursesNote": "さいたま市の一覧は**開催状況の列**を持っており（随時開催中／申込締切）、本調査で受付状況が明示されていた数少ない自治体のひとつです。ただし受講料と具体的な日程の記載はありません。窓口相談も対象事業に含まれており、利用開始日によって対象可否が変わる注記があります。",
+  "unknowns": {
+    "title": "市のページから分からないこと",
+    "items": [
+      { "label": "受講料", "body": "6事業すべてについて金額の記載がありません" },
+      { "label": "具体的な日程", "body": "「随時開催中」とあるのみで、開催日の記載がありません" },
+      { "label": "窓口相談の対象開始日", "body": "実施団体ごとに「平成29年8月31日以降」「令和7年4月1日以降」など対象となる利用開始日が異なります" }
+    ],
+    "action": "受講前に対象事業かどうかを市に確認するよう案内されています。各実施機関へお問い合わせください。"
+  },
+  "highlight": {
+    "title": "オンデマンド配信が3件あり、日程に縛られません",
+    "body": "さいたま市の対象事業6件のうち**3件がオンデマンド配信**（銀座セカンドライフ・コミュニティコム・アクティヴビジネスサポート）で、いずれも「随時開催中」です。決まった開講日を待つ必要がなく、自分のタイミングで要件を満たせます。窓口相談も対象に含まれています。"
+  },
+  "applicationSteps": [],
+  "otherBenefits": [
+    { "title": "創業関連保証", "body": "創業関連保証の特例が利用できます。" },
+    { "title": "日本政策金融公庫", "body": "新規開業・スタートアップ支援資金の貸付利率引き下げの対象になります。" },
+    { "title": "持続化補助金", "body": "小規模事業者持続化補助金〈創業型〉の申請対象になります。" }
+  ],
+  "localSupport": [
+    { "title": "さいたま市創業支援資金融資の優遇金利", "body": "証明書があると、さいたま市創業支援資金融資で**優遇金利**が適用されます（令和6年10月1日融資受付分から適用）。" }
+  ],
+  "sources": [
+    { "title": "さいたま市「特定創業支援等事業による支援を受けたことの証明申請について」", "url": "https://www.city.saitama.lg.jp/005/002/010/005/p036985.html" }
+  ]
+}
