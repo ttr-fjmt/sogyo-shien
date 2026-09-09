@@ -37,7 +37,7 @@
       "checkedAt": "2026-09-09"
     },
     "https://www.nerima-idc.or.jp/bsc/kigyousien/post_14.html": {
-      "verdict": "fail",
+      "verdict": "fetch-failed",
       "money": "",
       "name": "練馬区（出典2）",
       "checkedAt": "2026-09-09"
@@ -63,7 +63,7 @@
     "https://www.city.toshima.lg.jp/584/machizukuri/sangyo/kigyo/019176.html": {
       "verdict": "maybe",
       "money": "",
-      "name": "豊島区",
+      "name": "豊島区 開業支援コース",
       "checkedAt": "2026-09-09"
     },
     "https://www.city.toyama.lg.jp/business/kigyoshien/1010594/1005676.html": {
