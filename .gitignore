@@ -3,3 +3,7 @@ dist/
 .astro/
 tools/out/
 .DS_Store
+
+# ローカル確認用の一時ファイル
+server.js
+.claude/

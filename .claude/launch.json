@@ -1,1 +1,0 @@
-{"version":"0.0.1","configurations":[{"name":"proto","runtimeExecutable":"node","runtimeArgs":["server.js","dist"],"port":4321}]}
