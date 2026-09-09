@@ -9,8 +9,6 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
-    "@esbuild/win32-x64": "^0.28.2",
-    "@rollup/rollup-win32-x64-msvc": "^4.63.1",
     "astro": "^5.18.2"
   }
 }
