@@ -374,3 +374,74 @@ td.city{color:var(--ink-soft);white-space:nowrap}
 .faq-item{background:var(--surface);padding:var(--s3)}
 .faq-item dt{font-weight:700;font-size:.95rem;margin:0 0 var(--s2);line-height:1.6}
 .faq-item dd{margin:0;font-size:.92rem;color:var(--ink-soft);line-height:1.85}
+
+/* ==========================================================================
+   PCでの横幅の使い方
+   コンテナは広くとり、表やデータは横幅いっぱいに使う。
+   ただし日本語の本文は1行が長いと読みにくいので、読みもの部分だけ幅を絞る。
+   ========================================================================== */
+:root{
+  --measure-wide:74rem;   /* コンテナ全体（約1184px） */
+  --measure-read:46rem;   /* 本文の読みやすい幅（全角40〜45文字程度） */
+}
+
+@media (min-width:1000px){
+  .wrap{max-width:var(--measure-wide);padding-left:var(--s4);padding-right:var(--s4)}
+
+  /* 読みもの：幅を絞る */
+  .standfirst,
+  .wrap > p,
+  .cond,
+  .gaps,
+  .tablenote,
+  .pull,
+  .sources,
+  .proto,
+  .chart-note,
+  .finder-note,
+  .dx-lead,
+  ol.steps,
+  .site-foot{max-width:var(--measure-read)}
+
+  /* 見出しも本文と同じ幅で折り返す（罫線は全幅に伸ばす） */
+  h1{max-width:var(--measure-read)}
+  h2 > span, h3{max-width:var(--measure-read)}
+
+  /* データ：全幅を使う */
+  .scroller,
+  .ledger,
+  .figs,
+  .local,
+  .faq,
+  .course,
+  .chart,
+  .finder-index,
+  .ad{max-width:none}
+
+  /* 表は全幅で余裕ができるので、行の詰まりを緩める */
+  table{font-size:.92rem}
+  th,td{padding:.85rem 1rem}
+
+  /* 定義リストは横幅が広いと間延びするので、説明文だけ絞る */
+  .local-row{grid-template-columns:11rem minmax(0,1fr)}
+  .local-row dd{max-width:56rem}
+  .faq-item dd{max-width:62rem}
+  .spec{grid-template-columns:9rem minmax(0,1fr)}
+
+  /* 市区町村の索引は列を増やす */
+  .finder-index{grid-template-columns:repeat(auto-fill,minmax(13rem,1fr))}
+
+  /* 診断は横に並べて縦の移動を減らす */
+  .dx-q{max-width:var(--measure-read)}
+}
+
+/* 特に広い画面では、地域ページの講座表がさらに見やすくなる */
+@media (min-width:1400px){
+  .wrap{max-width:82rem}
+}
+
+/* 税額ブロックは全幅に伸ばすと中身が少なく間延びするので、中間の幅で止める */
+@media (min-width:1000px){
+  .ledger{max-width:64rem}
+  .course{max-width:70rem}
+}
