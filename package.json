@@ -5,7 +5,11 @@
   "scripts": {
     "dev": "astro dev --port 4321",
     "build": "astro build",
-    "preview": "astro preview --port 4321"
+    "preview": "astro preview --port 4321",
+    "status": "node tools/status.mjs",
+    "screen": "node tools/screen.mjs",
+    "scan": "node tools/scan.mjs",
+    "watch": "node tools/watch.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

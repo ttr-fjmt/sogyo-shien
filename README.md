@@ -1,14 +1,22 @@
 # 創業支援ポータル
 
 市区町村ごとの特定創業支援等事業を、成果（登録免許税がいくら安くなるか）を軸に整理する
-静的サイトです。1,459の認定市区町村への横展開を前提に、**データ駆動**で構成しています。
+静的サイトです。全国約1,580の認定市区町村への横展開を前提に、**データ駆動**で構成しています。
+
+公開先: https://sogyo-shien.com
+作業の進め方は **[CLAUDE.md](CLAUDE.md)** に、公開手順は [DEPLOY.md](DEPLOY.md) にまとめています。
 
 ## 使い方
 
 ```bash
-npm install --ignore-scripts   # ※ --ignore-scripts の理由は下記
-npm run dev                    # http://localhost:4321
-npm run build                  # dist/ に静的HTMLを出力
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # dist/ に静的HTMLを出力
+
+npm run status   # 今どこまで進んでいるか（掲載数・保留理由・巡回の状況）
+npm run screen tools/targets.tsv   # 候補ページの一次スクリーニング
+npm run scan     # 掲載保留と候補キューを巡回（--update で判定を記録）
+npm run watch    # 登録済み出典ページの差分検知（--update でスナップショット更新）
 ```
 
 ## 構成
@@ -22,6 +30,13 @@ src/
   pages/
     index.astro
     area/[prefSlug]/[slug].astro   ← 地域ページのテンプレート（全自治体で共用）
+tools/
+  lib/screen-core.mjs          ← ページ取得と仕分けの中身（3秒待機・robots.txt遵守）
+  screen.mjs                   ← 手動の一次スクリーニング
+  scan.mjs                     ← 候補の定期スクリーニング（scan.yml から）
+  watch.mjs                    ← 出典ページの差分検知（watch.yml から）
+  status.mjs                   ← 現在地の表示
+  candidates.tsv               ← 掲載候補のキュー
 ```
 
 ## テンプレートが守っているルール
@@ -32,8 +47,9 @@ src/
    `unknowns` に入れた項目は警告ブロックとして描画される。
 4. **受付状況は推定であることを明示する。** `status` と `statusBasis` を必ず対で持つ。
    元データに受付状況フラグがある自治体は稀（調査した18ソース中3つ）。
-5. **titleは市の特性で振り分ける。** 無料講座あり → 無料訴求、独自支援あり → 独自訴求、
-   それ以外 → 標準。1,459件が同一パターンになるのを避ける（`lib/fmt.js` の `pageTitle`）。
+5. **titleは重複させない。** 「その市で一番効く数字」＋「対象講座の件数」で組み立てる
+   （`lib/fmt.js` の `pageTitle`）。指標を1つしか見ないと、条件の似た自治体どうしで
+   同じタイトルになる。自動生成で言い表せない市は、データ側の `titleHook` に手書きする。
 6. **Event 構造化データは、開催日が確定していて受付中のものだけ出す。**
    通年・未定・終了は出さない（`eventJsonLd`）。
 7. **自治体間で記載が食い違う点は断定せず、確認先を示す。** `conflicts` に入れる。
@@ -46,22 +62,27 @@ src/
 必須キー: `slug` `prefSlug` `pref` `name` `lastVerified` `taxReduction` `requirement`
 `courses` `otherBenefits` `sources`
 
-**公開の最低条件**（SEO仕様書より）: 講座の実データ3件以上、その市固有の制度1つ以上、
-出典URLと最終確認日。満たせない市は公開しない。
+**公開の最低条件**（2026-09-09 改定）: **受講料・開催日・国の3措置以外の上乗せ支援**の
+いずれかが公表されていること。加えて出典URLと最終確認日は必須。
 
-## この環境でのビルドについて（重要）
+満たさない自治体は `publish.ready: false` で登録する。ページは生成されるが noindex になり
+sitemap からも外れる。捨てずに登録するのは、週次の巡回対象に載せて、日程や受講料が
+公表された時点で気づけるようにするため。詳しくは [CLAUDE.md](CLAUDE.md) の「掲載基準」。
 
-Claude のスクラッチ領域はパスが長く、**Windows の MAX_PATH（260文字）を超えるため
-esbuild のバイナリを spawn できません**。そのため、この環境では次の回避策を使っています。
+## 自動で回っているもの
 
-- `npm install --ignore-scripts`（esbuild の postinstall が失敗するため）
-- `package.json` の `overrides` で esbuild を単一バージョンに固定
-- ビルド時に `ESBUILD_BINARY_PATH` で短いパスのバイナリを指定
+| ワークフロー | 実行 | 内容 |
+|---|---|---|
+| `deploy.yml` | push時 | ビルドして GitHub Pages へ |
+| `watch.yml` | 毎週月曜 7:00 JST | 登録済み出典ページの差分検知 → Issue |
+| `scan.yml` | 毎週月曜 8:00 JST | 掲載保留と候補キューを巡回し、判定が上がったものを Issue |
 
-```bash
-ESBUILD_BINARY_PATH="C:\Users\fujim\esb.exe" npm run build
-```
+JSON化（ダイジェストを読んで自治体データを書く工程）は自動化していません。
+理由は [CLAUDE.md](CLAUDE.md) の「自動化していること・していないこと」に書いています。
 
-**通常の作業マシンでは、これらはすべて不要です。** `C:\sogyo-portal` のような短いパスに
-置けば `npm install && npm run build` がそのまま通ります。その場合は
-`package.json` の `overrides` も外して構いません。
+## 開発環境
+
+Node 22。`npm install && npm run build` がそのまま通ります。
+
+作業ディレクトリは `C:\sogyo-shien`。Claude のスクラッチ領域には置かないでください
+（セッション終了で消えるうえ、パスが長く Windows の MAX_PATH に引っかかります）。

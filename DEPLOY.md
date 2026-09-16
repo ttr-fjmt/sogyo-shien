@@ -9,8 +9,12 @@
 | ドメイン | sogyo-shien.com（お名前.com で取得、2026-09-09 登録） |
 | DNS | **Cloudflare**（`dan.ns.cloudflare.com` / `jamie.ns.cloudflare.com`） |
 | ホスティング | **GitHub Pages** |
-| リポジトリ | ttr-fjmt/sogyo-shien（private） |
+| リポジトリ | ttr-fjmt/sogyo-shien（**public**） |
 | Cloudflareプロキシ | **オフ**（グレーの雲） |
+
+リポジトリを public にしているのは、**private リポジトリの GitHub Pages が有料プラン限定**のためです。
+既存3サイト（agent-zukan / skillup-zukan / freelance-anken-zukan）も public で運用しています。
+private に戻すと公開が止まります。
 
 既存3サイトも DNS は Cloudflare、配信は GitHub Pages です。
 `curl -I https://agent-zukan.net/` が `Server: GitHub.com` と `x-github-edge-region: japaneast` を
